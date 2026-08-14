@@ -1,0 +1,343 @@
+{
+  "shopProfile": {
+    "shopId": "shop_mai_anh_boutique",
+    "shopName": "Thời Trang Mai Anh Boutique",
+    "ownerName": "Nguyễn Mai Anh",
+    "phone": "0988123456",
+    "email": "maianh.boutique@gmail.com",
+    "defaultBankBin": "970436",
+    "defaultBankAccount": "0011004567890",
+    "accountHolderName": "NGUYEN MAI ANH",
+    "address": "28 Phố Huế, Phường Hàng Bài, Quận Hoàn Kiếm, Hà Nội",
+    "city": "Hanoi",
+    "businessCategory": "fashion",
+    "isDemoMode": true
+  },
+  "inventory": [
+    {
+      "sku": "FAS-AD-HD-RED-S",
+      "name": "Áo Dài Lụa Hà Đông Đỏ Ruby (Size S)",
+      "category": "Áo Dài",
+      "price": 650000,
+      "stock": 18,
+      "unit": "bộ",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 380000,
+      "tags": ["áo dài", "lụa hà đông", "truyền thống", "bán chạy"]
+    },
+    {
+      "sku": "FAS-AD-HD-RED-M",
+      "name": "Áo Dài Lụa Hà Đông Đỏ Ruby (Size M)",
+      "category": "Áo Dài",
+      "price": 650000,
+      "stock": 25,
+      "unit": "bộ",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 380000,
+      "tags": ["áo dài", "lụa hà đông", "truyền thống"]
+    },
+    {
+      "sku": "FAS-AD-HD-RED-L",
+      "name": "Áo Dài Lụa Hà Đông Đỏ Ruby (Size L)",
+      "category": "Áo Dài",
+      "price": 650000,
+      "stock": 3,
+      "unit": "bộ",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 380000,
+      "tags": ["áo dài", "lụa hà đông", "low_stock"]
+    },
+    {
+      "sku": "FAS-AD-HD-BLU-S",
+      "name": "Áo Dài Lụa Hà Đông Xanh Cổ Vịt (Size S)",
+      "category": "Áo Dài",
+      "price": 650000,
+      "stock": 12,
+      "unit": "bộ",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 380000,
+      "tags": ["áo dài", "lụa hà đông"]
+    },
+    {
+      "sku": "FAS-AD-HD-BLU-M",
+      "name": "Áo Dài Lụa Hà Đông Xanh Cổ Vịt (Size M)",
+      "category": "Áo Dài",
+      "price": 650000,
+      "stock": 20,
+      "unit": "bộ",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 380000,
+      "tags": ["áo dài", "lụa hà đông"]
+    },
+    {
+      "sku": "FAS-VY-HOA-S",
+      "name": "Váy Hoa Nhí Vintage Dáng Xòe (Size S)",
+      "category": "Váy Liền",
+      "price": 389000,
+      "stock": 30,
+      "unit": "chiếc",
+      "lowStockThreshold": 6,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 210000,
+      "tags": ["váy hoa", "vintage", "mùa thu"]
+    },
+    {
+      "sku": "FAS-VY-HOA-M",
+      "name": "Váy Hoa Nhí Vintage Dáng Xòe (Size M)",
+      "category": "Váy Liền",
+      "price": 389000,
+      "stock": 42,
+      "unit": "chiếc",
+      "lowStockThreshold": 6,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 210000,
+      "tags": ["váy hoa", "vintage"]
+    },
+    {
+      "sku": "FAS-VY-HOA-L",
+      "name": "Váy Hoa Nhí Vintage Dáng Xòe (Size L)",
+      "category": "Váy Liền",
+      "price": 389000,
+      "stock": 15,
+      "unit": "chiếc",
+      "lowStockThreshold": 6,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 210000,
+      "tags": ["váy hoa", "vintage"]
+    },
+    {
+      "sku": "FAS-DAM-SATIN-GOLD",
+      "name": "Đầm Dạ Hội Satin Vàng Ánh Kim",
+      "category": "Đầm Dạ Hội",
+      "price": 1250000,
+      "stock": 8,
+      "unit": "chiếc",
+      "lowStockThreshold": 3,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 750000,
+      "tags": ["dạ hội", "satin", "cao cấp"]
+    },
+    {
+      "sku": "FAS-DAM-SATIN-BLK",
+      "name": "Đầm Dạ Hội Satin Đen Huyền Bí",
+      "category": "Đầm Dạ Hội",
+      "price": 1250000,
+      "stock": 10,
+      "unit": "chiếc",
+      "lowStockThreshold": 3,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 750000,
+      "tags": ["dạ hội", "satin", "sang trọng"]
+    },
+    {
+      "sku": "FAS-SM-TO-WHT",
+      "name": "Sơ Mi Tơ Dập Ly Trắng Freesize",
+      "category": "Áo Sơ Mi",
+      "price": 320000,
+      "stock": 2,
+      "unit": "chiếc",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 180000,
+      "tags": ["sơ mi tơ", "freesize", "low_stock"]
+    },
+    {
+      "sku": "FAS-SM-TO-BEI",
+      "name": "Sơ Mi Tơ Dập Ly Be Nhạt Freesize",
+      "category": "Áo Sơ Mi",
+      "price": 320000,
+      "stock": 14,
+      "unit": "chiếc",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 180000,
+      "tags": ["sơ mi tơ", "freesize"]
+    },
+    {
+      "sku": "FAS-TUI-CANVAS-SEN",
+      "name": "Túi Xách Canvas Thêu Hoa Sen",
+      "category": "Phụ Kiện",
+      "price": 420000,
+      "stock": 35,
+      "unit": "chiếc",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 220000,
+      "tags": ["phụ kiện", "túi canvas", "thêu tay"]
+    },
+    {
+      "sku": "FAS-KHAN-LUA-VANPHUC",
+      "name": "Khăn Lụa Vạn Phúc Vẽ Tay Nghệ Thuật",
+      "category": "Phụ Kiện",
+      "price": 280000,
+      "stock": 50,
+      "unit": "chiếc",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 140000,
+      "tags": ["khăn lụa", "vạn phúc", "quà tặng"]
+    },
+    {
+      "sku": "FAS-NON-LA-THEU",
+      "name": "Nón Lá Huế Thêu Hoa Văn Cung Đình",
+      "category": "Phụ Kiện",
+      "price": 190000,
+      "stock": 22,
+      "unit": "chiếc",
+      "lowStockThreshold": 5,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 95000,
+      "tags": ["nón lá", "cung đình", "truyền thống"]
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ORD-MA-2026-001",
+      "customerName": "Trần Thị Mai Phương",
+      "customerPhone": "0912345678",
+      "deliveryAddress": "45 Tràng Tiền, Phường Tràng Tiền, Quận Hoàn Kiếm",
+      "city": "Hanoi",
+      "district": "Quận Hoàn Kiếm",
+      "items": [
+        { "sku": "FAS-AD-HD-RED-M", "name": "Áo Dài Lụa Hà Đông Đỏ Ruby (Size M)", "quantity": 1, "unitPrice": 650000, "subtotal": 650000 }
+      ],
+      "itemsSubtotal": 650000,
+      "shippingFee": 20000,
+      "discountAmount": 20000,
+      "voucherCode": "FREESHIPVN",
+      "totalAmount": 650000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "VERIFIED",
+      "orderStatus": "CONFIRMED",
+      "vietqrPayload": "00020101021238420010A0000007270124000697043601130011004567890530370454066500005802VN62190815ORD-MA-2026-0016304ABCD",
+      "transactionRef": "FT26081400101",
+      "createdAt": "2026-08-14T02:30:00.000Z",
+      "updatedAt": "2026-08-14T02:35:00.000Z",
+      "notes": "Giao giờ hành chính, gọi trước 15 phút"
+    },
+    {
+      "orderId": "ORD-MA-2026-002",
+      "customerName": "Lê Hoàng Thu Trang",
+      "customerPhone": "0977889900",
+      "deliveryAddress": "12 Liễu Giai, Phường Cống Vị, Quận Ba Đình",
+      "city": "Hanoi",
+      "district": "Quận Ba Đình",
+      "items": [
+        { "sku": "FAS-VY-HOA-S", "name": "Váy Hoa Nhí Vintage Dáng Xòe (Size S)", "quantity": 2, "unitPrice": 389000, "subtotal": 778000 },
+        { "sku": "FAS-TUI-CANVAS-SEN", "name": "Túi Xách Canvas Thêu Hoa Sen", "quantity": 1, "unitPrice": 420000, "subtotal": 420000 }
+      ],
+      "itemsSubtotal": 1198000,
+      "shippingFee": 25000,
+      "discountAmount": 50000,
+      "voucherCode": "AIRISER20",
+      "totalAmount": 1173000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "VERIFIED",
+      "orderStatus": "PACKING",
+      "transactionRef": "FT26081400202",
+      "createdAt": "2026-08-14T03:15:00.000Z",
+      "updatedAt": "2026-08-14T03:20:00.000Z"
+    },
+    {
+      "orderId": "ORD-MA-2026-003",
+      "customerName": "Nguyễn Bích Ngọc",
+      "customerPhone": "0903456789",
+      "deliveryAddress": "88 Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy",
+      "city": "Hanoi",
+      "district": "Quận Cầu Giấy",
+      "items": [
+        { "sku": "FAS-DAM-SATIN-GOLD", "name": "Đầm Dạ Hội Satin Vàng Ánh Kim", "quantity": 1, "unitPrice": 1250000, "subtotal": 1250000 }
+      ],
+      "itemsSubtotal": 1250000,
+      "shippingFee": 30000,
+      "discountAmount": 0,
+      "totalAmount": 1280000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "PAID",
+      "orderStatus": "SHIPPED",
+      "createdAt": "2026-08-14T04:00:00.000Z",
+      "updatedAt": "2026-08-14T04:10:00.000Z"
+    },
+    {
+      "orderId": "ORD-MA-2026-004",
+      "customerName": "Phạm Lan Anh",
+      "customerPhone": "0911223344",
+      "deliveryAddress": "15 Lê Duẩn, Phường Bến Nghé, Quận 1",
+      "city": "Ho Chi Minh City",
+      "district": "Quận 1",
+      "items": [
+        { "sku": "FAS-AD-HD-BLU-M", "name": "Áo Dài Lụa Hà Đông Xanh Cổ Vịt (Size M)", "quantity": 1, "unitPrice": 650000, "subtotal": 650000 },
+        { "sku": "FAS-KHAN-LUA-VANPHUC", "name": "Khăn Lụa Vạn Phúc Vẽ Tay Nghệ Thuật", "quantity": 2, "unitPrice": 280000, "subtotal": 560000 }
+      ],
+      "itemsSubtotal": 1210000,
+      "shippingFee": 40000,
+      "discountAmount": 40000,
+      "totalAmount": 1210000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "VERIFIED",
+      "orderStatus": "CONFIRMED",
+      "createdAt": "2026-08-14T05:00:00.000Z",
+      "updatedAt": "2026-08-14T05:05:00.000Z"
+    },
+    {
+      "orderId": "ORD-MA-2026-005",
+      "customerName": "Đỗ Khánh Linh",
+      "customerPhone": "0933445566",
+      "deliveryAddress": "72 Bạch Đằng, Quận Hải Châu",
+      "city": "Da Nang",
+      "district": "Quận Hải Châu",
+      "items": [
+        { "sku": "FAS-NON-LA-THEU", "name": "Nón Lá Huế Thêu Hoa Văn Cung Đình", "quantity": 3, "unitPrice": 190000, "subtotal": 570000 }
+      ],
+      "itemsSubtotal": 570000,
+      "shippingFee": 35000,
+      "discountAmount": 0,
+      "totalAmount": 605000,
+      "paymentMethod": "COD",
+      "paymentStatus": "PENDING",
+      "orderStatus": "CONFIRMED",
+      "createdAt": "2026-08-14T06:00:00.000Z",
+      "updatedAt": "2026-08-14T06:00:00.000Z"
+    }
+  ],
+  "calendarEvents": [
+    {
+      "eventId": "cal_event_fashion_live_01",
+      "summary": "🔥 Mega Live TikTok Shop: BST Áo Dài Di Sản Hà Đông 2026",
+      "description": "Livestream bán hàng trực tiếp trên TikTok Shop & Facebook Live. Giới thiệu BST Áo Dài Lụa và Váy Hoa Mùa Thu. Host: MC Mai Lan.",
+      "startDateTime": "2026-08-15T19:30:00+07:00",
+      "endDateTime": "2026-08-15T21:30:00+07:00",
+      "location": "Studio Mai Anh Boutique - 28 Phố Huế, Hà Nội",
+      "eventType": "LIVESTREAM_SALES",
+      "attendees": ["maianh.boutique@gmail.com", "mclailan@gmail.com", "sale.maianh@gmail.com"],
+      "status": "CONFIRMED"
+    },
+    {
+      "eventId": "cal_event_fashion_restock_01",
+      "summary": "📦 Nhập Hàng Lụa Vạn Phúc & Sơ Mi Tơ Dập Ly",
+      "description": "Cảnh báo tồn kho thấp SKU FAS-SM-TO-WHT & FAS-AD-HD-RED-L. Lấy hàng tại Xưởng Dệt Lụa Vạn Phúc, Hà Đông.",
+      "startDateTime": "2026-08-16T09:00:00+07:00",
+      "endDateTime": "2026-08-16T11:00:00+07:00",
+      "location": "Làng Lụa Vạn Phúc, Quận Hà Đông, Hà Nội",
+      "eventType": "RESTOCK_REMINDER",
+      "attendees": ["kho.maianh@gmail.com"],
+      "status": "CONFIRMED"
+    },
+    {
+      "eventId": "cal_event_fashion_vip_fitting",
+      "summary": "👑 Thử Đồ VIP: Đầm Dạ Hội Satin Khách Hàng Doanh Nhân",
+      "description": "Hẹn riêng thử đầm dạ hội may đo cho khách VIP Trần Bích Thủy.",
+      "startDateTime": "2026-08-17T15:00:00+07:00",
+      "endDateTime": "2026-08-17T16:30:00+07:00",
+      "location": "Phòng VIP Mai Anh Boutique - 28 Phố Huế",
+      "eventType": "VIP_FITTING",
+      "attendees": ["designer@maianhboutique.vn"],
+      "status": "CONFIRMED"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+*/node_modules
+frontend/node_modules
+backend/node_modules
+
+# Build outputs & artifacts
+dist
+frontend/dist
+build
+out
+.nyc_output
+coverage
+
+# Environment secrets & credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Orchestration & local scratch logs
+.agents
+.gemini
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Caches
+.npm
+.cache
+.eslintcache
+.turbo
+.vite
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

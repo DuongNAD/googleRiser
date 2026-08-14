@@ -1,0 +1,176 @@
+{
+  "shopProfile": {
+    "shopId": "shop_glowskin_vietnam",
+    "shopName": "GlowSkin Vietnam - Mỹ Phẩm Thuần Chay Đà Nẵng",
+    "ownerName": "Trần Thị Hoàng Yến",
+    "phone": "0905123987",
+    "email": "glowskin.vietnam@gmail.com",
+    "defaultBankBin": "970407",
+    "defaultBankAccount": "19034567891011",
+    "accountHolderName": "TRAN THI HOANG YEN",
+    "address": "45 Nguyễn Văn Linh, Phường Nam Dương, Quận Hải Châu, Đà Nẵng",
+    "city": "Da Nang",
+    "businessCategory": "cosmetics",
+    "isDemoMode": true
+  },
+  "inventory": [
+    {
+      "sku": "COS-SR-RM-01",
+      "name": "Serum Rau Má 10% Niacinamide Giảm Mụn Phục Hồi (30ml)",
+      "category": "Serum & Tinh Chất",
+      "price": 285000,
+      "stock": 65,
+      "unit": "chai",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 120000,
+      "tags": ["serum rau má", "niacinamide", "thuần chay", "best seller"]
+    },
+    {
+      "sku": "COS-SR-HA-02",
+      "name": "Serum Cấp Nước Đa Tầng Hyaluronic Acid B5 (50ml)",
+      "category": "Serum & Tinh Chất",
+      "price": 310000,
+      "stock": 48,
+      "unit": "chai",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 140000,
+      "tags": ["serum ha", "vitamin b5", "cấp ẩm"]
+    },
+    {
+      "sku": "COS-KC-KD-03",
+      "name": "Kem Chống Nắng Kiềm Dầu Nâng Tông Tự Nhiên SPF50+ PA++++ (50ml)",
+      "category": "Chống Nắng",
+      "price": 320000,
+      "stock": 80,
+      "unit": "tuýp",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 150000,
+      "tags": ["kem chống nắng", "kiềm dầu", "spf50"]
+    },
+    {
+      "sku": "COS-SR-RM-04",
+      "name": "Sữa Rửa Mặt Tạo Bọt Chiết Xuất Tràm Trà Tràm Gió (150ml)",
+      "category": "Làm Sạch",
+      "price": 185000,
+      "stock": 90,
+      "unit": "chai",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 75000,
+      "tags": ["sữa rửa mặt", "tràm trà", "da dầu mụn"]
+    },
+    {
+      "sku": "COS-TN-HOA-05",
+      "name": "Toner Nước Cất Hoa Hồng Hữu Cơ Bảo Lộc (200ml)",
+      "category": "Nước Cân Bằng",
+      "price": 210000,
+      "stock": 55,
+      "unit": "chai",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 90000,
+      "tags": ["toner", "hoa hồng", "hữu cơ"]
+    },
+    {
+      "sku": "COS-KD-RAU-06",
+      "name": "Kem Dưỡng Ẩm Làm Dịu Chiết Xuất Rau Má Búp Non (50ml)",
+      "category": "Kem Dưỡng",
+      "price": 260000,
+      "stock": 40,
+      "unit": "hũ",
+      "lowStockThreshold": 8,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 115000,
+      "tags": ["kem dưỡng", "rau má", "dịu da"]
+    },
+    {
+      "sku": "COS-SN-GAC-07",
+      "name": "Son Dưỡng Dầu Gấc Dừa Bến Tre Lên Màu Hồng Tự Nhiên (3.5g)",
+      "category": "Son Môi",
+      "price": 95000,
+      "stock": 110,
+      "unit": "thỏi",
+      "lowStockThreshold": 20,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 35000,
+      "tags": ["son dưỡng", "dầu gấc", "dừa bến tre"]
+    },
+    {
+      "sku": "COS-MN-DAT-08",
+      "name": "Mặt Nạ Đất Sét Khoáng Núi Lửa Tro Tràm (100g)",
+      "category": "Mặt Nạ",
+      "price": 195000,
+      "stock": 35,
+      "unit": "hũ",
+      "lowStockThreshold": 8,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 85000,
+      "tags": ["mặt nạ đất sét", "núi lửa", "se khít lỗ chân lông"]
+    },
+    {
+      "sku": "COS-TT-BO-09",
+      "name": "Tẩy Trang Sáp Bơ Tươi Đắk Lắk Sạch Sâu Lành Tính (100g)",
+      "category": "Làm Sạch",
+      "price": 240000,
+      "stock": 50,
+      "unit": "hũ",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 105000,
+      "tags": ["tẩy trang", "sáp bơ", "đắk lắk"]
+    },
+    {
+      "sku": "COS-TD-TO-10",
+      "name": "Tinh Dầu Vỏ Bưởi Kích Mọc Tóc Nguyên Chất (50ml)",
+      "category": "Chăm Sóc Tóc",
+      "price": 165000,
+      "stock": 70,
+      "unit": "chai",
+      "lowStockThreshold": 12,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 65000,
+      "tags": ["tinh dầu bưởi", "mọc tóc", "dưỡng tóc"]
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ORD-GLOW-2026-001",
+      "customerName": "Võ Quỳnh Chi",
+      "customerPhone": "0905667788",
+      "deliveryAddress": "120 Lê Lợi, Phường Thạch Thang, Quận Hải Châu",
+      "city": "Da Nang",
+      "district": "Quận Hải Châu",
+      "items": [
+        { "sku": "COS-SR-RM-01", "name": "Serum Rau Má 10% Niacinamide Giảm Mụn Phục Hồi", "quantity": 1, "unitPrice": 285000, "subtotal": 285000 },
+        { "sku": "COS-KC-KD-03", "name": "Kem Chống Nắng Kiềm Dầu Nâng Tông Tự Nhiên SPF50+", "quantity": 1, "unitPrice": 320000, "subtotal": 320000 }
+      ],
+      "itemsSubtotal": 605000,
+      "shippingFee": 18000,
+      "discountAmount": 50000,
+      "voucherCode": "SME50K",
+      "totalAmount": 573000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "VERIFIED",
+      "orderStatus": "CONFIRMED",
+      "transactionRef": "TCB26081499112",
+      "createdAt": "2026-08-14T03:30:00.000Z",
+      "updatedAt": "2026-08-14T03:35:00.000Z"
+    }
+  ],
+  "calendarEvents": [
+    {
+      "eventId": "cal_event_glowskin_skincare_workshop",
+      "summary": "🌿 Workshop Chăm Sóc Da Dầu Mụn Mùa Hè 2026",
+      "description": "Livestream tư vấn routine phục hồi da mụn nhạy cảm cùng Bác sĩ da liễu khách mời.",
+      "startDateTime": "2026-08-16T20:00:00+07:00",
+      "endDateTime": "2026-08-16T21:30:00+07:00",
+      "location": "GlowSkin Studio Đà Nẵng",
+      "eventType": "LIVESTREAM_SALES",
+      "attendees": ["beauty@glowskin.vn"],
+      "status": "CONFIRMED"
+    }
+  ]
+}

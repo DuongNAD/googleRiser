@@ -1,0 +1,199 @@
+[
+  {
+    "receiptId": "REC_VCB_AUTH_001",
+    "bankCode": "VCB",
+    "bankName": "Vietcombank (Ngân hàng TMCP Ngoại Thương Việt Nam)",
+    "isAuthentic": true,
+    "confidenceScore": 0.99,
+    "riskLevel": "LOW",
+    "extractedData": {
+      "bankName": "Vietcombank (Ngân hàng TMCP Ngoại Thương Việt Nam)",
+      "accountNumber": "0011004567890",
+      "accountHolder": "NGUYEN MAI ANH",
+      "amount": 650000,
+      "currency": "VND",
+      "transactionId": "FT26081400101",
+      "transactionTime": "2026-08-14 09:30:15",
+      "transferContent": "ORD-MA-2026-001 Mai Phuong thanh toan Ao Dai",
+      "qrPayload": "00020101021238420010A0000007270124000697043601130011004567890530370454066500005802VN62190815ORD-MA-2026-0016304ABCD",
+      "recipientBankBin": "970436",
+      "recipientAccount": "0011004567890"
+    },
+    "forensicSignals": {
+      "timestampMatch": true,
+      "fontConsistency": true,
+      "compressionArtifacts": false,
+      "logoAuthenticity": true,
+      "qrIntegrity": true,
+      "anomalies": []
+    },
+    "reconciliationStatus": "MATCHED",
+    "matchedOrderId": "ORD-MA-2026-001",
+    "recommendation": "AUTO_APPROVE",
+    "rawOcrText": "CHUYỂN TIỀN NHANH NAPAS 247 THÀNH CÔNG\nSố tiền: 650,000 VND\nNgười thụ hưởng: NGUYEN MAI ANH\nNgân hàng: Vietcombank\nSố tài khoản: 0011004567890\nMã giao dịch: FT26081400101\nThời gian: 14/08/2026 09:30:15\nNội dung: ORD-MA-2026-001 Mai Phuong thanh toan Ao Dai"
+  },
+  {
+    "receiptId": "REC_TCB_AUTH_002",
+    "bankCode": "TCB",
+    "bankName": "Techcombank (Ngân hàng TMCP Kỹ Thương Việt Nam)",
+    "isAuthentic": true,
+    "confidenceScore": 0.97,
+    "riskLevel": "LOW",
+    "extractedData": {
+      "bankName": "Techcombank (Ngân hàng TMCP Kỹ Thương Việt Nam)",
+      "accountNumber": "19034567891011",
+      "accountHolder": "TRAN THI HOANG YEN",
+      "amount": 573000,
+      "currency": "VND",
+      "transactionId": "TCB26081499112",
+      "transactionTime": "2026-08-14 10:35:00",
+      "transferContent": "ORD-GLOW-2026-001 Quynh Chi GlowSkin",
+      "qrPayload": "00020101021238430010A00000072701250006970407011419034567891011530370454065730005802VN62210817ORD-GLOW-2026-0016304ABCD",
+      "recipientBankBin": "970407",
+      "recipientAccount": "19034567891011"
+    },
+    "forensicSignals": {
+      "timestampMatch": true,
+      "fontConsistency": true,
+      "compressionArtifacts": false,
+      "logoAuthenticity": true,
+      "qrIntegrity": true,
+      "anomalies": []
+    },
+    "reconciliationStatus": "MATCHED",
+    "matchedOrderId": "ORD-GLOW-2026-001",
+    "recommendation": "AUTO_APPROVE",
+    "rawOcrText": "GIAO DỊCH THÀNH CÔNG\nSố tiền: 573,000 VND\nĐến tài khoản: 19034567891011 - TRAN THI HOANG YEN\nNgân hàng thụ hưởng: Techcombank\nMã giao dịch: TCB26081499112\nThời gian giao dịch: 14/08/2026 10:35:00\nLời nhắn: ORD-GLOW-2026-001 Quynh Chi GlowSkin"
+  },
+  {
+    "receiptId": "REC_MB_FORGED_003",
+    "bankCode": "MB",
+    "bankName": "MBBank (Ngân hàng TMCP Quân Đội)",
+    "isAuthentic": false,
+    "confidenceScore": 0.15,
+    "riskLevel": "CRITICAL",
+    "extractedData": {
+      "bankName": "MBBank (Ngân hàng TMCP Quân Đội)",
+      "accountNumber": "888899992222",
+      "accountHolder": "LE HUYNH BAP",
+      "amount": 2750000,
+      "currency": "VND",
+      "transactionId": "MB260814FAKE99",
+      "transactionTime": "2026-08-14 11:45:00",
+      "transferContent": "ORD-FNB-2026-001 Thanh toan",
+      "recipientBankBin": "970422",
+      "recipientAccount": "888899992222"
+    },
+    "forensicSignals": {
+      "timestampMatch": false,
+      "fontConsistency": false,
+      "compressionArtifacts": true,
+      "logoAuthenticity": false,
+      "qrIntegrity": false,
+      "anomalies": [
+        "Amount field typography mismatched (Arial font used instead of MB Bank proprietary NeoSans font)",
+        "Temporal inconsistency: receipt generated at 11:45 but phone screenshot status bar shows 10:15",
+        "JPEG compression block cloning around the amount text '2,750,000 VND'"
+      ]
+    },
+    "reconciliationStatus": "UNMATCHED",
+    "recommendation": "REJECT",
+    "rawOcrText": "GIAO DỊCH CHUYỂN TIỀN THÀNH CÔNG\nSố tiền: 2,750,000 VND\nTài khoản nhận: 888899992222\nTên người nhận: LE HUYNH BAP\nMã tham chiếu: MB260814FAKE99\nNgày thực hiện: 14/08/2026 11:45:00"
+  },
+  {
+    "receiptId": "REC_MOMO_AUTH_004",
+    "bankCode": "MOMO",
+    "bankName": "Ví Điện Tử MoMo (M-Service)",
+    "isAuthentic": true,
+    "confidenceScore": 0.98,
+    "riskLevel": "LOW",
+    "extractedData": {
+      "bankName": "Ví Điện Tử MoMo",
+      "accountNumber": "0988123456",
+      "accountHolder": "NGUYEN MAI ANH",
+      "amount": 320000,
+      "currency": "VND",
+      "transactionId": "MOMO2608148810",
+      "transactionTime": "2026-08-14 08:15:20",
+      "transferContent": "Thanh toan So Mi To Dap Ly",
+      "recipientBankBin": "MOMO",
+      "recipientAccount": "0988123456"
+    },
+    "forensicSignals": {
+      "timestampMatch": true,
+      "fontConsistency": true,
+      "compressionArtifacts": false,
+      "logoAuthenticity": true,
+      "qrIntegrity": true,
+      "anomalies": []
+    },
+    "reconciliationStatus": "MATCHED",
+    "recommendation": "AUTO_APPROVE",
+    "rawOcrText": "CHUYỂN TIỀN THÀNH CÔNG ĐẾN VÍ MOMO\nSố tiền: 320.000đ\nNgười nhận: NGUYỄN MAI ANH\nSố MoMo: 0988123456\nMã giao dịch: MOMO2608148810\nThời gian: 14/08/2026 08:15:20"
+  },
+  {
+    "receiptId": "REC_BIDV_AUTH_005",
+    "bankCode": "BIDV",
+    "bankName": "BIDV (Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam)",
+    "isAuthentic": true,
+    "confidenceScore": 0.96,
+    "riskLevel": "LOW",
+    "extractedData": {
+      "bankName": "BIDV (Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam)",
+      "accountNumber": "21510001234567",
+      "accountHolder": "NGUYEN MAI ANH",
+      "amount": 1250000,
+      "currency": "VND",
+      "transactionId": "BIDV260814901",
+      "transactionTime": "2026-08-14 07:45:00",
+      "transferContent": "Thanh toan Dam Da Hoi",
+      "recipientBankBin": "970418",
+      "recipientAccount": "21510001234567"
+    },
+    "forensicSignals": {
+      "timestampMatch": true,
+      "fontConsistency": true,
+      "compressionArtifacts": false,
+      "logoAuthenticity": true,
+      "qrIntegrity": true,
+      "anomalies": []
+    },
+    "reconciliationStatus": "MATCHED",
+    "recommendation": "AUTO_APPROVE",
+    "rawOcrText": "BIDV SMARTBANKING - GIAO DỊCH THÀNH CÔNG\nSố tiền: 1,250,000 VND\nTài khoản thụ hưởng: 21510001234567 - NGUYEN MAI ANH\nMã giao dịch: BIDV260814901\nThời gian: 14/08/2026 07:45:00"
+  },
+  {
+    "receiptId": "REC_VPB_FORGED_006",
+    "bankCode": "VPB",
+    "bankName": "VPBank (Ngân hàng TMCP Việt Nam Thịnh Vượng)",
+    "isAuthentic": false,
+    "confidenceScore": 0.20,
+    "riskLevel": "HIGH",
+    "extractedData": {
+      "bankName": "VPBank (Ngân hàng TMCP Việt Nam Thịnh Vượng)",
+      "accountNumber": "1234567890",
+      "accountHolder": "LE HUYNH BAP",
+      "amount": 5000000,
+      "currency": "VND",
+      "transactionId": "VPB260814FAKE01",
+      "transactionTime": "2026-08-14 14:00:00",
+      "transferContent": "Thanh toan tra sua 5 trieu",
+      "recipientBankBin": "970432",
+      "recipientAccount": "1234567890"
+    },
+    "forensicSignals": {
+      "timestampMatch": true,
+      "fontConsistency": false,
+      "compressionArtifacts": true,
+      "logoAuthenticity": false,
+      "qrIntegrity": false,
+      "anomalies": [
+        "Bank logo aspect ratio distorted with blurry antialiasing edges",
+        "Pixel noise around transaction amount and recipient account number indicates copy-paste manipulation"
+      ]
+    },
+    "reconciliationStatus": "UNMATCHED",
+    "recommendation": "REJECT",
+    "rawOcrText": "VPBANK NEO - GIAO DỊCH THÀNH CÔNG\nSố tiền: 5,000,000 VND\nTài khoản nhận: 1234567890 - LE HUYNH BAP\nMã tham chiếu: VPB260814FAKE01\nThời gian: 14/08/2026 14:00:00"
+  }
+]

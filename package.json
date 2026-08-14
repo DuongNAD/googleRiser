@@ -1,0 +1,45 @@
+{
+  "name": "sme-autopilot",
+  "version": "1.0.0",
+  "description": "SME AutoPilot - Multimodal AI Operations Platform for Vietnamese Online Merchants (#BuildwithGoogleAI AI Riser Vietnam 2026)",
+  "main": "backend/src/server.ts",
+  "scripts": {
+    "build": "npm run build:backend",
+    "build:backend": "tsc",
+    "build:frontend": "cd frontend && npm run build",
+    "dev": "ts-node backend/src/server.ts",
+    "dev:backend": "ts-node backend/src/server.ts",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "node dist/backend/src/server.js",
+    "test": "ts-node tests/runner.ts",
+    "test:t1": "ts-node tests/runner.ts --tier=tier1",
+    "test:t2": "ts-node tests/runner.ts --tier=tier2",
+    "test:t3": "ts-node tests/runner.ts --tier=tier3",
+    "test:t4": "ts-node tests/runner.ts --tier=tier4",
+    "test:t5": "ts-node tests/runner.ts --tier=tier5",
+    "test:ai": "ts-node backend/tests/ai/run_ai_tests.ts",
+    "test:api": "ts-node backend/tests/api/run_api_tests.ts",
+    "test:all": "ts-node tests/runner.ts && ts-node backend/tests/ai/run_ai_tests.ts && ts-node backend/tests/api/run_api_tests.ts"
+  },
+  "keywords": [
+    "vietnam",
+    "sme",
+    "gemini",
+    "google-cloud",
+    "vietqr",
+    "autopilot"
+  ],
+  "author": "AI Riser Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

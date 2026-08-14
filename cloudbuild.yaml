@@ -1,0 +1,73 @@
+# ==============================================================================
+# Google Cloud Build Pipeline for SME AutoPilot
+# AI Riser Vietnam 2026 (#BuildwithGoogleAI)
+# ==============================================================================
+
+steps:
+  # 1. Build the multi-stage production container image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-image'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/sme-autopilot:$BUILD_ID'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/sme-autopilot:latest'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/sme-autopilot:$BUILD_ID'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO_NAME}/sme-autopilot:latest'
+      - '.'
+
+  # 2. Push image to Container Registry / Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-image'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/sme-autopilot:$BUILD_ID'
+
+  # 3. Deploy container image to Google Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy-cloud-run'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - '${_SERVICE_NAME}'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/sme-autopilot:$BUILD_ID'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+      - '--memory'
+      - '512Mi'
+      - '--cpu'
+      - '1'
+      - '--concurrency'
+      - '80'
+      - '--timeout'
+      - '300s'
+      - '--min-instances'
+      - '0'
+      - '--max-instances'
+      - '5'
+      - '--set-env-vars'
+      - 'APP_MODE=DEMO,NODE_ENV=production,PORT=8080'
+
+images:
+  - 'gcr.io/$PROJECT_ID/sme-autopilot:$BUILD_ID'
+  - 'gcr.io/$PROJECT_ID/sme-autopilot:latest'
+
+substitutions:
+  _REGION: 'asia-southeast1'
+  _SERVICE_NAME: 'sme-autopilot-service'
+  _REPO_NAME: 'sme-autopilot'
+
+timeout: '1200s'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

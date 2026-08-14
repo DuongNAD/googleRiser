@@ -1,0 +1,221 @@
+{
+  "shopProfile": {
+    "shopId": "shop_bep_me_bap",
+    "shopName": "Bếp Mẹ Bắp F&B - Trà Sữa & Đặc Sản Nam Bộ",
+    "ownerName": "Lê Huỳnh Bắp",
+    "phone": "0909887766",
+    "email": "bepmebap.saigon@gmail.com",
+    "defaultBankBin": "970422",
+    "defaultBankAccount": "888899992222",
+    "accountHolderName": "LE HUYNH BAP",
+    "address": "128 Nguyễn Trãi, Phường 3, Quận 5, TP. Hồ Chí Minh",
+    "city": "Ho Chi Minh City",
+    "businessCategory": "fnb",
+    "isDemoMode": true
+  },
+  "inventory": [
+    {
+      "sku": "FNB-TS-OL-01",
+      "name": "Trà Sữa Oolong Nướng Trân Châu Hoàng Kim (Size L)",
+      "category": "Trà Sữa",
+      "price": 45000,
+      "stock": 120,
+      "unit": "ly",
+      "lowStockThreshold": 20,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 18000,
+      "tags": ["trà sữa", "oolong nướng", "best seller"]
+    },
+    {
+      "sku": "FNB-TS-MC-02",
+      "name": "Matcha Latte Đậu Đỏ Nhật Bản (Size L)",
+      "category": "Trà Sữa",
+      "price": 48000,
+      "stock": 85,
+      "unit": "ly",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 20000,
+      "tags": ["matcha", "latte", "đậu đỏ"]
+    },
+    {
+      "sku": "FNB-TR-TC-03",
+      "name": "Trà Trái Cây Nhiệt Đới Hạt Sen Long Nhãn",
+      "category": "Trà Trái Cây",
+      "price": 50000,
+      "stock": 90,
+      "unit": "ly",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 22000,
+      "tags": ["trà trái cây", "hạt sen", "thanh nhiệt"]
+    },
+    {
+      "sku": "FNB-TR-VC-04",
+      "name": "Trà Vải Cúc Vàng Thảo Mộc",
+      "category": "Trà Trái Cây",
+      "price": 42000,
+      "stock": 65,
+      "unit": "ly",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 17000,
+      "tags": ["trà vải", "hoa cúc"]
+    },
+    {
+      "sku": "FNB-CF-MUOI-05",
+      "name": "Cà Phê Muối Xứ Huế Kem Béo",
+      "category": "Cà Phê",
+      "price": 35000,
+      "stock": 110,
+      "unit": "ly",
+      "lowStockThreshold": 25,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 12000,
+      "tags": ["cà phê", "cà phê muối", "huế"]
+    },
+    {
+      "sku": "FNB-CF-DEN-06",
+      "name": "Cà Phê Đen Pha Phin Buôn Ma Thuột",
+      "category": "Cà Phê",
+      "price": 28000,
+      "stock": 140,
+      "unit": "ly",
+      "lowStockThreshold": 30,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 8000,
+      "tags": ["cà phê", "phin", "buôn ma thuột"]
+    },
+    {
+      "sku": "FNB-AN-CC-07",
+      "name": "Cơm Cháy Chà Bông Sài Gòn Đáy Nồi Cay Giòn (Túi 500g)",
+      "category": "Đồ Ăn Vặt",
+      "price": 95000,
+      "stock": 40,
+      "unit": "túi",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 55000,
+      "tags": ["ăn vặt", "cơm cháy", "đặc sản"]
+    },
+    {
+      "sku": "FNB-AN-BT-08",
+      "name": "Bánh Tráng Phơi Sương Cuốn Bơ Hành Phi Tây Ninh",
+      "category": "Đồ Ăn Vặt",
+      "price": 35000,
+      "stock": 75,
+      "unit": "phần",
+      "lowStockThreshold": 15,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 16000,
+      "tags": ["bánh tráng", "tây ninh", "bơ hành"]
+    },
+    {
+      "sku": "FNB-AN-KH-09",
+      "name": "Khô Bò Sợi Cay Lá Chanh Củ Chi (Hũ 300g)",
+      "category": "Đồ Ăn Vặt",
+      "price": 135000,
+      "stock": 30,
+      "unit": "hũ",
+      "lowStockThreshold": 8,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 85000,
+      "tags": ["khô bò", "ăn vặt"]
+    },
+    {
+      "sku": "FNB-AN-KG-10",
+      "name": "Khô Gà Lá Chanh Giòn Cay (Hũ 300g)",
+      "category": "Đồ Ăn Vặt",
+      "price": 75000,
+      "stock": 50,
+      "unit": "hũ",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 42000,
+      "tags": ["khô gà", "lá chanh"]
+    },
+    {
+      "sku": "FNB-CHE-DUA-11",
+      "name": "Chè Dừa Dầm Hải Phòng Thạch Giòn",
+      "category": "Tráng Miệng",
+      "price": 38000,
+      "stock": 45,
+      "unit": "ly",
+      "lowStockThreshold": 10,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 16000,
+      "tags": ["chè", "dừa dầm", "tráng miệng"]
+    },
+    {
+      "sku": "FNB-CHE-TUYET-12",
+      "name": "Chè Tuyết Yến Nhựa Đào Dưỡng Nhan",
+      "category": "Tráng Miệng",
+      "price": 45000,
+      "stock": 35,
+      "unit": "chai",
+      "lowStockThreshold": 8,
+      "lastUpdated": "2026-08-14T08:00:00.000Z",
+      "costPrice": 22000,
+      "tags": ["chè dưỡng nhan", "tuyết yến"]
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "ORD-FNB-2026-001",
+      "customerName": "Huỳnh Tấn Phát",
+      "customerPhone": "0908112233",
+      "deliveryAddress": "45 Nguyễn Thị Minh Khai, Quận 1",
+      "city": "Ho Chi Minh City",
+      "district": "Quận 1",
+      "items": [
+        { "sku": "FNB-TS-OL-01", "name": "Trà Sữa Oolong Nướng Trân Châu Hoàng Kim (Size L)", "quantity": 4, "unitPrice": 45000, "subtotal": 180000 },
+        { "sku": "FNB-AN-CC-07", "name": "Cơm Cháy Chà Bông Sài Gòn Đáy Nồi Cay Giòn", "quantity": 1, "unitPrice": 95000, "subtotal": 95000 }
+      ],
+      "itemsSubtotal": 275000,
+      "shippingFee": 18000,
+      "discountAmount": 18000,
+      "voucherCode": "FREESHIPVN",
+      "totalAmount": 275000,
+      "paymentMethod": "VIETQR_NAPAS",
+      "paymentStatus": "VERIFIED",
+      "orderStatus": "CONFIRMED",
+      "transactionRef": "MB2608149811",
+      "createdAt": "2026-08-14T03:00:00.000Z",
+      "updatedAt": "2026-08-14T03:05:00.000Z"
+    },
+    {
+      "orderId": "ORD-FNB-2026-002",
+      "customerName": "Ngô Bảo Châu",
+      "customerPhone": "0982334455",
+      "deliveryAddress": "70 Nguyễn Trãi, Quận 5",
+      "city": "Ho Chi Minh City",
+      "district": "Quận 5",
+      "items": [
+        { "sku": "FNB-CF-MUOI-05", "name": "Cà Phê Muối Xứ Huế Kem Béo", "quantity": 2, "unitPrice": 35000, "subtotal": 70000 },
+        { "sku": "FNB-AN-BT-08", "name": "Bánh Tráng Phơi Sương Cuốn Bơ Hành Phi Tây Ninh", "quantity": 2, "unitPrice": 35000, "subtotal": 70000 }
+      ],
+      "itemsSubtotal": 140000,
+      "shippingFee": 18000,
+      "discountAmount": 0,
+      "totalAmount": 158000,
+      "paymentMethod": "COD",
+      "paymentStatus": "PENDING",
+      "orderStatus": "SHIPPED",
+      "createdAt": "2026-08-14T04:20:00.000Z",
+      "updatedAt": "2026-08-14T04:30:00.000Z"
+    }
+  ],
+  "calendarEvents": [
+    {
+      "eventId": "cal_event_fnb_happy_hour",
+      "summary": "🥤 Giờ Vàng Trà Sữa: Mua 2 Tặng 1 Giờ Trưa Văn Phòng",
+      "description": "Flash sale đồng giá và mua 2 tặng 1 cho đơn hàng khu vực Quận 1, Quận 3, Quận 5.",
+      "startDateTime": "2026-08-15T11:30:00+07:00",
+      "endDateTime": "2026-08-15T13:30:00+07:00",
+      "location": "Bếp Mẹ Bắp - 128 Nguyễn Trãi, Q5",
+      "eventType": "LIVESTREAM_SALES",
+      "attendees": ["order@bepmebap.vn"],
+      "status": "CONFIRMED"
+    }
+  ]
+}

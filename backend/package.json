@@ -1,0 +1,25 @@
+{
+  "name": "sme-autopilot-backend",
+  "version": "1.0.0",
+  "description": "SME AutoPilot Backend - Express REST & SSE Server with Multimodal AI and Google Ecosystem SPI",
+  "main": "dist/backend/src/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/server.ts",
+    "start": "node dist/backend/src/server.js",
+    "test": "ts-node ../tests/runner.ts",
+    "test:ai": "ts-node tests/ai/run_ai_tests.ts",
+    "test:api": "ts-node tests/api/run_api_tests.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
