@@ -17,20 +17,20 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
   const getAnomalyColor = (type?: string) => {
     switch (type) {
       case 'FONT_MISMATCH':
-        return { border: 'border-red-500', bg: 'bg-red-500/20', text: 'text-red-300' };
+        return { border: 'border-red-500', bg: 'bg-red-500/20', text: 'text-red-300 dark:text-red-300 light:text-red-700' };
       case 'CLOCK_PARADOX':
-        return { border: 'border-amber-500', bg: 'bg-amber-500/20', text: 'text-amber-300' };
+        return { border: 'border-amber-500', bg: 'bg-amber-500/20', text: 'text-amber-300 dark:text-amber-300 light:text-amber-700' };
       case 'COMPRESSION_ELA':
-        return { border: 'border-purple-500', bg: 'bg-purple-500/20', text: 'text-purple-300' };
+        return { border: 'border-purple-500', bg: 'bg-purple-500/20', text: 'text-purple-300 dark:text-purple-300 light:text-purple-700' };
       case 'LOGO_BLUR':
-        return { border: 'border-blue-500', bg: 'bg-blue-500/20', text: 'text-blue-300' };
+        return { border: 'border-blue-500', bg: 'bg-blue-500/20', text: 'text-blue-300 dark:text-blue-300 light:text-blue-700' };
       default:
-        return { border: 'border-red-500', bg: 'bg-red-500/20', text: 'text-red-300' };
+        return { border: 'border-red-500', bg: 'bg-red-500/20', text: 'text-red-300 dark:text-red-300 light:text-red-700' };
     }
   };
 
   return (
-    <div className={`relative inline-block overflow-hidden rounded-xl bg-slate-950 border border-slate-800 ${className}`}>
+    <div className={`relative inline-block overflow-hidden rounded-xl bg-slate-950 border border-slate-800 dark:bg-slate-950 dark:border-slate-800 light:bg-slate-100 light:border-slate-200 ${className}`}>
       <img
         src={imageSrc}
         alt="Receipt Forensics"
@@ -60,7 +60,7 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
             className={`absolute border-2 ${colors.border} ${colors.bg} rounded cursor-pointer transition-all duration-150 animate-pulse`}
           >
             <span
-              className={`absolute -top-5 left-0 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-900/90 ${colors.text} border ${colors.border} shadow whitespace-nowrap`}
+              className={`absolute -top-5 left-0 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-900/90 dark:bg-slate-900/90 light:bg-white/95 ${colors.text} border ${colors.border} shadow whitespace-nowrap`}
             >
               {box.label || box.anomalyType || 'Anomaly'}
             </span>
@@ -69,8 +69,8 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
       })}
 
       {hoveredBox && (
-        <div className="absolute bottom-2 left-2 right-2 p-2 rounded-lg bg-slate-900/95 border border-red-500/40 text-xs text-slate-200 shadow-xl backdrop-blur-md">
-          <span className="font-bold text-red-400">⚠️ Bất Thường Phát Hiện: </span>
+        <div className="absolute bottom-2 left-2 right-2 p-2 rounded-lg bg-slate-900/95 border border-red-500/40 text-xs text-slate-200 shadow-xl backdrop-blur-md dark:bg-slate-900/95 dark:border-red-500/40 dark:text-slate-200 light:bg-white/95 light:border-red-300 light:text-slate-900">
+          <span className="font-bold text-red-400 dark:text-red-400 light:text-red-600">⚠️ Bất Thường Phát Hiện: </span>
           <span>{hoveredBox.label} ({hoveredBox.anomalyType || 'FORENSIC_FLAG'})</span>
         </div>
       )}

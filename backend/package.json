@@ -7,9 +7,9 @@
     "build": "tsc",
     "dev": "ts-node src/server.ts",
     "start": "node dist/backend/src/server.js",
-    "test": "ts-node ../tests/runner.ts",
-    "test:ai": "ts-node tests/ai/run_ai_tests.ts",
-    "test:api": "ts-node tests/api/run_api_tests.ts"
+    "test": "node --expose-gc -r ts-node/register ../tests/runner.ts",
+    "test:ai": "node --expose-gc -r ts-node/register tests/ai/run_ai_tests.ts",
+    "test:api": "node --expose-gc -r ts-node/register tests/api/run_api_tests.ts"
   },
   "dependencies": {
     "@googleapis/calendar": "^16.0.0",

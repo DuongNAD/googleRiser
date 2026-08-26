@@ -146,16 +146,16 @@ export const ProductStudioView: React.FC = () => {
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 light:bg-white light:border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20 mb-2 light:bg-purple-50 light:text-purple-700 light:border-purple-200">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Imagen 3 Staging & Gemini 2.0 Copywriting</span>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-white tracking-tight light:text-slate-900">
             Product Studio & Tạo Bài Đăng Bán Hàng Đa Kênh
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 light:text-slate-500">
             Dựng bối cảnh chụp ảnh sản phẩm thông minh và tạo kịch bản video TikTok Shop, bài post Facebook, tin nhắn Zalo VIP, SEO Shopee.
           </p>
         </div>
@@ -172,7 +172,7 @@ export const ProductStudioView: React.FC = () => {
 
       {/* Preset Products Selector */}
       <div className="space-y-2">
-        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 light:text-slate-500">
           Chọn Sản Phẩm Mẫu Hoặc Tải Ảnh Riêng
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -184,16 +184,16 @@ export const ProductStudioView: React.FC = () => {
                 onClick={() => handleSelectPreset(p)}
                 className={`p-3.5 rounded-2xl border text-left transition flex items-center gap-3 ${
                   isSelected
-                    ? 'bg-purple-600/20 border-purple-500 ring-2 ring-purple-500/30'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-800/50'
+                    ? 'bg-purple-600/20 border-purple-500 ring-2 ring-purple-500/30 light:bg-purple-50 light:border-purple-400 light:ring-purple-200'
+                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 light:bg-white light:border-slate-200 light:hover:border-slate-300 light:hover:bg-slate-50'
                 }`}
               >
-                <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-slate-950 flex items-center justify-center border border-slate-800">
+                <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-slate-950 flex items-center justify-center border border-slate-800 light:bg-slate-100 light:border-slate-200">
                   <img src={p.imageSrc} alt={p.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h4 className="font-bold text-xs text-white truncate">{p.name}</h4>
-                  <p className="text-[11px] text-purple-300 font-semibold">{p.category}</p>
+                  <h4 className="font-bold text-xs text-white truncate light:text-slate-900">{p.name}</h4>
+                  <p className="text-[11px] text-purple-300 font-semibold light:text-purple-600">{p.category}</p>
                 </div>
               </button>
             );
@@ -206,13 +206,13 @@ export const ProductStudioView: React.FC = () => {
         {/* Left Column: Visual Staging Workbench (5 cols) */}
         <div className="lg:col-span-5 space-y-6">
           {/* Visual Staging Preview */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <Camera className="w-4 h-4 text-purple-400" />
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4 light:border-slate-200">
+            <h3 className="text-sm font-bold text-white flex items-center gap-2 light:text-slate-900">
+              <Camera className="w-4 h-4 text-purple-400 light:text-purple-600" />
               <span>Phòng Dựng Bối Cảnh Studio (Imagen 3)</span>
             </h3>
 
-            <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center p-2 min-h-[260px]">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center p-2 min-h-[260px] light:bg-slate-100 light:border-slate-200">
               <img
                 src={activeImage}
                 alt="Product Preview"
@@ -222,7 +222,7 @@ export const ProductStudioView: React.FC = () => {
               />
 
               {/* Theme Badge Overlay */}
-              <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-950/80 backdrop-blur-md text-purple-300 border border-purple-500/30">
+              <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-950/80 backdrop-blur-md text-purple-300 border border-purple-500/30 light:bg-white/90 light:text-purple-700 light:border-purple-200 light:shadow-sm">
                 {selectedTheme === 'TRADITIONAL_TET' && '🧧 Bối cảnh Tết Cổ Truyền'}
                 {selectedTheme === 'LUXURY_MINIMALIST' && '✨ Bối cảnh Sang Trọng'}
                 {selectedTheme === 'NEON_CYBERPUNK' && '⚡ Bối cảnh Neon Hiện Đại'}
@@ -232,8 +232,8 @@ export const ProductStudioView: React.FC = () => {
 
             {/* Staging Theme Selector */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Palette className="w-3.5 h-3.5 text-purple-400" />
+              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 light:text-slate-700">
+                <Palette className="w-3.5 h-3.5 text-purple-400 light:text-purple-600" />
                 <span>Chủ Đề Dựng Bối Cảnh Studio</span>
               </label>
               <div className="grid grid-cols-2 gap-2">
@@ -248,8 +248,8 @@ export const ProductStudioView: React.FC = () => {
                     onClick={() => setSelectedTheme(th.id as any)}
                     className={`px-3 py-2 rounded-xl text-xs font-semibold border transition text-left flex items-center gap-2 ${
                       selectedTheme === th.id
-                        ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold'
-                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                        ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold light:bg-purple-50 light:text-purple-700 light:border-purple-300'
+                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white light:bg-slate-50 light:border-slate-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100'
                     }`}
                   >
                     <span>{th.icon}</span>
@@ -261,8 +261,8 @@ export const ProductStudioView: React.FC = () => {
 
             {/* Aspect Ratio Selector */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Ratio className="w-3.5 h-3.5 text-purple-400" />
+              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5 light:text-slate-700">
+                <Ratio className="w-3.5 h-3.5 text-purple-400 light:text-purple-600" />
                 <span>Tỷ Lệ Khung Hình Chụp</span>
               </label>
               <div className="grid grid-cols-3 gap-2">
@@ -276,8 +276,8 @@ export const ProductStudioView: React.FC = () => {
                     onClick={() => setAspectRatio(r.id as any)}
                     className={`py-1.5 px-2 rounded-xl text-[11px] font-semibold border transition text-center ${
                       aspectRatio === r.id
-                        ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold'
-                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                        ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold light:bg-purple-50 light:text-purple-700 light:border-purple-300'
+                        : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white light:bg-slate-50 light:border-slate-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100'
                     }`}
                   >
                     {r.label}
@@ -300,36 +300,36 @@ export const ProductStudioView: React.FC = () => {
         {/* Right Column: Copywriting Studio (7 cols) */}
         <div className="lg:col-span-7 space-y-6">
           {/* Tone & Parameters Configuration */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <Wand2 className="w-4 h-4 text-purple-400" />
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4 light:border-slate-200">
+            <h3 className="text-sm font-bold text-white flex items-center gap-2 light:text-slate-900">
+              <Wand2 className="w-4 h-4 text-purple-400 light:text-purple-600" />
               <span>Cấu Hình Giọng Điệu & Nội Dung Sản Phẩm</span>
             </h3>
 
             <div className="space-y-3 text-xs">
               <div>
-                <label className="text-slate-300 font-semibold mb-1 block">Tên Sản Phẩm:</label>
+                <label className="text-slate-300 font-semibold mb-1 block light:text-slate-700">Tên Sản Phẩm:</label>
                 <input
                   type="text"
                   value={productTitle}
                   onChange={(e) => setProductTitle(e.target.value)}
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-semibold focus:outline-none focus:border-purple-500"
+                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-semibold focus:outline-none focus:border-purple-500 light:bg-white light:border-slate-300 light:text-slate-900"
                 />
               </div>
 
               <div>
-                <label className="text-slate-300 font-semibold mb-1 block">Mô Tả Chi Tiết & Điểm Bán Hàng (USP):</label>
+                <label className="text-slate-300 font-semibold mb-1 block light:text-slate-700">Mô Tả Chi Tiết & Điểm Bán Hàng (USP):</label>
                 <textarea
                   rows={2}
                   value={productDescription}
                   onChange={(e) => setProductDescription(e.target.value)}
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-purple-500"
+                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-purple-500 light:bg-white light:border-slate-300 light:text-slate-800"
                 />
               </div>
 
               {/* Tone Selector */}
               <div>
-                <label className="text-slate-300 font-semibold mb-1.5 block">Văn Phong (Tone Preset):</label>
+                <label className="text-slate-300 font-semibold mb-1.5 block light:text-slate-700">Văn Phong (Tone Preset):</label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {[
                     { id: 'friendly', label: '🌸 Thân thiện' },
@@ -342,8 +342,8 @@ export const ProductStudioView: React.FC = () => {
                       onClick={() => setSelectedTone(t.id as any)}
                       className={`py-2 px-2 rounded-xl text-xs font-semibold border transition text-center ${
                         selectedTone === t.id
-                          ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold'
-                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                          ? 'bg-purple-600/20 text-purple-200 border-purple-500 font-bold light:bg-purple-50 light:text-purple-700 light:border-purple-300'
+                          : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white light:bg-slate-50 light:border-slate-200 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100'
                       }`}
                     >
                       {t.label}
@@ -355,8 +355,8 @@ export const ProductStudioView: React.FC = () => {
           </div>
 
           {/* Multi-Channel Copy Tabs & Output */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4 light:border-slate-200">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3 light:border-slate-200">
               {/* Channel Tabs */}
               <div className="flex items-center gap-2 overflow-x-auto">
                 {[
@@ -374,7 +374,7 @@ export const ProductStudioView: React.FC = () => {
                       className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap ${
                         isActive
                           ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
-                          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800 light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100'
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -388,7 +388,7 @@ export const ProductStudioView: React.FC = () => {
               {generatedPack && (
                 <button
                   onClick={() => copyToClipboard(exportFormattedCopy(activeChannel), activeChannel)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition light:bg-slate-100 light:hover:bg-slate-200 light:text-slate-800 light:border-slate-200"
                 >
                   {copiedKey === activeChannel ? (
                     <>
@@ -408,12 +408,12 @@ export const ProductStudioView: React.FC = () => {
             {/* Generated Content Body */}
             {!generatedPack ? (
               <div className="py-12 flex flex-col items-center justify-center text-center space-y-3">
-                <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20 light:bg-purple-50 light:text-purple-700 light:border-purple-200">
                   <Wand2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-200">Sẵn Sàng Tạo Bài Đăng</h4>
-                  <p className="text-xs text-slate-400 max-w-sm mt-1">
+                  <h4 className="text-sm font-bold text-slate-200 light:text-slate-800">Sẵn Sàng Tạo Bài Đăng</h4>
+                  <p className="text-xs text-slate-400 max-w-sm mt-1 light:text-slate-500">
                     Nhấn "Tạo Nội Dung Bán Hàng" để Gemini 2.0 tự động sinh bài post, kịch bản 3s hook video TikTok và tiêu đề chuẩn SEO.
                   </p>
                 </div>
@@ -421,19 +421,19 @@ export const ProductStudioView: React.FC = () => {
             ) : (
               <div className="space-y-4">
                 {activeChannel === 'facebook' && (
-                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800">
-                    <h4 className="text-sm font-extrabold text-indigo-300">
+                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800 light:bg-slate-50 light:border-slate-200">
+                    <h4 className="text-sm font-extrabold text-indigo-300 light:text-indigo-700">
                       {generatedPack.channelCopies.facebook.headline}
                     </h4>
-                    <p className="text-slate-200 whitespace-pre-line leading-relaxed">
+                    <p className="text-slate-200 whitespace-pre-line leading-relaxed light:text-slate-800">
                       {generatedPack.channelCopies.facebook.body}
                     </p>
-                    <div className="p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-200 font-semibold">
+                    <div className="p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-200 font-semibold light:bg-indigo-50 light:border-indigo-200 light:text-indigo-800">
                       {generatedPack.channelCopies.facebook.callToAction}
                     </div>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {generatedPack.channelCopies.facebook.hashtags.map((h, i) => (
-                        <span key={i} className="text-indigo-400 font-mono">
+                        <span key={i} className="text-indigo-400 font-mono light:text-indigo-600">
                           {h}
                         </span>
                       ))}
@@ -442,35 +442,35 @@ export const ProductStudioView: React.FC = () => {
                 )}
 
                 {activeChannel === 'tiktokShop' && (
-                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800">
-                    <div className="p-3 rounded-xl bg-pink-950/40 border border-pink-500/40">
-                      <span className="font-bold text-pink-400 uppercase tracking-wider text-[10px]">
+                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800 light:bg-slate-50 light:border-slate-200">
+                    <div className="p-3 rounded-xl bg-pink-950/40 border border-pink-500/40 light:bg-pink-50 light:border-pink-200">
+                      <span className="font-bold text-pink-400 uppercase tracking-wider text-[10px] light:text-pink-700">
                         🎬 3-Second Video Hook (Kéo Người Xem):
                       </span>
-                      <p className="text-white font-bold text-xs mt-1">
+                      <p className="text-white font-bold text-xs mt-1 light:text-slate-900">
                         "{generatedPack.channelCopies.tiktokShop.videoHook}"
                       </p>
                     </div>
 
                     <div>
-                      <span className="font-bold text-slate-400 uppercase tracking-wider text-[10px]">
+                      <span className="font-bold text-slate-400 uppercase tracking-wider text-[10px] light:text-slate-500">
                         📝 Kịch Bản Video Ngắn (Shorts Script):
                       </span>
-                      <p className="text-slate-200 mt-1 leading-relaxed whitespace-pre-line">
+                      <p className="text-slate-200 mt-1 leading-relaxed whitespace-pre-line light:text-slate-800">
                         {generatedPack.channelCopies.tiktokShop.videoScript}
                       </p>
                     </div>
 
-                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
-                      <span className="text-slate-400">Âm thanh đề xuất: </span>
-                      <strong className="text-pink-300">
+                    <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 light:bg-white light:border-slate-200">
+                      <span className="text-slate-400 light:text-slate-500">Âm thanh đề xuất: </span>
+                      <strong className="text-pink-300 light:text-pink-700">
                         {generatedPack.channelCopies.tiktokShop.soundRecommendation}
                       </strong>
                     </div>
 
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {generatedPack.channelCopies.tiktokShop.hashtags.map((h, i) => (
-                        <span key={i} className="text-pink-400 font-mono">
+                        <span key={i} className="text-pink-400 font-mono light:text-pink-600">
                           {h}
                         </span>
                       ))}
@@ -479,27 +479,27 @@ export const ProductStudioView: React.FC = () => {
                 )}
 
                 {activeChannel === 'zalo' && (
-                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800">
-                    <p className="font-bold text-slate-200">{generatedPack.channelCopies.zalo.greeting}</p>
-                    <p className="text-slate-300 leading-relaxed">{generatedPack.channelCopies.zalo.promotionText}</p>
-                    <div className="p-2.5 rounded-xl bg-sky-950/40 border border-sky-500/30 text-sky-300 font-mono break-all">
+                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800 light:bg-slate-50 light:border-slate-200">
+                    <p className="font-bold text-slate-200 light:text-slate-800">{generatedPack.channelCopies.zalo.greeting}</p>
+                    <p className="text-slate-300 leading-relaxed light:text-slate-700">{generatedPack.channelCopies.zalo.promotionText}</p>
+                    <div className="p-2.5 rounded-xl bg-sky-950/40 border border-sky-500/30 text-sky-300 font-mono break-all light:bg-sky-50 light:border-sky-200 light:text-sky-800">
                       {generatedPack.channelCopies.zalo.directOrderLink}
                     </div>
                   </div>
                 )}
 
                 {activeChannel === 'shopee' && (
-                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                  <div className="space-y-3 text-xs bg-slate-950 p-4 rounded-2xl border border-slate-800 light:bg-slate-50 light:border-slate-200">
                     <div>
-                      <span className="text-slate-400 text-[10px] font-bold uppercase">Tiêu Đề Chuẩn SEO:</span>
-                      <h5 className="text-xs font-bold text-orange-300 mt-0.5">
+                      <span className="text-slate-400 text-[10px] font-bold uppercase light:text-slate-500">Tiêu Đề Chuẩn SEO:</span>
+                      <h5 className="text-xs font-bold text-orange-300 mt-0.5 light:text-orange-700">
                         {generatedPack.channelCopies.shopee.seoTitle}
                       </h5>
                     </div>
 
                     <div>
-                      <span className="text-slate-400 text-[10px] font-bold uppercase">Đặc Điểm Nổi Bật:</span>
-                      <ul className="list-disc list-inside text-slate-200 space-y-1 mt-1">
+                      <span className="text-slate-400 text-[10px] font-bold uppercase light:text-slate-500">Đặc Điểm Nổi Bật:</span>
+                      <ul className="list-disc list-inside text-slate-200 space-y-1 mt-1 light:text-slate-700">
                         {generatedPack.channelCopies.shopee.bulletPoints.map((bp, i) => (
                           <li key={i}>{bp}</li>
                         ))}
@@ -508,7 +508,7 @@ export const ProductStudioView: React.FC = () => {
 
                     <div className="flex flex-wrap gap-1 pt-1">
                       {generatedPack.channelCopies.shopee.searchKeywords.map((k, i) => (
-                        <span key={i} className="px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-300 text-[10px]">
+                        <span key={i} className="px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-300 text-[10px] light:bg-white light:border-slate-200 light:text-slate-700">
                           #{k}
                         </span>
                       ))}

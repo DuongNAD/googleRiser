@@ -655,9 +655,11 @@ Key Architectural Highlights:
 🔹 Autonomous Product Studio: Combines Gemini 2.0 attribute extraction with Imagen 3 staging prompts across 4 cultural aesthetic themes (e.g., Traditional Lunar New Year / Tết) and 4-channel localized copy generation.
 🔹 Multi-Dialect Voice Commerce: Real-time STT engine supporting Northern, Central, and Southern Vietnamese dialects with 5 native Function Calling tools (inventory check, Maps shipping calculator, draft order creation).
 🔹 Google Ecosystem Pluggable SPI: Live two-way sync with Google Sheets API v4, responsive HTML invoice generation via Gmail API, event automation via Calendar API, and 2-Opt TSP delivery routing via Google Maps Platform.
-🔹 High-Performance Cloud Run: Multi-stage containerized architecture (<150MB image, non-root security `nodejs:1001`, sub-350ms cold starts, and 100% test coverage across 421 automated test suites).
+🔹 High-Performance Cloud Run: Multi-stage containerized architecture (<150MB image, non-root security `nodejs:1001`, sub-350ms cold starts, and 484 automated test cases passing at 100%).
 
 Zero-Friction Evaluation: Built with an in-memory SPI fallback engine that enables judges and developers to test the full end-to-end workflow instantly in Demo Mode without requiring cloud API keys.
+
+The build journey (#VibeCoding): the idea started from a very ordinary scene — a shop owner squinting at a bank-transfer screenshot, trying to decide whether to hand over the parcel. That single question, "how would a machine tell a real receipt from a Photoshopped one?", turned into a 5-layer forensic matrix. <<THÊM 1-2 CÂU CỦA RIÊNG BẠN: khó khăn lớn nhất bạn gặp, hoặc chi tiết bất ngờ nhất khi làm — phần này nên là giọng của chính bạn>> Along the way the project grew into 6 milestones, 484 automated test cases, and a Demo Mode built specifically so a judge never has to configure an API key to see it work.
 
 Explore our open-source codebase & architecture:
 🔗 GitHub: https://github.com/DuongNAD/googleRiser

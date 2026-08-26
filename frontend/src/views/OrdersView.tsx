@@ -195,16 +195,16 @@ export const OrdersView: React.FC = () => {
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 light:bg-white light:border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2 light:bg-blue-50 light:text-blue-700 light:border-blue-200">
             <FileSpreadsheet className="w-3.5 h-3.5" />
             <span>Đồng Bộ Google Sheets 2 Chiều</span>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-white tracking-tight light:text-slate-900">
             Quản Lý & Xử Lý Đơn Hàng Bán Lẻ
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 light:text-slate-500">
             Theo dõi trạng thái giao vận, đối soát thanh toán VietQR và xuất hóa đơn Gmail tự động.
           </p>
         </div>
@@ -222,16 +222,16 @@ export const OrdersView: React.FC = () => {
       </div>
 
       {/* Filter & Search Bar */}
-      <div className="glass-panel p-4 rounded-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="glass-panel p-4 rounded-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 light:border-slate-200">
         {/* Search Bar */}
         <div className="relative flex-1 w-full">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 light:text-slate-500" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Tìm theo Mã đơn, Tên khách hàng, SĐT, Địa chỉ giao hàng..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+            className="w-full pl-10 pr-4 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-900 light:placeholder-slate-400"
           />
         </div>
 
@@ -244,7 +244,7 @@ export const OrdersView: React.FC = () => {
               setOrderStatusFilter(e.target.value);
               setCurrentPage(1);
             }}
-            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500"
+            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-800"
           >
             <option value="ALL">Tất cả trạng thái đơn</option>
             <option value="DRAFT">Nháp (Draft)</option>
@@ -262,7 +262,7 @@ export const OrdersView: React.FC = () => {
               setPaymentStatusFilter(e.target.value);
               setCurrentPage(1);
             }}
-            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500"
+            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-800"
           >
             <option value="ALL">Tất cả thanh toán</option>
             <option value="PENDING">Chờ thanh toán</option>
@@ -275,9 +275,9 @@ export const OrdersView: React.FC = () => {
 
       {/* Batch Action Bar */}
       {selectedOrderIds.length > 0 && (
-        <div className="p-3 rounded-xl bg-indigo-950/60 border border-indigo-500/40 flex flex-wrap items-center justify-between gap-3 text-xs animate-in fade-in">
-          <span className="font-semibold text-indigo-200">
-            Đã chọn <strong className="text-white">{selectedOrderIds.length}</strong> đơn hàng
+        <div className="p-3 rounded-xl bg-indigo-950/60 border border-indigo-500/40 flex flex-wrap items-center justify-between gap-3 text-xs animate-in fade-in light:bg-indigo-50 light:border-indigo-200">
+          <span className="font-semibold text-indigo-200 light:text-indigo-800">
+            Đã chọn <strong className="text-white light:text-indigo-950">{selectedOrderIds.length}</strong> đơn hàng
           </span>
           <div className="flex items-center gap-2">
             <button
@@ -309,17 +309,17 @@ export const OrdersView: React.FC = () => {
       )}
 
       {/* Orders Table */}
-      <div className="glass-panel rounded-3xl border border-slate-800 overflow-hidden">
+      <div className="glass-panel rounded-3xl border border-slate-800 overflow-hidden light:border-slate-200">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-slate-800 bg-slate-900/80 text-slate-400 font-bold uppercase tracking-wider">
+              <tr className="border-b border-slate-800 bg-slate-900/80 text-slate-400 font-bold uppercase tracking-wider light:border-slate-200 light:bg-slate-50/80 light:text-slate-500">
                 <th className="py-4 px-4 w-10">
                   <input
                     type="checkbox"
                     checked={pagination.data.length > 0 && selectedOrderIds.length === pagination.data.length}
                     onChange={toggleSelectAll}
-                    className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer"
+                    className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer light:border-slate-300"
                   />
                 </th>
                 <th className="py-4 px-4">Mã Đơn</th>
@@ -331,10 +331,10 @@ export const OrdersView: React.FC = () => {
                 <th className="py-4 px-4 text-right">Thao Tác</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
+            <tbody className="divide-y divide-slate-800/60 light:divide-slate-200">
               {pagination.data.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-12 text-center text-slate-400">
+                  <td colSpan={8} className="py-12 text-center text-slate-400 light:text-slate-500">
                     Không tìm thấy đơn hàng nào phù hợp với bộ lọc.
                   </td>
                 </tr>
@@ -344,8 +344,8 @@ export const OrdersView: React.FC = () => {
                   return (
                     <tr
                       key={order.orderId}
-                      className={`hover:bg-slate-800/40 transition ${
-                        isSelected ? 'bg-indigo-950/30' : ''
+                      className={`hover:bg-slate-800/40 transition light:hover:bg-slate-50 ${
+                        isSelected ? 'bg-indigo-950/30 light:bg-indigo-50/60' : ''
                       }`}
                     >
                       <td className="py-4 px-4">
@@ -353,34 +353,34 @@ export const OrdersView: React.FC = () => {
                           type="checkbox"
                           checked={isSelected}
                           onChange={() => toggleSelectOrder(order.orderId)}
-                          className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer"
+                          className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer light:border-slate-300"
                         />
                       </td>
-                      <td className="py-4 px-4 font-mono font-bold text-indigo-300">
+                      <td className="py-4 px-4 font-mono font-bold text-indigo-300 light:text-indigo-600">
                         {order.orderId}
-                        <div className="text-[10px] text-slate-500 font-sans">
+                        <div className="text-[10px] text-slate-500 font-sans light:text-slate-400">
                           {formatDateTimeVi(order.createdAt)}
                         </div>
                       </td>
                       <td className="py-4 px-4">
-                        <div className="font-bold text-slate-100">{order.customerName}</div>
-                        <div className="text-[11px] text-slate-400">{order.customerPhone}</div>
-                        <div className="text-[10px] text-slate-500 truncate max-w-xs">{order.deliveryAddress}</div>
+                        <div className="font-bold text-slate-100 light:text-slate-900">{order.customerName}</div>
+                        <div className="text-[11px] text-slate-400 light:text-slate-500">{order.customerPhone}</div>
+                        <div className="text-[10px] text-slate-500 truncate max-w-xs light:text-slate-400">{order.deliveryAddress}</div>
                       </td>
                       <td className="py-4 px-4">
                         {order.items.map((item: OrderItem, idx: number) => (
-                          <div key={idx} className="text-slate-300">
+                          <div key={idx} className="text-slate-300 light:text-slate-700">
                             <span className="font-semibold">{item.name}</span>
-                            <span className="text-slate-400"> x{item.quantity}</span>
+                            <span className="text-slate-400 light:text-slate-500"> x{item.quantity}</span>
                           </div>
                         ))}
                       </td>
                       <td className="py-4 px-4">
-                        <div className="font-bold text-white text-sm">
+                        <div className="font-bold text-white text-sm light:text-slate-900">
                           <VietnameseCurrency amount={order.totalAmount} />
                         </div>
                         {order.discountAmount > 0 && (
-                          <div className="text-[10px] text-emerald-400 font-semibold">
+                          <div className="text-[10px] text-emerald-400 font-semibold light:text-emerald-600">
                             Giảm: -{formatVietnameseCurrency(order.discountAmount)}
                           </div>
                         )}
@@ -394,7 +394,7 @@ export const OrdersView: React.FC = () => {
                           onChange={(e) =>
                             handleStatusChange(order.orderId, order.orderStatus, e.target.value as OrderStatus)
                           }
-                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500 cursor-pointer"
+                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:border-indigo-500 cursor-pointer light:bg-white light:border-slate-300 light:text-slate-800"
                         >
                           <option value="DRAFT">Nháp</option>
                           <option value="CONFIRMED">Đã Xác Nhận</option>
@@ -407,7 +407,7 @@ export const OrdersView: React.FC = () => {
                       <td className="py-4 px-4 text-right space-x-1 whitespace-nowrap">
                         <button
                           onClick={() => setSelectedOrderForInvoice(order)}
-                          className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                          className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                           title="Gửi hóa đơn Gmail"
                         >
                           <Mail className="w-4 h-4 text-red-400" />
@@ -420,7 +420,7 @@ export const OrdersView: React.FC = () => {
                               message: `Đang định tuyến giao hàng xe máy đến: ${order.deliveryAddress}`
                             });
                           }}
-                          className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+                          className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition light:text-slate-600 light:hover:text-slate-900 light:hover:bg-slate-100"
                           title="Tối ưu đường giao shipper"
                         >
                           <MapPin className="w-4 h-4 text-amber-400" />
@@ -435,24 +435,24 @@ export const OrdersView: React.FC = () => {
         </div>
 
         {/* Pagination Footer */}
-        <div className="p-4 border-t border-slate-800 bg-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <span className="text-slate-400">
-            Hiển thị <strong className="text-white">{pagination.data.length}</strong> / <strong className="text-white">{pagination.totalItems}</strong> đơn hàng (Trang {pagination.page} / {pagination.totalPages})
+        <div className="p-4 border-t border-slate-800 bg-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs light:border-slate-200 light:bg-slate-50/80">
+          <span className="text-slate-400 light:text-slate-500">
+            Hiển thị <strong className="text-white light:text-slate-900">{pagination.data.length}</strong> / <strong className="text-white light:text-slate-900">{pagination.totalItems}</strong> đơn hàng (Trang {pagination.page} / {pagination.totalPages})
           </span>
 
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={pagination.page <= 1}
-              className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white disabled:opacity-40 transition"
+              className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white disabled:opacity-40 transition light:bg-white light:border-slate-300 light:text-slate-700 light:hover:text-slate-900 light:hover:bg-slate-100"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <span className="font-bold text-slate-200 px-2">{pagination.page}</span>
+            <span className="font-bold text-slate-200 px-2 light:text-slate-800">{pagination.page}</span>
             <button
               onClick={() => setCurrentPage((p) => Math.min(pagination.totalPages, p + 1))}
               disabled={pagination.page >= pagination.totalPages}
-              className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white disabled:opacity-40 transition"
+              className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white disabled:opacity-40 transition light:bg-white light:border-slate-300 light:text-slate-700 light:hover:text-slate-900 light:hover:bg-slate-100"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -462,29 +462,29 @@ export const OrdersView: React.FC = () => {
 
       {/* Gmail Invoice Dispatch Modal */}
       {selectedOrderForInvoice && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <div className="flex items-center gap-2 text-white font-bold">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm light:bg-slate-900/40">
+          <div className="w-full max-w-lg bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4 light:bg-white light:border-slate-200 light:shadow-xl">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3 light:border-slate-200">
+              <div className="flex items-center gap-2 text-white font-bold light:text-slate-900">
                 <Mail className="w-5 h-5 text-red-400" />
                 <span>Gửi Hóa Đơn Điện Tử Qua Gmail</span>
               </div>
               <button
                 onClick={() => setSelectedOrderForInvoice(null)}
-                className="text-slate-400 hover:text-white"
+                className="text-slate-400 hover:text-white light:text-slate-500 light:hover:text-slate-800"
               >
                 ✕
               </button>
             </div>
 
-            <div className="space-y-3 text-xs text-slate-300">
-              <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
-                <div><strong>Mã đơn:</strong> <span className="font-mono text-indigo-300">{selectedOrderForInvoice.orderId}</span></div>
+            <div className="space-y-3 text-xs text-slate-300 light:text-slate-600">
+              <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1 light:bg-slate-50 light:border-slate-200">
+                <div><strong>Mã đơn:</strong> <span className="font-mono text-indigo-300 light:text-indigo-600">{selectedOrderForInvoice.orderId}</span></div>
                 <div><strong>Người nhận:</strong> {selectedOrderForInvoice.customerName} ({selectedOrderForInvoice.customerPhone})</div>
-                <div><strong>Tổng thanh toán:</strong> <span className="text-emerald-400 font-bold">{formatVietnameseCurrency(selectedOrderForInvoice.totalAmount)}</span></div>
+                <div><strong>Tổng thanh toán:</strong> <span className="text-emerald-400 font-bold light:text-emerald-600">{formatVietnameseCurrency(selectedOrderForInvoice.totalAmount)}</span></div>
               </div>
 
-              <p className="text-slate-400">
+              <p className="text-slate-400 light:text-slate-500">
                 Email hóa đơn sẽ kèm theo mã QR thanh toán chuẩn VietQR và thông tin vận đơn chi tiết.
               </p>
             </div>
@@ -492,7 +492,7 @@ export const OrdersView: React.FC = () => {
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setSelectedOrderForInvoice(null)}
-                className="flex-1 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+                className="flex-1 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition light:bg-slate-100 light:hover:bg-slate-200 light:text-slate-700"
               >
                 Hủy
               </button>

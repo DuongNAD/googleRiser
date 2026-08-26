@@ -93,14 +93,14 @@ export const EcosystemDrawer: React.FC = () => {
           {/* Header */}
           <div className="p-6 border-b border-slate-800 dark:border-slate-800 light:border-slate-200 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <div className="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/20 light:bg-blue-50 light:text-blue-700 light:border-blue-200">
                 <Layers className="w-5 h-5" />
               </div>
               <div>
                 <h3 className="font-bold text-slate-100 text-base dark:text-slate-100 light:text-slate-900">
                   Google Ecosystem SPI
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-500">
                   Trạng thái kết nối 6 dịch vụ Google Cloud & Workspace
                 </p>
               </div>
@@ -117,7 +117,7 @@ export const EcosystemDrawer: React.FC = () => {
           <div className="p-6 space-y-4 overflow-y-auto flex-1">
             <div className="flex items-center justify-between p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 dark:bg-slate-900/60 dark:border-slate-800 light:bg-slate-100 light:border-slate-200">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-emerald-400" />
+                <Shield className="w-4 h-4 text-emerald-400 dark:text-emerald-400 light:text-emerald-600" />
                 <span className="text-xs font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">
                   Chế Độ Vận Hành
                 </span>
@@ -126,8 +126,8 @@ export const EcosystemDrawer: React.FC = () => {
                 onClick={toggleMode}
                 className={`text-xs font-bold px-2.5 py-1 rounded-lg transition ${
                   mode === 'demo'
-                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-                    : 'bg-blue-500/20 text-blue-400 border border-blue-500/40'
+                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 dark:bg-emerald-500/20 dark:text-emerald-400 dark:border-emerald-500/40 light:bg-emerald-100 light:text-emerald-800 light:border-emerald-300'
+                    : 'bg-blue-500/20 text-blue-400 border border-blue-500/40 dark:bg-blue-500/20 dark:text-blue-400 dark:border-blue-500/40 light:bg-blue-100 light:text-blue-800 light:border-blue-300'
                 }`}
               >
                 {mode === 'demo' ? '🟢 Demo (In-Memory SPI)' : '🔵 Live (Google APIs)'}
@@ -151,10 +151,10 @@ export const EcosystemDrawer: React.FC = () => {
                           <h4 className="text-xs font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">
                             {svc.name}
                           </h4>
-                          <p className="text-[11px] text-slate-400 mt-0.5">
+                          <p className="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-600 mt-0.5">
                             {svc.desc}
                           </p>
-                          <div className="text-[10px] text-slate-400 font-mono mt-1">
+                          <div className="text-[10px] text-slate-400 dark:text-slate-400 light:text-slate-500 font-mono mt-1">
                             {svc.meta}
                           </div>
                         </div>
@@ -162,12 +162,12 @@ export const EcosystemDrawer: React.FC = () => {
 
                       <div className="flex items-center gap-1">
                         {svc.active ? (
-                          <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                          <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-200">
                             <CheckCircle2 className="w-3 h-3" />
                             <span>Hoạt động</span>
                           </span>
                         ) : (
-                          <span className="flex items-center gap-1 text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                          <span className="flex items-center gap-1 text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/20 light:bg-amber-50 light:text-amber-800 light:border-amber-200">
                             <AlertCircle className="w-3 h-3" />
                             <span>Mock</span>
                           </span>
@@ -181,7 +181,7 @@ export const EcosystemDrawer: React.FC = () => {
           </div>
 
           {/* Footer: Demo Reset Action */}
-          <div className="p-6 border-t border-slate-800 dark:border-slate-800 light:border-slate-200 space-y-3 bg-slate-950/50">
+          <div className="p-6 border-t border-slate-800 dark:border-slate-800 light:border-slate-200 space-y-3 bg-slate-950/50 dark:bg-slate-950/50 light:bg-slate-50">
             <button
               onClick={resetDemoData}
               disabled={isLoading}
@@ -190,7 +190,7 @@ export const EcosystemDrawer: React.FC = () => {
               <RotateCcw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
               <span>Khôi Phục Dữ Liệu Demo Chuẩn</span>
             </button>
-            <p className="text-[11px] text-slate-400 text-center">
+            <p className="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 text-center">
               Đặt lại toàn bộ dữ liệu đơn hàng, kho, lịch sự kiện về cấu hình mẫu sạch.
             </p>
           </div>

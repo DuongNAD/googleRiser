@@ -190,27 +190,27 @@ export const VoiceAssistantView: React.FC = () => {
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 light:bg-white light:border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-2 light:bg-amber-50 light:text-amber-700 light:border-amber-200">
             <Mic className="w-3.5 h-3.5" />
             <span>Gemini 2.0 Live Voice & Function Calling</span>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-white tracking-tight light:text-slate-900">
             Trợ Lý Giọng Nói Đa Phương Ngữ Bắc - Trung - Nam
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 light:text-slate-500">
             Ra lệnh bằng giọng nói tự nhiên để tra cứu kho, tính phí vận chuyển và chốt đơn hàng tự động.
           </p>
         </div>
 
         {/* Dialect Selector */}
         <div className="flex items-center gap-2">
-          <span className="text-xs text-slate-400 font-semibold">Giọng đọc:</span>
+          <span className="text-xs text-slate-400 font-semibold light:text-slate-600">Giọng đọc:</span>
           <select
             value={dialect}
             onChange={(e) => setDialect(e.target.value as any)}
-            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 font-bold focus:outline-none focus:border-amber-500"
+            className="px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-slate-200 font-bold focus:outline-none focus:border-amber-500 light:bg-white light:border-slate-300 light:text-slate-800"
           >
             <option value="auto">🌐 Tự Động Nhận Diện</option>
             <option value="north">🗼 Giọng Bắc (Hà Nội)</option>
@@ -224,7 +224,7 @@ export const VoiceAssistantView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Voice Conversation Widget (7 cols) */}
         <div className="lg:col-span-7 space-y-4">
-          <div className="glass-panel rounded-3xl border border-slate-800 flex flex-col h-[580px] overflow-hidden">
+          <div className="glass-panel rounded-3xl border border-slate-800 flex flex-col h-[580px] overflow-hidden light:border-slate-200">
             {/* Chat Messages Body */}
             <div className="flex-1 p-5 overflow-y-auto space-y-4">
               {messages.map((turn, idx) => {
@@ -244,7 +244,7 @@ export const VoiceAssistantView: React.FC = () => {
                       <div
                         className={`p-4 rounded-2xl text-xs leading-relaxed ${
                           isAssistant
-                            ? 'bg-slate-900 border border-slate-800 text-slate-200 shadow-md'
+                            ? 'bg-slate-900 border border-slate-800 text-slate-200 shadow-md light:bg-white light:border-slate-200 light:text-slate-800'
                             : 'bg-indigo-600 text-white font-medium shadow-lg shadow-indigo-600/20'
                         }`}
                       >
@@ -266,7 +266,7 @@ export const VoiceAssistantView: React.FC = () => {
                     </div>
 
                     {!isAssistant && (
-                      <div className="w-8 h-8 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 flex-shrink-0">
+                      <div className="w-8 h-8 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 flex-shrink-0 light:bg-slate-200 light:border-slate-300 light:text-slate-700">
                         <User className="w-4 h-4" />
                       </div>
                     )}
@@ -276,10 +276,10 @@ export const VoiceAssistantView: React.FC = () => {
 
               {isProcessing && (
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center light:bg-amber-50 light:text-amber-700 light:border-amber-200">
                     <Sparkles className="w-4 h-4 animate-spin" />
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-amber-300 font-semibold flex items-center gap-2">
+                  <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-amber-300 font-semibold flex items-center gap-2 light:bg-amber-50 light:border-amber-200 light:text-amber-800">
                     <span>Gemini 2.0 đang suy luận & gọi công cụ...</span>
                   </div>
                 </div>
@@ -289,9 +289,9 @@ export const VoiceAssistantView: React.FC = () => {
             </div>
 
             {/* Audio Waveform & Mic Control Bar */}
-            <div className="p-4 border-t border-slate-800 bg-slate-950/80 backdrop-blur-md space-y-3">
+            <div className="p-4 border-t border-slate-800 bg-slate-950/80 backdrop-blur-md space-y-3 light:border-slate-200 light:bg-white/80">
               {isRecording ? (
-                <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex items-center justify-between">
+                <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 flex items-center justify-between light:bg-amber-50 light:border-amber-200">
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1">
                       <span className="w-1.5 h-3 bg-amber-400 rounded-full animate-soundwave-1" />
@@ -300,7 +300,7 @@ export const VoiceAssistantView: React.FC = () => {
                       <span className="w-1.5 h-5 bg-amber-400 rounded-full animate-soundwave-4" />
                       <span className="w-1.5 h-2 bg-amber-400 rounded-full animate-soundwave-5" />
                     </div>
-                    <span className="text-xs font-bold text-amber-300">
+                    <span className="text-xs font-bold text-amber-300 light:text-amber-800">
                       Đang lắng nghe ({recordingSeconds}s / 60s)...
                     </span>
                   </div>
@@ -328,7 +328,7 @@ export const VoiceAssistantView: React.FC = () => {
                     onChange={(e) => setInputText(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                     placeholder="Nói hoặc nhập câu hỏi (vd: kiểm tra áo dài đỏ size L)..."
-                    className="flex-1 px-4 py-2.5 rounded-xl text-xs bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-xs bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 light:bg-slate-50 light:border-slate-300 light:text-slate-900 light:placeholder-slate-400"
                   />
 
                   <button
@@ -343,7 +343,7 @@ export const VoiceAssistantView: React.FC = () => {
 
               {/* 5 Preset Speech Shortcuts */}
               <div className="flex items-center gap-2 overflow-x-auto pt-1 pb-1">
-                <span className="text-[10px] font-bold text-slate-500 uppercase flex-shrink-0">Gợi ý câu lệnh:</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase flex-shrink-0 light:text-slate-500">Gợi ý câu lệnh:</span>
                 {[
                   'Kiểm tra áo dài đỏ còn size L không shop?',
                   'Tính tiền ship về Cầu Giấy Hà Nội',
@@ -354,7 +354,7 @@ export const VoiceAssistantView: React.FC = () => {
                   <button
                     key={pIdx}
                     onClick={() => handleSendMessage(prompt)}
-                    className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 whitespace-nowrap transition"
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 whitespace-nowrap transition light:bg-white light:hover:bg-slate-100 light:border-slate-200 light:text-slate-700"
                   >
                     "{prompt}"
                   </button>
@@ -367,53 +367,53 @@ export const VoiceAssistantView: React.FC = () => {
         {/* Right Column: Live Draft Order Cart & Function Calling Inspector (5 cols) */}
         <div className="lg:col-span-5 space-y-6">
           {/* Draft Order Confirmation Cart */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4 light:border-slate-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 light:bg-amber-50 light:text-amber-700 light:border-amber-200">
                   <ShoppingBag className="w-4 h-4" />
                 </div>
-                <h3 className="text-sm font-bold text-white">Giỏ Hàng Tạo Bằng Giọng Nói</h3>
+                <h3 className="text-sm font-bold text-white light:text-slate-900">Giỏ Hàng Tạo Bằng Giọng Nói</h3>
               </div>
-              <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+              <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-200">
                 Live Draft
               </span>
             </div>
 
             {draftCart ? (
               <div className="space-y-4 text-xs">
-                <div className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
-                  <div className="font-semibold text-slate-200">
-                    Khách hàng: <strong>{draftCart.customerName}</strong> ({draftCart.phone})
+                <div className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800 space-y-2 light:bg-slate-50 light:border-slate-200">
+                  <div className="font-semibold text-slate-200 light:text-slate-800">
+                    Khách hàng: <strong className="light:text-slate-900">{draftCart.customerName}</strong> ({draftCart.phone})
                   </div>
-                  <div className="text-slate-400 text-[11px]">
+                  <div className="text-slate-400 text-[11px] light:text-slate-500">
                     Địa chỉ: {draftCart.address}
                   </div>
                 </div>
 
-                <div className="space-y-2 border-t border-slate-800 pt-3">
+                <div className="space-y-2 border-t border-slate-800 pt-3 light:border-slate-200">
                   {draftCart.items.map((it, idx) => (
-                    <div key={idx} className="flex justify-between items-center text-slate-200">
+                    <div key={idx} className="flex justify-between items-center text-slate-200 light:text-slate-700">
                       <div>
                         <span className="font-semibold">{it.name}</span>
-                        <span className="text-slate-400 text-[11px]"> x{it.quantity}</span>
+                        <span className="text-slate-400 text-[11px] light:text-slate-500"> x{it.quantity}</span>
                       </div>
-                      <strong className="text-white">
+                      <strong className="text-white light:text-slate-900">
                         {formatVietnameseCurrency(it.price * it.quantity)}
                       </strong>
                     </div>
                   ))}
-                  <div className="flex justify-between text-slate-400 pt-1">
+                  <div className="flex justify-between text-slate-400 pt-1 light:text-slate-500">
                     <span>Phí ship (Google Maps):</span>
                     <span>+{formatVietnameseCurrency(draftCart.shippingFee)}</span>
                   </div>
-                  <div className="flex justify-between text-emerald-400 font-semibold pt-1">
+                  <div className="flex justify-between text-emerald-400 font-semibold pt-1 light:text-emerald-600">
                     <span>Giảm giá voucher:</span>
                     <span>-{formatVietnameseCurrency(draftCart.discount)}</span>
                   </div>
-                  <div className="flex justify-between items-center text-sm font-bold text-white pt-2 border-t border-slate-800">
+                  <div className="flex justify-between items-center text-sm font-bold text-white pt-2 border-t border-slate-800 light:text-slate-900 light:border-slate-200">
                     <span>Tổng thanh toán:</span>
-                    <span className="text-emerald-400 text-base">
+                    <span className="text-emerald-400 text-base light:text-emerald-600">
                       {formatVietnameseCurrency(
                         draftCart.items.reduce((s, i) => s + i.price * i.quantity, 0) +
                           draftCart.shippingFee -
@@ -433,8 +433,8 @@ export const VoiceAssistantView: React.FC = () => {
               </div>
             ) : (
               <div className="py-8 flex flex-col items-center justify-center text-center space-y-2">
-                <ShoppingBag className="w-8 h-8 text-slate-600" />
-                <p className="text-xs text-slate-400 max-w-xs">
+                <ShoppingBag className="w-8 h-8 text-slate-600 light:text-slate-400" />
+                <p className="text-xs text-slate-400 max-w-xs light:text-slate-500">
                   Chưa có đơn hàng nháp. Hãy nói: <em>"Tạo đơn 2 bộ áo dài về Nguyễn Trãi Q5"</em> để AI tự động lên đơn.
                 </p>
               </div>
@@ -442,35 +442,35 @@ export const VoiceAssistantView: React.FC = () => {
           </div>
 
           {/* Gemini 2.0 Tool Calling Capabilities */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-              <Wrench className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3 light:border-slate-200">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2 light:text-slate-500">
+              <Wrench className="w-3.5 h-3.5 text-indigo-400 light:text-indigo-600" />
               <span>Các Công Cụ Tích Hợp (Function Calling Tools)</span>
             </h4>
 
             <div className="space-y-2 text-xs">
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between light:bg-slate-50 light:border-slate-200">
                 <div>
-                  <div className="font-mono font-bold text-indigo-300">query_inventory</div>
-                  <div className="text-[11px] text-slate-400">Tra cứu tồn kho thực tế từ Google Sheets</div>
+                  <div className="font-mono font-bold text-indigo-300 light:text-indigo-600">query_inventory</div>
+                  <div className="text-[11px] text-slate-400 light:text-slate-500">Tra cứu tồn kho thực tế từ Google Sheets</div>
                 </div>
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">Sẵn sàng</span>
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full light:bg-emerald-50 light:text-emerald-700">Sẵn sàng</span>
               </div>
 
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between light:bg-slate-50 light:border-slate-200">
                 <div>
-                  <div className="font-mono font-bold text-indigo-300">calculate_shipping_fee</div>
-                  <div className="text-[11px] text-slate-400">Tính cước giao hàng qua Google Maps Matrix</div>
+                  <div className="font-mono font-bold text-indigo-300 light:text-indigo-600">calculate_shipping_fee</div>
+                  <div className="text-[11px] text-slate-400 light:text-slate-500">Tính cước giao hàng qua Google Maps Matrix</div>
                 </div>
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">Sẵn sàng</span>
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full light:bg-emerald-50 light:text-emerald-700">Sẵn sàng</span>
               </div>
 
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between light:bg-slate-50 light:border-slate-200">
                 <div>
-                  <div className="font-mono font-bold text-indigo-300">create_draft_order</div>
-                  <div className="text-[11px] text-slate-400">Tự động khởi tạo đơn và gửi mail hóa đơn</div>
+                  <div className="font-mono font-bold text-indigo-300 light:text-indigo-600">create_draft_order</div>
+                  <div className="text-[11px] text-slate-400 light:text-slate-500">Tự động khởi tạo đơn và gửi mail hóa đơn</div>
                 </div>
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">Sẵn sàng</span>
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full light:bg-emerald-50 light:text-emerald-700">Sẵn sàng</span>
               </div>
             </div>
           </div>

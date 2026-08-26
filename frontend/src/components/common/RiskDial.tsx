@@ -1,6 +1,7 @@
 import React from 'react';
 import { RiskLevel } from '@shared';
 import { computeRiskDialAngle } from '../../utils/validators';
+import { useTheme } from '../../context/ThemeContext';
 
 interface RiskDialProps {
   riskLevel: RiskLevel;
@@ -15,7 +16,9 @@ export const RiskDial: React.FC<RiskDialProps> = ({
   size = 180,
   showLabels = true
 }) => {
+  const { theme } = useTheme();
   const { angleDegrees, colorHex, labelVi } = computeRiskDialAngle(riskLevel, confidenceScore);
+  const trackStroke = theme === 'light' ? '#e2e8f0' : '#334155';
 
   // Center & radius for SVG arc
   const center = size / 2;
@@ -48,7 +51,7 @@ export const RiskDial: React.FC<RiskDialProps> = ({
           <path
             d={`M ${center - radius} ${center} A ${radius} ${radius} 0 0 1 ${center + radius} ${center}`}
             fill="none"
-            stroke="#334155"
+            stroke={trackStroke}
             strokeWidth="14"
             strokeLinecap="round"
           />
@@ -97,10 +100,10 @@ export const RiskDial: React.FC<RiskDialProps> = ({
       </div>
 
       {showLabels && (
-        <div className="flex justify-between w-full text-[10px] text-slate-400 font-semibold px-2 mt-1">
-          <span className="text-emerald-400">An Toàn</span>
-          <span className="text-amber-400">Nghi Vấn</span>
-          <span className="text-red-400">Gian Lận</span>
+        <div className="flex justify-between w-full text-[10px] text-slate-400 dark:text-slate-400 light:text-slate-500 font-semibold px-2 mt-1">
+          <span className="text-emerald-400 dark:text-emerald-400 light:text-emerald-600">An Toàn</span>
+          <span className="text-amber-400 dark:text-amber-400 light:text-amber-600">Nghi Vấn</span>
+          <span className="text-red-400 dark:text-red-400 light:text-red-600">Gian Lận</span>
         </div>
       )}
     </div>

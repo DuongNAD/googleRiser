@@ -25,11 +25,11 @@ export interface RouteConfig {
 
 export const NAV_ITEMS: RouteConfig[] = [
   { path: '/', viewName: 'DashboardView', labelVi: 'Tổng Quan & KPI', icon: LayoutDashboard },
-  { path: '/audit', viewName: 'BillAuditView', labelVi: 'Kiểm Tra Bill VietQR', icon: QrCode, badge: '5-Layer', badgeColor: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' },
-  { path: '/orders', viewName: 'OrdersView', labelVi: 'Quản Lý Đơn Hàng', icon: ShoppingCart, badge: 'Sheets Sync', badgeColor: 'bg-blue-500/10 text-blue-400 border border-blue-500/30' },
-  { path: '/studio', viewName: 'ProductStudioView', labelVi: 'Product Studio', icon: Sparkles, badge: 'Imagen 3', badgeColor: 'bg-purple-500/10 text-purple-400 border border-purple-500/30' },
-  { path: '/assistant', viewName: 'VoiceAssistantView', labelVi: 'Trợ Lý Giọng Nói AI', icon: Mic, badge: 'Voice', badgeColor: 'bg-amber-500/10 text-amber-400 border border-amber-500/30' },
-  { path: '/playground', viewName: 'AIPlaygroundView', labelVi: 'AI Studio Playground', icon: Cpu, badge: 'Gemini 2.0', badgeColor: 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/30' },
+  { path: '/audit', viewName: 'BillAuditView', labelVi: 'Kiểm Tra Bill VietQR', icon: QrCode, badge: '5-Layer', badgeColor: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/30 light:bg-emerald-50 light:text-emerald-700 light:border-emerald-200' },
+  { path: '/orders', viewName: 'OrdersView', labelVi: 'Quản Lý Đơn Hàng', icon: ShoppingCart, badge: 'Sheets Sync', badgeColor: 'bg-blue-500/10 text-blue-400 border border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-500/30 light:bg-blue-50 light:text-blue-700 light:border-blue-200' },
+  { path: '/studio', viewName: 'ProductStudioView', labelVi: 'Product Studio', icon: Sparkles, badge: 'Imagen 3', badgeColor: 'bg-purple-500/10 text-purple-400 border border-purple-500/30 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-500/30 light:bg-purple-50 light:text-purple-700 light:border-purple-200' },
+  { path: '/assistant', viewName: 'VoiceAssistantView', labelVi: 'Trợ Lý Giọng Nói AI', icon: Mic, badge: 'Voice', badgeColor: 'bg-amber-500/10 text-amber-400 border border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-400 dark:border-amber-500/30 light:bg-amber-50 light:text-amber-700 light:border-amber-200' },
+  { path: '/playground', viewName: 'AIPlaygroundView', labelVi: 'AI Studio Playground', icon: Cpu, badge: 'Gemini 2.0', badgeColor: 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/30 light:bg-indigo-50 light:text-indigo-700 light:border-indigo-200' },
   { path: '/ecosystem', viewName: 'EcosystemSettingsView', labelVi: 'Google Ecosystem & Cài Đặt', icon: Layers }
 ];
 
@@ -61,7 +61,7 @@ export const Sidebar: React.FC = () => {
             >
               <Icon
                 className={`w-5 h-5 flex-shrink-0 transition-transform group-hover:scale-110 ${
-                  isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-400'
+                  isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-400 dark:text-slate-400 dark:group-hover:text-indigo-400 light:text-slate-500 light:group-hover:text-indigo-600'
                 }`}
               />
 
@@ -69,7 +69,7 @@ export const Sidebar: React.FC = () => {
                 <div className="flex items-center justify-between flex-1 min-w-0 gap-1.5">
                   <span className="truncate">{item.labelVi}</span>
                   {item.badge && (
-                    <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold flex-shrink-0 whitespace-nowrap ${item.badgeColor || 'bg-slate-800 text-slate-300'}`}>
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold flex-shrink-0 whitespace-nowrap ${item.badgeColor || 'bg-slate-800 text-slate-300 dark:bg-slate-800 dark:text-slate-300 light:bg-slate-100 light:text-slate-700'}`}>
                       {item.badge}
                     </span>
                   )}
@@ -91,12 +91,12 @@ export const Sidebar: React.FC = () => {
           <div className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/50 dark:bg-slate-900/60 dark:border-slate-800 light:bg-slate-100 light:border-slate-200">
             <div className="flex items-center justify-between text-xs font-semibold text-slate-300 dark:text-slate-300 light:text-slate-800">
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <ShieldCheck className="w-4 h-4 text-emerald-400 dark:text-emerald-400 light:text-emerald-600" />
                 <span>Forensics Engine</span>
               </div>
-              <span className="text-[10px] text-emerald-400 font-bold">25+ Banks</span>
+              <span className="text-[10px] text-emerald-400 dark:text-emerald-400 light:text-emerald-600 font-bold">25+ Banks</span>
             </div>
-            <p className="text-[10px] text-slate-400 mt-1">
+            <p className="text-[10px] text-slate-400 dark:text-slate-400 light:text-slate-600 mt-1">
               Phát hiện Photoshop, font mismatch & nghịch lý đồng hồ VietQR.
             </p>
           </div>

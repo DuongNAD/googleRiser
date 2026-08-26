@@ -131,16 +131,16 @@ export const AIPlaygroundView: React.FC = () => {
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-slate-900 border border-slate-800 light:bg-white light:border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-2 light:bg-indigo-50 light:text-indigo-700 light:border-indigo-200">
             <Cpu className="w-3.5 h-3.5" />
             <span>Google AI Studio & Gemini 2.0 Developer Workbench</span>
           </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-white tracking-tight light:text-slate-900">
             AI Studio Playground — Thử Nghiệm Prompt & Schema Trực Tiếp
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 light:text-slate-500">
             Tùy chỉnh nhiệt độ, Top-P, System Instructions và kiểm tra Structured Output JSON dành riêng cho giám khảo và lập trình viên.
           </p>
         </div>
@@ -157,7 +157,7 @@ export const AIPlaygroundView: React.FC = () => {
 
       {/* Preset System Templates */}
       <div className="space-y-2">
-        <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 light:text-slate-500">
           Nạp Mẫu Cấu Hình Prompt SME Chuẩn:
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -165,15 +165,15 @@ export const AIPlaygroundView: React.FC = () => {
             <button
               key={idx}
               onClick={() => applyPreset(p)}
-              className="p-3 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/40 text-left transition flex items-center justify-between"
+              className="p-3 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/40 text-left transition flex items-center justify-between light:bg-white light:border-slate-200 light:hover:border-indigo-300 light:hover:bg-slate-50"
             >
               <div>
-                <h4 className="font-bold text-xs text-white">{p.name}</h4>
-                <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+                <h4 className="font-bold text-xs text-white light:text-slate-900">{p.name}</h4>
+                <p className="text-[10px] text-slate-400 font-mono mt-0.5 light:text-slate-500">
                   {p.model} • Temp: {p.temp}
                 </p>
               </div>
-              <Sparkles className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-indigo-400 flex-shrink-0 light:text-indigo-600" />
             </button>
           ))}
         </div>
@@ -183,19 +183,19 @@ export const AIPlaygroundView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Model & Parameters Configuration (4 cols) */}
         <div className="lg:col-span-4 space-y-6">
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-5">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-              <Sliders className="w-4 h-4 text-indigo-400" />
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-5 light:border-slate-200">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2 light:text-slate-500">
+              <Sliders className="w-4 h-4 text-indigo-400 light:text-indigo-600" />
               <span>Tham Số Mô Hình (Parameters)</span>
             </h3>
 
             {/* Model Selector */}
             <div>
-              <label className="text-xs font-semibold text-slate-300 mb-1.5 block">Chọn Mô Hình AI:</label>
+              <label className="text-xs font-semibold text-slate-300 mb-1.5 block light:text-slate-700">Chọn Mô Hình AI:</label>
               <select
                 value={model}
                 onChange={(e) => setModel(e.target.value as any)}
-                className="w-full px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-white font-mono font-bold focus:outline-none focus:border-indigo-500"
+                className="w-full px-3 py-2 rounded-xl text-xs bg-slate-950 border border-slate-700 text-white font-mono font-bold focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-800"
               >
                 <option value="gemini-2.0-flash">gemini-2.0-flash (Siêu nhanh & Forensics)</option>
                 <option value="gemini-2.0-pro-exp">gemini-2.0-pro-exp (Suy luận sâu)</option>
@@ -206,8 +206,8 @@ export const AIPlaygroundView: React.FC = () => {
             {/* Temperature Slider */}
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-slate-300 font-semibold">Temperature:</span>
-                <span className="font-mono font-bold text-indigo-400">{temperature.toFixed(2)}</span>
+                <span className="text-slate-300 font-semibold light:text-slate-700">Temperature:</span>
+                <span className="font-mono font-bold text-indigo-400 light:text-indigo-600">{temperature.toFixed(2)}</span>
               </div>
               <input
                 type="range"
@@ -218,7 +218,7 @@ export const AIPlaygroundView: React.FC = () => {
                 onChange={(e) => setTemperature(parseFloat(e.target.value))}
                 className="w-full accent-indigo-500 cursor-pointer"
               />
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+              <div className="flex justify-between text-[10px] text-slate-500 mt-1 light:text-slate-400">
                 <span>0.0 (Chính xác / Pháp y)</span>
                 <span>2.0 (Sáng tạo)</span>
               </div>
@@ -227,8 +227,8 @@ export const AIPlaygroundView: React.FC = () => {
             {/* Top-P Slider */}
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-slate-300 font-semibold">Top-P (Nucleus Sampling):</span>
-                <span className="font-mono font-bold text-indigo-400">{topP.toFixed(2)}</span>
+                <span className="text-slate-300 font-semibold light:text-slate-700">Top-P (Nucleus Sampling):</span>
+                <span className="font-mono font-bold text-indigo-400 light:text-indigo-600">{topP.toFixed(2)}</span>
               </div>
               <input
                 type="range"
@@ -244,8 +244,8 @@ export const AIPlaygroundView: React.FC = () => {
             {/* Max Output Tokens */}
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-slate-300 font-semibold">Max Output Tokens:</span>
-                <span className="font-mono font-bold text-indigo-400">{maxTokens}</span>
+                <span className="text-slate-300 font-semibold light:text-slate-700">Max Output Tokens:</span>
+                <span className="font-mono font-bold text-indigo-400 light:text-indigo-600">{maxTokens}</span>
               </div>
               <input
                 type="range"
@@ -259,14 +259,14 @@ export const AIPlaygroundView: React.FC = () => {
             </div>
 
             {/* Function Calling Tools Toggle */}
-            <div className="pt-2 border-t border-slate-800">
-              <label className="flex items-center justify-between cursor-pointer text-xs font-semibold text-slate-300">
+            <div className="pt-2 border-t border-slate-800 light:border-slate-200">
+              <label className="flex items-center justify-between cursor-pointer text-xs font-semibold text-slate-300 light:text-slate-700">
                 <span>Bật Function Calling Tools</span>
                 <input
                   type="checkbox"
                   checked={enableTools}
                   onChange={(e) => setEnableTools(e.target.checked)}
-                  className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer w-4 h-4"
+                  className="rounded border-slate-700 text-indigo-600 focus:ring-0 cursor-pointer w-4 h-4 light:border-slate-300"
                 />
               </label>
             </div>
@@ -276,30 +276,30 @@ export const AIPlaygroundView: React.FC = () => {
         {/* Right Column: Prompt & Stream Inspector (8 cols) */}
         <div className="lg:col-span-8 space-y-6">
           {/* System Instructions & User Prompt Editor */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4 light:border-slate-200">
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-                <FileCode className="w-3.5 h-3.5 text-indigo-400" />
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5 light:text-slate-500">
+                <FileCode className="w-3.5 h-3.5 text-indigo-400 light:text-indigo-600" />
                 <span>System Instruction (Chỉ dẫn hệ thống):</span>
               </label>
               <textarea
                 rows={3}
                 value={systemInstruction}
                 onChange={(e) => setSystemInstruction(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs font-mono focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs font-mono focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-800"
               />
             </div>
 
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5 text-indigo-400" />
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5 light:text-slate-500">
+                <Terminal className="w-3.5 h-3.5 text-indigo-400 light:text-indigo-600" />
                 <span>User Prompt (Nội dung yêu cầu thử nghiệm):</span>
               </label>
               <textarea
                 rows={3}
                 value={userPrompt}
                 onChange={(e) => setUserPrompt(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs font-medium focus:outline-none focus:border-indigo-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs font-medium focus:outline-none focus:border-indigo-500 light:bg-white light:border-slate-300 light:text-slate-900"
               />
             </div>
 
@@ -314,30 +314,30 @@ export const AIPlaygroundView: React.FC = () => {
           </div>
 
           {/* Real-time Streaming Output & Telemetry */}
-          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3 light:border-slate-200">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3 light:border-slate-200">
               <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4 text-emerald-400" />
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+                <Activity className="w-4 h-4 text-emerald-400 light:text-emerald-600" />
+                <h4 className="text-xs font-bold uppercase tracking-wider text-white light:text-slate-900">
                   Phản Hồi Trực Tiếp (SSE Real-time Token Stream)
                 </h4>
               </div>
 
               <div className="flex items-center gap-3 text-[11px]">
                 {latencyMs !== null && (
-                  <span className="text-emerald-400 font-mono font-bold">
+                  <span className="text-emerald-400 font-mono font-bold light:text-emerald-600">
                     ⚡ {latencyMs}ms
                   </span>
                 )}
                 {tokenCount > 0 && (
-                  <span className="text-indigo-300 font-mono">
+                  <span className="text-indigo-300 font-mono light:text-indigo-600">
                     {tokenCount} tokens
                   </span>
                 )}
                 {streamOutput && (
                   <button
                     onClick={copyResult}
-                    className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition"
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition light:bg-slate-100 light:hover:bg-slate-200 light:text-slate-700 light:border-slate-200"
                   >
                     {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                     <span>{copied ? 'Đã Chép' : 'Sao Chép'}</span>
@@ -346,9 +346,9 @@ export const AIPlaygroundView: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-slate-950 rounded-2xl p-4 border border-slate-800 min-h-[180px] max-h-[360px] overflow-y-auto text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed">
+            <div className="bg-slate-950 rounded-2xl p-4 border border-slate-800 min-h-[180px] max-h-[360px] overflow-y-auto text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed light:bg-slate-50 light:border-slate-200 light:text-slate-800">
               {streamOutput || (
-                <span className="text-slate-600">
+                <span className="text-slate-600 light:text-slate-400">
                   // Kết quả phản hồi streaming từ Gemini 2.0 sẽ hiển thị tại đây khi bạn nhấn "Chạy Thực Thi Prompt"...
                 </span>
               )}
