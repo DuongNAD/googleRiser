@@ -1,0 +1,5 @@
+Model: gemini-2.0-flash
+Temperature: 0.30
+Top-P: 0.95
+Max Output Tokens: 2048
+Tool Support: Function Calling (5 tools)

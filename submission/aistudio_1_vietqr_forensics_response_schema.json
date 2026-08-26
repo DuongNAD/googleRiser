@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BillForensicsResult",
+  "type": "object",
+  "description": "Structured JSON output schema for 5-layer bank receipt forensics analysis in SME AutoPilot",
+  "properties": {
+    "isAuthentic": {
+      "type": "boolean",
+      "description": "Whether the receipt is genuine and unmanipulated"
+    },
+    "confidenceScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Forensic confidence score from 0.00 to 1.00"
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+      "description": "Evaluated fraud risk level"
+    },
+    "extractedData": {
+      "type": "object",
+      "description": "Extracted metadata from the banking receipt",
+      "properties": {
+        "bankName": {
+          "type": "string",
+          "description": "Issuing bank short or full name"
+        },
+        "accountNumber": {
+          "type": "string",
+          "description": "Sender account number or masked account"
+        },
+        "accountHolder": {
+          "type": "string",
+          "description": "Sender account holder name"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Transaction amount in VND"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Transaction currency, typically VND"
+        },
+        "transactionId": {
+          "type": "string",
+          "description": "Transaction reference / FT code"
+        },
+        "transactionTime": {
+          "type": "string",
+          "description": "Timestamp on the receipt body"
+        },
+        "transferContent": {
+          "type": "string",
+          "description": "Transaction description / narration"
+        },
+        "qrPayload": {
+          "type": "string",
+          "description": "Extracted raw VietQR EMVCo string if present"
+        },
+        "recipientBankBin": {
+          "type": "string",
+          "description": "Recipient bank BIN code (e.g. 970436)"
+        },
+        "recipientAccount": {
+          "type": "string",
+          "description": "Beneficiary account number"
+        }
+      },
+      "required": [
+        "bankName",
+        "accountNumber",
+        "accountHolder",
+        "amount",
+        "currency",
+        "transactionId",
+        "transactionTime",
+        "transferContent"
+      ]
+    },
+    "forensicSignals": {
+      "type": "object",
+      "description": "High-level summary of forensic signal verification",
+      "properties": {
+        "timestampMatch": {
+          "type": "boolean",
+          "description": "Status bar clock is chronologically consistent with receipt time"
+        },
+        "fontConsistency": {
+          "type": "boolean",
+          "description": "Typography matches bank official design system"
+        },
+        "compressionArtifacts": {
+          "type": "boolean",
+          "description": "True if compression is uniform (no splice halos)"
+        },
+        "logoAuthenticity": {
+          "type": "boolean",
+          "description": "Bank logo matches authentic geometry and color"
+        },
+        "qrIntegrity": {
+          "type": "boolean",
+          "description": "VietQR CRC16 checksum passes EMVCo validation"
+        },
+        "anomalies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of flagged tampering anomaly descriptions"
+        }
+      },
+      "required": [
+        "timestampMatch",
+        "fontConsistency",
+        "compressionArtifacts",
+        "logoAuthenticity",
+        "qrIntegrity",
+        "anomalies"
+      ]
+    },
+    "forensicLayers": {
+      "type": "object",
+      "description": "Detailed results for each of the 5 forensic inspection layers",
+      "properties": {
+        "layer1_clockConsistency": {
+          "type": "object",
+          "properties": {
+            "passed": { "type": "boolean" },
+            "statusBarTime": { "type": "string" },
+            "receiptTime": { "type": "string" },
+            "isClockParadox": { "type": "boolean" },
+            "timeGapMinutes": { "type": "number" },
+            "details": { "type": "string" }
+          },
+          "required": ["passed", "isClockParadox", "details"]
+        },
+        "layer2_typography": {
+          "type": "object",
+          "properties": {
+            "passed": { "type": "boolean" },
+            "fontFamilyMatch": { "type": "boolean" },
+            "kerningConsistent": { "type": "boolean" },
+            "baselineAligned": { "type": "boolean" },
+            "details": { "type": "string" }
+          },
+          "required": ["passed", "fontFamilyMatch", "kerningConsistent", "baselineAligned", "details"]
+        },
+        "layer3_compressionEla": {
+          "type": "object",
+          "properties": {
+            "passed": { "type": "boolean" },
+            "quantizationUniform": { "type": "boolean" },
+            "edgeRingingDetected": { "type": "boolean" },
+            "tamperedRegionsDetected": { "type": "boolean" },
+            "details": { "type": "string" }
+          },
+          "required": ["passed", "quantizationUniform", "edgeRingingDetected", "tamperedRegionsDetected", "details"]
+        },
+        "layer4_brandUi": {
+          "type": "object",
+          "properties": {
+            "passed": { "type": "boolean" },
+            "bankIdentified": { "type": "string" },
+            "logoAuthentic": { "type": "boolean" },
+            "colorPaletteMatch": { "type": "boolean" },
+            "uiLayoutValid": { "type": "boolean" },
+            "details": { "type": "string" }
+          },
+          "required": ["passed", "bankIdentified", "logoAuthentic", "colorPaletteMatch", "uiLayoutValid", "details"]
+        },
+        "layer5_vietQr": {
+          "type": "object",
+          "properties": {
+            "passed": { "type": "boolean" },
+            "qrPresent": { "type": "boolean" },
+            "crcValid": { "type": "boolean" },
+            "calculatedCrc": { "type": "string" },
+            "embeddedCrc": { "type": "string" },
+            "dataCrossCheckMatch": { "type": "boolean" },
+            "details": { "type": "string" }
+          },
+          "required": ["passed", "qrPresent", "crcValid", "dataCrossCheckMatch", "details"]
+        }
+      },
+      "required": [
+        "layer1_clockConsistency",
+        "layer2_typography",
+        "layer3_compressionEla",
+        "layer4_brandUi",
+        "layer5_vietQr"
+      ]
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": ["AUTO_APPROVE", "MANUAL_REVIEW", "REJECT"],
+      "description": "Actionable verdict for merchant workflow"
+    },
+    "reconciliationStatus": {
+      "type": "string",
+      "enum": ["MATCHED", "UNMATCHED", "FLAGGED"],
+      "description": "Order reconciliation status against Google Sheets"
+    },
+    "matchedOrderId": {
+      "type": "string",
+      "description": "Matching order ID if found"
+    },
+    "analyzedAt": {
+      "type": "string",
+      "description": "ISO 8601 timestamp of analysis completion"
+    }
+  },
+  "required": [
+    "isAuthentic",
+    "confidenceScore",
+    "riskLevel",
+    "extractedData",
+    "forensicSignals",
+    "forensicLayers",
+    "recommendation",
+    "reconciliationStatus",
+    "analyzedAt"
+  ]
+}

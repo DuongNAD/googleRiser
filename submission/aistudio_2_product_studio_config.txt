@@ -1,0 +1,5 @@
+Model: gemini-2.0-flash (Visual Extraction & Copy) / imagen-3.0-generate-002 (Visual Staging)
+Temperature: 0.20 (extraction) / 0.70 (copy)
+Top-P: 0.95
+Max Output Tokens: 4096
+Response MIME Type: application/json

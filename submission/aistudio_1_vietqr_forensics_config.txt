@@ -1,0 +1,6 @@
+Model: gemini-2.0-flash
+Temperature: 0.20
+Top-P: 0.90
+Top-K: 40
+Max Output Tokens: 4096
+Response MIME Type: application/json

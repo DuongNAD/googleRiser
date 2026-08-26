@@ -1,0 +1,21 @@
+TIÊU ĐỀ VIDEO (VIDEO TITLE):
+SME AutoPilot — Multimodal AI Operations & VietQR Fraud Prevention for Vietnamese Merchants
+
+CHẾ ĐỘ HIỂN THỊ (VISIBILITY):
+Public (Công khai)
+
+MÔ TẢ VIDEO (YOUTUBE DESCRIPTION):
+SME AutoPilot là nền tảng vận hành AI đa phương thức toàn diện dành cho hơn 5.2 triệu hộ kinh doanh tại Việt Nam, tích hợp Google Gemini 2.0, Imagen 3 và hệ sinh thái Google Workspace. Hệ thống tự động hóa pháp y hóa đơn VietQR 5 lớp chống thất thoát 10-15% do bill giả dưới 350ms, tạo bối cảnh ảnh thương mại đa kênh và trợ lý giọng nói đa phương ngữ tự động chốt đơn vào Google Sheets. Dự án được thiết kế chuẩn mực cho cuộc thi AI Riser Vietnam 2026 với chế độ Demo 0-friction sẵn sàng đánh giá ngay lập tức.
+
+⏱️ TIMESTAMPS / CÁC PHÂN ĐOẠN VIDEO:
+0:00 Hook, Bài Toán SME Việt & Dashboard Điều Hành KPI
+0:15 Pháp Y VietQR 5 Lớp Trực Tiếp (Bill Thật VCB vs Bill Giả MBBank)
+0:55 Product Studio — Bối Cảnh Imagen 3 & Gói Tiếp Thị Đa Kênh
+1:25 Trợ Lý Giọng Nói Đa Phương Ngữ & Tạo Đơn Tự Động Vào Google Sheets
+1:50 Kiến Trúc Cloud Run Serverless & Kêu Gọi Trải Nghiệm
+
+🔗 LIÊN KẾT DỰ ÁN & MÃ NGUỒN:
+- GitHub Repository: https://github.com/DuongNAD/googleRiser
+- Google AI Studio Link: <<DÁN_LINK_AI_STUDIO>>
+
+#AIRiserVietnam2026 #BuildwithGoogleAI #VibeCoding #SMEAutoPilot #Gemini2 #CloudRun

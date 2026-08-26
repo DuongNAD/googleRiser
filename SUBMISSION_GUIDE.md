@@ -19,6 +19,8 @@
 
 > ⏰ **Thời hạn nộp bài**: Form đóng lúc **23:59 ngày 30/08/2026** tại [goo.gle/airiservietnam-completion](https://goo.gle/airiservietnam-completion).
 
+> 📁 **Tệp nộp bài sẵn sàng copy-paste**: Toàn bộ bản sao định dạng plain text và JSON của các prompt Google AI Studio, bài đăng LinkedIn và metadata video YouTube đã được tổng hợp tại thư mục [`submission/`](./submission/README.md) để phục vụ sao chép trực tiếp vào form nộp bài.
+
 ---
 
 ## 📑 Table of Contents

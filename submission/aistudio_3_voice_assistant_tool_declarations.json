@@ -1,0 +1,150 @@
+[
+  {
+    "name": "query_inventory",
+    "description": "Tra cứu tình trạng tồn kho, mức giá và các phân loại (size, màu) của sản phẩm theo mã SKU hoặc tên sản phẩm tiếng Việt.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "sku": {
+          "type": "STRING",
+          "description": "Mã SKU sản phẩm (ví dụ: FAS-AD-HD-RED-S)"
+        },
+        "productName": {
+          "type": "STRING",
+          "description": "Tên hoặc từ khóa tìm kiếm tiếng Việt (ví dụ: Áo Dài Đỏ, Serum Rau Má)"
+        },
+        "category": {
+          "type": "STRING",
+          "description": "Ngành hàng: fashion, fnb, cosmetics"
+        },
+        "variation": {
+          "type": "OBJECT",
+          "description": "Phân loại cần tìm (ví dụ: {\"size\": \"M\", \"color\": \"Đỏ\"})"
+        }
+      }
+    }
+  },
+  {
+    "name": "calculate_shipping_fee",
+    "description": "Tính toán cự ly và phí vận chuyển chính xác đến 63 tỉnh thành Việt Nam qua Google Maps Platform.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "province": {
+          "type": "STRING",
+          "description": "Tỉnh/Thành phố nhận hàng (ví dụ: Hà Nội, Hồ Chí Minh, Đà Nẵng)"
+        },
+        "district": {
+          "type": "STRING",
+          "description": "Quận/Huyện nhận hàng (ví dụ: Cầu Giấy, Quận 1, Hải Châu)"
+        },
+        "weightGram": {
+          "type": "NUMBER",
+          "description": "Khối lượng đơn hàng (gram, mặc định 500g)"
+        },
+        "shippingTier": {
+          "type": "STRING",
+          "enum": ["standard", "express", "same_day"],
+          "description": "Gói vận chuyển"
+        }
+      },
+      "required": ["province"]
+    }
+  },
+  {
+    "name": "create_draft_order",
+    "description": "Tạo đơn hàng nháp hoàn chỉnh với thông tin khách hàng, số điện thoại, địa chỉ nhận hàng và danh sách sản phẩm.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "customerName": {
+          "type": "STRING",
+          "description": "Họ và tên khách hàng"
+        },
+        "customerPhone": {
+          "type": "STRING",
+          "description": "Số điện thoại nhận hàng (10 chữ số chuẩn Việt Nam)"
+        },
+        "shippingAddress": {
+          "type": "OBJECT",
+          "properties": {
+            "street": {
+              "type": "STRING",
+              "description": "Số nhà, tên đường"
+            },
+            "district": {
+              "type": "STRING",
+              "description": "Quận/Huyện"
+            },
+            "province": {
+              "type": "STRING",
+              "description": "Tỉnh/Thành phố"
+            }
+          },
+          "required": ["street", "province"]
+        },
+        "items": {
+          "type": "ARRAY",
+          "items": {
+            "type": "OBJECT",
+            "properties": {
+              "sku": {
+                "type": "STRING"
+              },
+              "productName": {
+                "type": "STRING"
+              },
+              "quantity": {
+                "type": "NUMBER"
+              },
+              "unitPrice": {
+                "type": "NUMBER"
+              }
+            },
+            "required": ["productName", "quantity", "unitPrice"]
+          }
+        },
+        "paymentMethod": {
+          "type": "STRING",
+          "enum": ["COD", "VIETQR_NAPAS", "MOMO"]
+        }
+      },
+      "required": ["customerName", "customerPhone", "shippingAddress", "items"]
+    }
+  },
+  {
+    "name": "track_order_status",
+    "description": "Tra cứu tiến độ đơn hàng và mã vận đơn theo mã đơn hàng hoặc số điện thoại.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "orderId": {
+          "type": "STRING",
+          "description": "Mã đơn hàng (ví dụ: ORD-MA-2026-001)"
+        },
+        "customerPhone": {
+          "type": "STRING",
+          "description": "Số điện thoại đặt hàng"
+        }
+      }
+    }
+  },
+  {
+    "name": "apply_discount_voucher",
+    "description": "Kiểm tra tính hợp lệ của mã khuyến mãi và tính toán số tiền được giảm trừ.",
+    "parameters": {
+      "type": "OBJECT",
+      "properties": {
+        "voucherCode": {
+          "type": "STRING",
+          "description": "Mã voucher (ví dụ: TET2026, FREESHIP, VIP50K, AIRISER2026)"
+        },
+        "orderSubtotal": {
+          "type": "NUMBER",
+          "description": "Tổng giá trị tiền hàng trước giảm (VND)"
+        }
+      },
+      "required": ["voucherCode", "orderSubtotal"]
+    }
+  }
+]

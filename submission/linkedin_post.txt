@@ -1,0 +1,22 @@
+🚀 Proud to introduce SME AutoPilot — an Enterprise Multimodal AI Operations Platform for Southeast Asian Social Commerce, engineered for the #BuildwithGoogleAI AI Riser Vietnam 2026 Challenge! 🇻🇳
+
+In Vietnam, over 5.2 million MSMEs face two critical challenges: a 10-15% revenue loss from sophisticated counterfeit banking transfer receipts (fake VietQR slips) and immense operational drag from manual order transcriptions.
+
+We built SME AutoPilot natively on Google Gemini 2.0 and Google Cloud Run to solve this at scale:
+
+Key Architectural Highlights:
+🔹 Multimodal VietQR Forensics: Uses Gemini 2.0 Flash Vision with a 5-layer tamper matrix (Clock Paradox analysis, 28-bank typography verification, ELA compression gradient checks, and bitwise NAPAS EMVCo CRC16-CCITT polynomial validation).
+🔹 Autonomous Product Studio: Combines Gemini 2.0 attribute extraction with Imagen 3 staging prompts across 4 cultural aesthetic themes (e.g., Traditional Lunar New Year / Tết) and 4-channel localized copy generation.
+🔹 Multi-Dialect Voice Commerce: Real-time STT engine supporting Northern, Central, and Southern Vietnamese dialects with 5 native Function Calling tools (inventory check, Maps shipping calculator, draft order creation).
+🔹 Google Ecosystem Pluggable SPI: Live two-way sync with Google Sheets API v4, responsive HTML invoice generation via Gmail API, event automation via Calendar API, and 2-Opt TSP delivery routing via Google Maps Platform.
+🔹 High-Performance Cloud Run: Multi-stage containerized architecture (<150MB image, non-root security `nodejs:1001`, sub-350ms cold starts, and 484 automated test cases passing at 100%).
+
+Zero-Friction Evaluation: Built with an in-memory SPI fallback engine that enables judges and developers to test the full end-to-end workflow instantly in Demo Mode without requiring cloud API keys.
+
+The build journey (#VibeCoding): the idea started from a very ordinary scene — a shop owner squinting at a bank-transfer screenshot, trying to decide whether to hand over the parcel. That single question, "how would a machine tell a real receipt from a Photoshopped one?", turned into a 5-layer forensic matrix. <<THÊM 1-2 CÂU CỦA RIÊNG BẠN: khó khăn lớn nhất bạn gặp, hoặc chi tiết bất ngờ nhất khi làm — phần này nên là giọng của chính bạn>> Along the way the project grew into 6 milestones, 484 automated test cases, and a Demo Mode built specifically so a judge never has to configure an API key to see it work.
+
+Explore our open-source codebase & architecture:
+🔗 GitHub: https://github.com/DuongNAD/googleRiser
+🎥 2-Min Video Demo: <<PASTE_PUBLIC_YOUTUBE_LINK>>
+
+#BuildwithGoogleAI #AIRiserVietnam2026 #VibeCoding #SMEAutoPilot #Gemini2 #GoogleCloud #CloudRun #TypeScript #MachineLearning #EnterpriseAI
