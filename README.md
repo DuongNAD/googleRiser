@@ -5,9 +5,11 @@
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg?style=for-the-badge&logo=github)](https://github.com/DuongNAD/googleRiser)
 [![Test Suite](https://img.shields.io/badge/Tests-484%2F484%20Passed%20(100%25)-success.svg?style=for-the-badge&logo=jest)](https://github.com/DuongNAD/googleRiser)
 [![Google AI](https://img.shields.io/badge/Google%20AI-Gemini%202.0%20%7C%20Imagen%203-blue.svg?style=for-the-badge&logo=google)](https://aistudio.google.com)
-[![Google Cloud](https://img.shields.io/badge/Deployed%20on-Google%20Cloud%20Run-4285F4.svg?style=for-the-badge&logo=googlecloud)](https://cloud.google.com/run)
+[![Google Cloud](https://img.shields.io/badge/Cloud%20Run-Ready-4285F4.svg?style=for-the-badge&logo=googlecloud)](https://cloud.google.com/run)
 [![Stack](https://img.shields.io/badge/Stack-Node.js%2022%20%7C%20React%2018%20%7C%20Vite%206%20%7C%20Tailwind-61DAFB.svg?style=for-the-badge&logo=react)](https://react.dev)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg?style=for-the-badge)](LICENSE)
+
+**🔗 Live demo**: <<DÁN_URL_CLOUD_RUN_TẠI_ĐÂY>> — chạy local trong 30 giây theo mục Quickstart bên dưới.
 
 ---
 
@@ -74,14 +76,18 @@ The system comes pre-configured with a **Zero-Friction Stateful Demo Mode**, ena
 git clone https://github.com/DuongNAD/googleRiser.git
 cd googleRiser
 
-# 2. Install dependencies (Root, Backend & Frontend)
-npm install
+# 2. Install dependencies (Root + Frontend) and build the SPA bundle
+npm run setup
 
-# 3. Start full-stack development environment (Backend + Frontend)
-npm run dev
+# 3. Start the full-stack demo (Express backend serving the built SPA)
+npm run demo
 
 # 4. Open in browser:
-# http://localhost:8080 (or http://localhost:5173 for Vite Dev Server)
+# http://localhost:8080
+#
+# For frontend hot-reload during development instead:
+#   npm run dev          # backend API on :8080
+#   npm run dev:frontend # Vite HMR on :5173
 ```
 
 ### Docker Setup:
@@ -277,7 +283,7 @@ Complete competition documentation and artifacts are available in:
 Includes:
 1. **Problem Analysis & Technical Architecture Overview**.
 2. **Replicable Google AI Studio System Prompts & JSON Schemas**.
-3. **3-Minute Video Demo Script & Storyboard (180s bilingual EN-VI format)**.
+3. **2-Minute Video Demo Script & Storyboard (120s script & storyboard)**.
 4. **Ready-to-Publish Social Media Post Templates (Facebook, LinkedIn, X, TikTok)**.
 5. **5-Minute Zero-Friction Judge's Tour**.
 6. **Production Google Cloud Run Serverless Blueprint**.

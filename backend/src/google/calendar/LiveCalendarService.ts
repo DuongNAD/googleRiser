@@ -30,14 +30,14 @@ export class LiveCalendarService implements ICalendarService {
     }
 
     try {
-      const { google } = require('googleapis');
-      const auth = new google.auth.GoogleAuth({
+      const calendar = require('@googleapis/calendar');
+      const auth = new calendar.auth.GoogleAuth({
         scopes: ['https://www.googleapis.com/auth/calendar']
       });
-      this.calendarClient = google.calendar({ version: 'v3', auth });
+      this.calendarClient = calendar.calendar({ version: 'v3', auth });
       this.isConfigured = true;
     } catch (err) {
-      console.warn('[LiveCalendarService] Could not initialize googleapis client, falling back to mock:', err);
+      console.warn('[LiveCalendarService] Could not initialize googleapis client, falling back to MOCK data (missing credentials or missing googleapis module):', err);
       this.isConfigured = false;
     }
   }

@@ -28,14 +28,14 @@ export class LiveGmailService implements IGmailService {
     }
 
     try {
-      const { google } = require('googleapis');
-      const auth = new google.auth.GoogleAuth({
+      const gmail = require('@googleapis/gmail');
+      const auth = new gmail.auth.GoogleAuth({
         scopes: ['https://www.googleapis.com/auth/gmail.send']
       });
-      this.gmailClient = google.gmail({ version: 'v1', auth });
+      this.gmailClient = gmail.gmail({ version: 'v1', auth });
       this.isConfigured = true;
     } catch (err) {
-      console.warn('[LiveGmailService] Could not initialize googleapis client, falling back to mock:', err);
+      console.warn('[LiveGmailService] Could not initialize googleapis client, falling back to MOCK data (missing credentials or missing googleapis module):', err);
       this.isConfigured = false;
     }
   }

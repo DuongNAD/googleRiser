@@ -12,7 +12,7 @@
   - `npm run test:t3` — Tier 3 Cross-Feature Combinations (25 tests)
   - `npm run test:t4` — Tier 4 Real-World SME Workloads (5 scenarios)
 - **Type Check**: `npx tsc --noEmit`
-- **Expected Outcome**: All 202 automated test cases pass with exit code `0` in <1 second.
+- **Expected Outcome**: All 372 `npm test` cases pass with exit code `0` in ~1.1s (484 with `npm run test:all`, which adds the 83 AI and 29 API cases).
 
 ## Coverage Summary
 | Tier | Test Count | Pass Rate | Description |
@@ -21,8 +21,10 @@
 | **2. Boundary & Corner Cases** | 80 | 100% (80/80) | 5 boundary/negative tests per feature across all 16 features |
 | **3. Cross-Feature Combinations** | 25 | 100% (25/25) | 25 pairwise cross-module integration tests (C1–C25) |
 | **4. Real-World Application Scenarios** | 5 | 100% (5/5) | 5 comprehensive Vietnamese SME business pipelines (S1–S5) |
-| **5. Adversarial & Mutation Hardening** | 12 | 100% (12/12) | Stress concurrency, mutation oracles, multi-tenant isolation |
-| **Total Verified Test Cases** | **202** | **100%** | **0 failures, 0 flakiness (100% pass across 1,900 runs)** |
+| **5. Adversarial & Mutation Hardening** | 98 | 100% (98/98) | Stress concurrency, mutation oracles, multi-tenant isolation, Cloud Run lifecycle |
+| **6. Google Cloud Ecosystem & SPI (M2)** | 84 | 100% (84/84) | Sheets, Gmail, Calendar, Maps, Firestore, factory & seed suites |
+| **`npm test` Total** | **372** | **100%** | **0 failures** |
+| **`npm run test:all` Total** | **484** | **100%** | **372 + 83 AI + 29 API cases** |
 
 ## Feature Checklist
 | # | Feature Name | Tier 1 (Feature) | Tier 2 (Boundary) | Tier 3 (Pairwise) | Tier 4 (Scenario) |

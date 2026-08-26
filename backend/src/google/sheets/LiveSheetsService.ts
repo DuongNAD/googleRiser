@@ -31,15 +31,15 @@ export class LiveSheetsService implements ISheetsService {
     }
 
     try {
-      // Safe dynamic loader for googleapis SDK
-      const { google } = require('googleapis');
-      const auth = new google.auth.GoogleAuth({
+      // Safe dynamic loader for @googleapis/sheets SDK
+      const sheets = require('@googleapis/sheets');
+      const auth = new sheets.auth.GoogleAuth({
         scopes: ['https://www.googleapis.com/auth/spreadsheets']
       });
-      this.sheetsClient = google.sheets({ version: 'v4', auth });
+      this.sheetsClient = sheets.sheets({ version: 'v4', auth });
       this.isConfigured = true;
     } catch (err) {
-      console.warn('[LiveSheetsService] Could not initialize googleapis client, falling back to mock:', err);
+      console.warn('[LiveSheetsService] Could not initialize googleapis client, falling back to MOCK data (missing credentials or missing googleapis module):', err);
       this.isConfigured = false;
     }
   }

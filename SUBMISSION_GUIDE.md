@@ -3,18 +3,32 @@
 **Track**: Enterprise & Multimodal AI Operations (`#BuildwithGoogleAI` • `#AIRiserVietnam2026` • `#VibeCoding` • `#SMEAutoPilot`)  
 **Target Platform**: Google Cloud Run & Google AI Studio (Gemini 2.0 Flash / Pro, Imagen 3, Google Workspace SPI)  
 **Version**: 1.0.0 (Production Release)  
-**Repository**: [https://github.com/google-riser/sme-autopilot](https://github.com/google-riser/sme-autopilot)  
+**Repository**: [https://github.com/DuongNAD/googleRiser](https://github.com/DuongNAD/googleRiser)  
 **Date**: August 2026  
+
+## ✅ Trạng Thái Nộp Bài (Submission Status)
+
+| Hạng mục | Bắt buộc | Trạng thái | Link |
+|---|---|---|---|
+| **Google AI Studio link** | Bắt buộc | ⬜ Chưa có | `<<DÁN_LINK_AI_STUDIO_TẠI_ĐÂY>>` |
+| **Video demo 2 phút (YouTube, Public)** | Bắt buộc | ⬜ Chưa có | `<<DÁN_LINK_YOUTUBE_TẠI_ĐÂY>>` |
+| **Bài đăng LinkedIn** | Bắt buộc | ⬜ Chưa có | `<<DÁN_LINK_LINKEDIN_TẠI_ĐÂY>>` |
+| **Form nộp bài** | Bắt buộc | ⬜ Chưa có | `<<DÁN_LINK_FORM_TẠI_ĐÂY>>` |
+| **GitHub repository** | Bắt buộc | ✅ Đã hoàn thành | [https://github.com/DuongNAD/googleRiser](https://github.com/DuongNAD/googleRiser) |
+| **Cloud Run demo URL (tuỳ chọn)** | Không (Tuỳ chọn) | ⬜ Chưa có | `<<DÁN_URL_CLOUD_RUN_TẠI_ĐÂY>>` |
+
+> ⏰ **Thời hạn nộp bài**: Form đóng lúc **23:59 ngày 30/08/2026** tại [goo.gle/airiservietnam-completion](https://goo.gle/airiservietnam-completion).
 
 ---
 
 ## 📑 Table of Contents
 1. [Section 1: Project Overview, Problem Statement & Executive Summary](#-section-1-project-overview-problem-statement--executive-summary)
 2. [Section 2: Replicable Google AI Studio System Prompts & Structured Schemas](#-section-2-replicable-google-ai-studio-system-prompts--structured-schemas)
+   - [2.0 Cách Tạo Link Google AI Studio Nộp Bài (5 Bước)](#20-cách-tạo-link-google-ai-studio-nộp-bài-5-bước)
    - [2.1 VietQR Forensics & Fraud Detection Engine](#21-vietqr-forensics--fraud-detection-engine)
    - [2.2 Product Studio & Multi-Channel Copywriting Engine](#22-product-studio--multi-channel-copywriting-engine)
    - [2.3 Voice Assistant & Multimodal Tool Declarations (Function Calling)](#23-voice-assistant--multimodal-tool-declarations-function-calling)
-3. [Section 3: 3-Minute YouTube Video Demo Storyboard & Script](#-section-3-3-minute-youtube-video-demo-storyboard--script)
+3. [Section 3: 2-Minute YouTube Video Demo Storyboard & Script](#-section-3-2-minute-youtube-video-demo-storyboard--script)
 4. [Section 4: Social Media Post Templates](#-section-4-social-media-post-templates)
 5. [Section 5: Step-by-Step Judge Evaluation Guide (Zero-Friction Demo Mode)](#-section-5-step-by-step-judge-evaluation-guide-zero-friction-demo-mode)
 6. [Section 6: Architecture & Google Cloud Run Deployment Blueprint](#-section-6-architecture--google-cloud-run-deployment-blueprint)
@@ -82,6 +96,39 @@ Vietnam's digital commerce economy is experiencing explosive growth, with over *
 # 🤖 Section 2: Replicable Google AI Studio System Prompts & Structured Schemas
 
 All prompts in this section are 100% production-tested, fully replicable, and ready for one-click copy-pasting directly into [Google AI Studio](https://aistudio.google.com/).
+
+---
+
+## 2.0 Cách Tạo Link Google AI Studio Nộp Bài (5 Bước)
+
+Để tạo đường link Google AI Studio nộp cho Ban Giám Khảo cuộc thi **AI Riser Vietnam 2026 (#BuildwithGoogleAI)**, thực hiện theo 5 bước chuẩn hóa sau:
+
+1. **Mở Google AI Studio & Tạo Prompt Mới**:
+   - Truy cập [https://aistudio.google.com/](https://aistudio.google.com/).
+   - Nhấn **Create new prompt** (hoặc **New prompt**).
+2. **Dán System Instruction & Thiết Lập Tham Số**:
+   - Sao chép toàn bộ nội dung trong mục **Google AI Studio System Instruction** của [Mục 2.1](#21-vietqr-forensics--fraud-detection-engine) và dán vào ô *System instructions*.
+   - Cấu hình Model và Generation Config theo đúng thông số tại mục 2.1:
+     * **Model**: `gemini-2.0-flash`
+     * **Temperature**: `0.20`
+     * **Top-P**: `0.90` | **Top-K**: `40`
+     * **Max Output Tokens**: `4096`
+     * **Response MIME Type**: `application/json`
+3. **Cấu Hình Định Dạng Đầu Ra (Structured Output)**:
+   - Mở phần *Structured output* (JSON Schema).
+   - Sao chép toàn bộ JSON Schema trong mục **Structured Output JSON Schema** của Mục 2.1 và dán vào trường cấu hình schema.
+4. **Chạy Thử Nghiệm Đối Chứng (Test Run)**:
+   - Tải lên 1 hình ảnh hóa đơn mẫu (ví dụ: ảnh bill Vietcombank thật hoặc bill MBBank giả).
+   - Nhấn nút **Run** (Ctrl+Enter / Cmd+Enter) để AI phân tích và trả về kết quả JSON, đảm bảo prompt đã lưu có lịch sử chạy thực tế (*real run*).
+5. **Lưu, Chia Sẻ & Lấy Link Công Khai**:
+   - Nhấn **Save** và đặt tên cho prompt (ví dụ: `SME AutoPilot — VietQR 5-Layer Forensics Engine`).
+   - Nhấn **Share** ở góc trên bên phải màn hình.
+   - Thiết lập quyền truy cập liên kết thành: **Anyone with the link can view** (Bất kỳ ai có liên kết đều có thể xem).
+   - Nhấn **Copy link** và dán vào ô **Google AI Studio link** trong bảng [✅ Trạng Thái Nộp Bài](#-trạng-thái-nộp-bài-submission-status) ở đầu tài liệu.
+
+> [!IMPORTANT]
+> **Prompt chính nộp bài (Primary Link)**: Chọn **Mục 2.1 (VietQR Forensics & Fraud Detection Engine)** làm đường link Google AI Studio chính thức trong form nộp bài, vì đây là tính năng pháp y đa phương thức cốt lõi và ấn tượng nhất của dự án.
+> Nếu form nộp bài cho phép đính kèm thêm các link bổ sung, có thể thực hiện tương tự để chia sẻ thêm link cho **Mục 2.2 (Product Studio)** và **Mục 2.3 (Voice Assistant Tool Declarations)**.
 
 ---
 
@@ -449,115 +496,116 @@ Politeness Protocol: Always begin with "Dạ Shop em chào anh/chị ạ" and co
 
 ---
 
-# 🎬 Section 3: 3-Minute YouTube Video Demo Storyboard & Script
+# 🎬 Section 3: 2-Minute YouTube Video Demo Storyboard & Script
 
 **Video Title**: `SME AutoPilot — Multimodal AI Operations & VietQR Fraud Prevention for Vietnamese Merchants`  
-**Duration**: Exactly 3:00 (180 Seconds)  
+**Duration**: Exactly 2:00 (120 Seconds)  
 **Format**: 4K 60FPS Screen Recording + Studio Picture-in-Picture Voiceover  
 **Audio Track**: Upbeat Modern Lo-fi Tech Beat (BGM) + Crystal Clear Voiceover  
+> ⚠️ **Lưu ý Presenter**: Video demo trên YouTube bắt buộc phải đặt chế độ hiển thị **Public (Công khai)**, đồng thời tiêu đề và mô tả video phải chứa đầy đủ 2 hashtag: `#AIRiserVietnam2026 #BuildwithGoogleAI`.
 
 ```
 +---------------------------------------------------------------------------------------------------+
-| 0:00 - 0:25 (25s) | SCENE 1: The Vietnamese SME Dilemma & Hook                                    |
-| 0:25 - 1:05 (40s) | SCENE 2: Multimodal VietQR 5-Layer Forensics Live Test (Fake vs Genuine Bill) |
-| 1:05 - 1:45 (40s) | SCENE 3: Product Studio Imagen 3 Staging & 4-Channel Copywriting              |
-| 1:45 - 2:20 (35s) | SCENE 4: Multi-Dialect Voice Order Assistant & Live Auto-Cart                 |
-| 2:20 - 2:45 (25s) | SCENE 5: Google Ecosystem Live Bi-Sync (Sheets, Gmail, Calendar, Maps)        |
-| 2:45 - 3:00 (15s) | SCENE 6: Cloud Run Architecture & Closing Call to Action                      |
+| 0:00 - 0:15 (15s) | SCENE 1: Hook, Bài Toán SME Việt & Dashboard Điều Hành KPI                   |
+| 0:15 - 0:55 (40s) | SCENE 2: Pháp Y VietQR 5 Lớp Trực Tiếp (Bill Thật VCB vs Bill Giả MBBank)     |
+| 0:55 - 1:25 (30s) | SCENE 3: Product Studio — Bối Cảnh Imagen 3 & Gói Tiếp Thị Đa Kênh            |
+| 1:25 - 1:50 (25s) | SCENE 4: Trợ Lý Giọng Nói Đa Phương Ngữ & Tạo Đơn Tự Động Vào Google Sheets   |
+| 1:50 - 2:00 (10s) | SCENE 5: Kiến Trúc Cloud Run Serverless & Kêu Gọi Trải Nghiệm                 |
 +---------------------------------------------------------------------------------------------------+
 ```
 
 ---
 
-### Scene 1: The Vietnamese SME Dilemma & Hook (0:00 – 0:25 | 25 Seconds)
-- **Visual Scene**: Split screen: Left side shows a busy Vietnamese fashion boutique owner looking stressed with hundreds of unread Zalo/FB messages; Right side shows a fake bank transfer slip created with Photoshop. Camera transitions smoothly into the sleek SME AutoPilot Executive Dashboard (`DashboardView.tsx`) with glowing Google AI badges and live KPI metrics.
-- **On-Screen Action**: Hover over the 4 KPI cards (Total Revenue, 100% Sheets Sync, Authenticity Rate 99.4%, Risk Alert Counter).
-- **Voiceover (Vietnamese)**:
-  > *"Mỗi ngày tại Việt Nam, hàng triệu chủ shop online đang thất thoát từ 10 đến 15% doanh thu vì các chiêu trò làm bill chuyển khoản giả mạo tinh vi, đồng thời tốn hàng giờ nhập liệu Excel thủ công. Xin giới thiệu SME AutoPilot — nền tảng vận hành AI toàn diện xây dựng trên Google Gemini 2.0 và hệ sinh thái Google Cloud!"*
-- **Voiceover (English Subtitles)**:
-  > *"Every day in Vietnam, millions of online merchants lose 10-15% of their revenue to fake bank transfer slips while spending hours on manual Excel entry. Introducing SME AutoPilot — the all-in-one AI operations platform powered by Google Gemini 2.0 and Google Cloud!"*
-- **Sound Effects**: Subdued ambient chatter ➔ Smooth high-tech whoosh transition.
+### Scene 1: Hook, Bài Toán SME Việt & Dashboard Điều Hành KPI (0:00 – 0:15 | 15s)
+
+1. **Hình ảnh / Visual**:
+   - Giao diện trang chủ `Tổng Quan & KPI` (`DashboardView.tsx`). Màn hình hiển thị 4 thẻ KPI đúng như trong app: **`Tổng Doanh Thu`**, **`Tổng Đơn Hàng`**, **`Tỷ Lệ Bill Hợp Lệ`** và **`Giá Trị TB / Đơn (AOV)`**, kèm biểu đồ `Xu Hướng Doanh Thu Theo Giờ` dạng SVG và badge trạng thái `Google SPI 6/6` trên thanh header.
+2. **Thao tác bấm (click checklist)**:
+   1. Mở ứng dụng tại màn hình `Tổng Quan & KPI`.
+   2. Rê chuột qua 4 thẻ KPI đầu trang hiển thị doanh thu và tỷ lệ đối soát an toàn.
+   3. Cuộn nhẹ xuống xem biểu đồ doanh thu theo khung giờ bán hàng và danh sách giao dịch gần nhất.
+3. **Lời thoại tiếng Việt (voiceover)**:
+   > *"Tại Việt Nam, hơn 5 triệu nhà bán hàng mất 10 đến 15% lợi nhuận vì bill chuyển khoản giả và nghẽn nhập liệu Excel. SME AutoPilot tự động hóa toàn diện vận hành nhờ Google Gemini 2.0!"* (38 từ)
+4. **Chữ chạy trên màn hình / On-screen text**:
+   - `SME AutoPilot — Nền Tảng Vận Hành AI Đa Phương Thức Cho Hộ Kinh Doanh Việt`
+   - `Thất thoát 10-15% vì bill giả | Nghẽn 3-5h nhập liệu thủ công mỗi đêm`
 
 ---
 
-### Scene 2: Multimodal VietQR 5-Layer Forensics Live Test (0:25 – 1:05 | 40 Seconds)
-- **Visual Scene**: Navigate to the VietQR Forensics Workbench (`BillAuditView.tsx`). The screen showcases the Circular Risk Dial and 6 preset test receipts.
-- **On-Screen Action**:
-  1. Click the preset counterfeit receipt `MB-FAKE` (2.750.000đ).
-  2. The AI forensic engine completes in **320ms**: The Risk Dial flashes **CRITICAL (Score: 0.15)** in glowing red.
-  3. Interactive Bounding Boxes highlight the tampered regions:
-     - **Font Mismatch**: Arial font spliced into MBBank's proprietary NeoSans typography.
-     - **Clock Paradox**: Phone status bar clock displays `10:15`, but receipt timestamp shows `11:45`.
-  4. Click `Từ Chối (Reject)`.
-  5. Next, click genuine receipt `VCB-AUTH` (650.000đ). Risk Dial turns **EMERALD LOW RISK (Score: 0.99)** with valid NAPAS EMVCo CRC-16 checksum.
-  6. Click `Duyệt Thanh Toán (PAID) & Đồng Bộ Sheets` — toast confirms instant order reconciliation.
-- **Voiceover (Vietnamese)**:
-  > *"Tại tab Pháp y VietQR, chỉ mất 0.3 giây để Gemini 2.0 Flash phân tích 5 tầng bảo mật. Thử nghiệm với bill MBBank giả mạo: Hệ thống phát hiện ngay nghịch lý thời gian khi đồng hồ điện thoại đi sau giờ giao dịch, và phông chữ bị chắp vá Photoshop. Chuyển sang bill Vietcombank chuẩn: Mã CRC-16 hợp lệ 100%, hệ thống tự động đối soát và duyệt thanh toán tức thì!"*
-- **Voiceover (English Subtitles)**:
-  > *"In VietQR Forensics, Gemini 2.0 Flash inspects 5 security layers in just 0.3s. Testing a forged MBBank slip: The AI instantly catches a Clock Paradox anomaly and font tampering. Switching to an authentic Vietcombank slip: Valid CRC-16 checksum, matching order ID, and 1-click automatic approval!"*
-- **Sound Effects**: Warning chime on fake slip ➔ Clean confirmation ping on genuine slip.
+### Scene 2: Pháp Y VietQR 5 Lớp Trực Tiếp (0:15 – 0:55 | 40s)
+
+1. **Hình ảnh / Visual**:
+   - Màn hình `Kiểm Tra Bill VietQR` (badge `5-Layer`, `BillAuditView.tsx`). Thước đo rủi ro `Thước Đo Rủi Ro Pháp Y` (`RiskDial`), khung ảnh hóa đơn kèm `BoundingBoxCanvas` và danh sách 6 mẫu hóa đơn đối chứng.
+2. **Thao tác bấm (click checklist)**:
+   1. Trên thanh sidebar bên trái, bấm vào menu **`Kiểm Tra Bill VietQR`** (badge `5-Layer`).
+   2. Bấm vào mẫu bill thật đầu tiên: **`Vietcombank 650.000 đ`** (Thật).
+   3. Quan sát kết quả phân tích tức thì (<350ms): Thước đo rủi ro chuyển **`An Toàn (98%)`**, nhãn trạng thái hiển thị **`ĐÃ KHỚP ĐƠN (MATCHED)`**, cả 5 lớp kiểm tra đều báo `PASS`.
+   4. Bấm nút **`Duyệt Thanh Toán (PAID)`** để xác nhận đối soát đơn hàng.
+   5. Bấm chuyển sang mẫu bill giả mạo: **`MBBank 2.750.000 đ`** (Giả).
+   6. Quan sát AI bóc trần gian lận: Thước đo rủi ro chuyển màu đỏ **`Gian Lận (96%)`**, nhãn đối soát báo **`CẢNH BÁO (FLAGGED)`**, thông báo toast hiện lên **`CẢNH BÁO: HÓA ĐƠN GIẢ MẠO`**.
+   7. Quan sát các bounding box viền đỏ trực quan trên ảnh hóa đơn: Vùng số tiền bị chèn phông `Arial` sai lệch và Lớp 1 báo lỗi **`Nghịch lý đồng hồ (Clock Paradox)`** khi giờ thanh trạng thái (11:45) đi trước giờ giao dịch (10:15).
+   8. Bấm nút **`Từ Chối`** để chặn giao dịch gian lận.
+3. **Lời thoại tiếng Việt (voiceover)**:
+   > *"Tính năng Pháp Y VietQR quét quang học 5 lớp dưới 350 phần nghìn giây. Chọn bill Vietcombank 650.000 đồng thật: hệ thống xác nhận mã CRC-16 NAPAS hợp lệ, khớp đơn tức thì, đồng hồ chuẩn xác và rủi ro ở mức An Toàn 98%. Tiếp tục kiểm tra bill MBBank 2.750.000 đồng giả mạo: Gemini 2.0 lập tức bật Cảnh Báo Gian Lận 96%, khoanh vùng đỏ phát hiện phông Arial chắp vá và bóc trần Nghịch lý đồng hồ khi giờ chụp trên thanh trạng thái đi trước giờ ghi trên hóa đơn. Thao tác bấm Từ Chối chặn đứng ngay hành vi lừa đảo!"* (108 từ)
+4. **Chữ chạy trên màn hình / On-screen text**:
+   - `VietQR 5-Layer Forensics: Quét OCR & đối soát trong <350ms`
+   - `Bill Thật: Khớp mã CRC-16 NAPAS & Phông chuẩn ngân hàng`
+   - `Bill Giả: Bóc trần Font Mismatch Arial & Nghịch lý đồng hồ (Clock Paradox)`
 
 ---
 
-### Scene 3: Product Studio Imagen 3 Staging & 4-Channel Copy (1:05 – 1:45 | 40 Seconds)
-- **Visual Scene**: Switch to Product Studio (`ProductStudioView.tsx`). A raw photo of "Áo Dài Lụa Hà Đông" is displayed.
-- **On-Screen Action**:
-  1. Select theme **"Tết Cổ Truyền"** and tone **"Thân thiện"**, aspect ratio `1:1`.
-  2. Click **"Tạo Nội Dung Bán Hàng"**.
-  3. Visual Staging renders an Imagen 3 prompt formula (lacquer tray, golden apricot blossoms, red silk).
-  4. Switch through 4 channel tabs:
-     - **Facebook**: Catchy emoji headline & narrative story.
-     - **TikTok Shop**: 3-second viral video hook & storyboard.
-     - **Zalo VIP**: Personalized customer greeting & `[TET2026]` promo code.
-     - **Shopee SEO**: Keyword-rich listing title & structured bullet points.
-  5. Click **"Sao Chép"** — green toast notification pops up.
-- **Voiceover (Vietnamese)**:
-  > *"Với Product Studio, chỉ từ một bức ảnh chụp thô, Gemini 2.0 và Imagen 3 tự động bóc tách chất liệu, phối màu và tạo bối cảnh chụp ảnh studio Tết cổ truyền lộng lẫy. Đồng thời, AI viết sẵn toàn bộ gói tiếp thị 4 kênh chuẩn văn hóa Việt: từ kịch bản giật tít 3 giây cho TikTok Shop, bài đăng Facebook cảm xúc, đến tin nhắn VIP Zalo và từ khóa chuẩn SEO Shopee chỉ trong 1 cú click!"*
-- **Voiceover (English Subtitles)**:
-  > *"With Product Studio, Gemini 2.0 and Imagen 3 extract materials, colors, and generate Lunar New Year studio staging prompts. In seconds, it produces localized marketing packs across 4 channels: viral 3-second TikTok hooks, Facebook storytelling, Zalo VIP messages, and Shopee SEO!"*
-- **Sound Effects**: Shutter click sound ➔ Smooth UI tab transitions.
+### Scene 3: Product Studio — Bối Cảnh Imagen 3 & Gói Tiếp Thị Đa Kênh (0:55 – 1:25 | 30s)
+
+1. **Hình ảnh / Visual**:
+   - Giao diện `Product Studio` (badge `Imagen 3`, `ProductStudioView.tsx`). Phòng dựng bối cảnh hình ảnh thương mại với Imagen 3 và công cụ tạo nội dung bán hàng 4 kênh.
+2. **Thao tác bấm (click checklist)**:
+   1. Trên sidebar, bấm vào menu **`Product Studio`** (badge `Imagen 3`).
+   2. Chọn sản phẩm mẫu **`Áo Dài Gấm Phượng Hoàng`**.
+   3. Chọn chủ đề bối cảnh **`Tết Cổ Truyền`** (icon 🧧), tỷ lệ khung hình **`1:1`**, văn phong **`🌸 Thân thiện`**.
+   4. Bấm nút **`Tạo Nội Dung Bán Hàng`** (AI phân tích chất liệu và tạo công thức prompt Imagen 3 cùng 4 gói nội dung).
+   5. Lần lượt bấm chuyển qua 4 tab kênh: **`Facebook Post`**, **`TikTok Video Script`** (kịch bản 3s hook), **`Zalo VIP OA`** (tin nhắn kèm voucher `[TET2026]`), **`Shopee SEO`** (tiêu đề & từ khóa chuẩn SEO).
+   6. Bấm nút **`Sao Chép`** để copy nội dung bài đăng vào clipboard.
+3. **Lời thoại tiếng Việt (voiceover)**:
+   > *"Với Product Studio, từ một bức ảnh thô áo dài, Imagen 3 tự động phân tích chất liệu và dựng bối cảnh studio Tết Cổ Truyền rực rỡ. Đồng thời, Gemini 2.0 tạo trọn gói tiếp thị 4 kênh: kịch bản giật tít 3 giây cho TikTok Shop, bài đăng kể chuyện Facebook, tin nhắn chăm sóc khách VIP Zalo kèm mã ưu đãi, và bộ từ khóa chuẩn SEO Shopee. Chỉ một nút bấm Sao Chép là sẵn sàng đăng bán đa nền tảng!"* (85 từ)
+4. **Chữ chạy trên màn hình / On-screen text**:
+   - `Imagen 3 Staging: Tự động dựng bối cảnh studio Tết Cổ Truyền từ ảnh thô`
+   - `Gemini 2.0 Copywriting: Bộ tiếp thị 4 kênh chuẩn văn hóa Việt (TikTok Shop, FB, Zalo, Shopee)`
 
 ---
 
-### Scene 4: Multi-Dialect Voice Order Assistant & Live Auto-Cart (1:45 – 2:20 | 35 Seconds)
-- **Visual Scene**: Switch to Voice Assistant (`VoiceAssistantView.tsx`). Dialect selector set to **"Giọng Nam (Sài Gòn)"**.
-- **On-Screen Action**:
-  1. Click voice shortcut: *"Tạo đơn 2 bộ áo dài đỏ size L về 128 Nguyễn Trãi Q5, tính tiền ship nha shop"*.
-  2. Animated audio waveform pulses.
-  3. Gemini 2.0 Live fires two function calls: `query_inventory` (stock: 18 available) and `calculate_shipping_fee` (Google Maps computes 25,000 VND).
-  4. Real-time **Live Draft Cart** widget renders customer details, itemized totals, and delivery cost.
-  5. Click **"Xác Nhận Tạo Đơn & Đồng Bộ Sheets"**.
-- **Voiceover (Vietnamese)**:
-  > *"Trợ lý giọng nói đa phương thức hiểu chuẩn xác các phương ngữ Bắc - Trung - Nam. Khi khách hàng nói giọng Sài Gòn, AI tự động kích hoạt Function Calling để tra cứu kho hàng, tính cước vận chuyển Google Maps, áp mã giảm giá và tạo ngay đơn hàng hoàn chỉnh trên giỏ hàng thông minh thời gian thực!"*
-- **Voiceover (English Subtitles)**:
-  > *"The multimodal voice assistant understands Northern, Central, and Southern dialects. Using real-time Function Calling, it checks inventory, calculates Google Maps delivery fees, applies vouchers, and creates a live draft order instantly!"*
-- **Sound Effects**: Animated audio waveform hum ➔ Cash register chime on cart confirmation.
+### Scene 4: Trợ Lý Giọng Nói Đa Phương Ngữ & Tạo Đơn Tự Động Vào Google Sheets (1:25 – 1:50 | 25s)
+
+1. **Hình ảnh / Visual**:
+   - Giao diện `Trợ Lý Giọng Nói AI` (badge `Voice`, `VoiceAssistantView.tsx`) kết hợp tiện ích giỏ hàng trực tiếp `Live Draft` và phân hệ `Quản Lý Đơn Hàng` (badge `Sheets Sync`, `OrdersView.tsx`).
+2. **Thao tác bấm (click checklist)**:
+   1. Trên sidebar, bấm vào menu **`Trợ Lý Giọng Nói AI`** (badge `Voice`).
+   2. Tại ô chọn Giọng đọc, chọn **`🌴 Giọng Nam (Sài Gòn / Miền Tây)`**.
+   3. Bấm vào gợi ý câu lệnh mẫu: **`"Tạo đơn 2 bộ áo dài về 128 Nguyễn Trãi Q5"`**.
+   4. Quan sát Gemini 2.0 Live xử lý và tự động kích hoạt Function Calling: `query_inventory` (kiểm tra tồn kho) và `calculate_shipping_fee` (Google Maps tính cước giao hàng 25.000đ).
+   5. Quan sát giỏ hàng **`Live Draft`** bên phải tự động điền thông tin khách hàng, số lượng, phí vận chuyển và tổng tiền.
+   6. Bấm nút **`Xác Nhận Tạo Đơn & Đồng Bộ Sheets`**.
+   7. Bấm sang menu **`Quản Lý Đơn Hàng`** (badge `Sheets Sync`) để kiểm tra đơn hàng mới xuất hiện ngay đầu bảng và tự động đồng bộ hai chiều với Google Sheets.
+3. **Lời thoại tiếng Việt (voiceover)**:
+   > *"Trợ lý giọng nói đa phương thức hiểu chuẩn xác phương ngữ Bắc, Trung, Nam. Khi người bán ra lệnh bằng giọng Sài Gòn, Gemini 2.0 kích hoạt Function Calling để tra cứu kho, tính phí ship Google Maps và cập nhật giỏ hàng trực tiếp. Bấm xác nhận, đơn hàng được đẩy tức thì vào Google Sheets và hệ thống quản lý!"* (63 từ)
+4. **Chữ chạy trên màn hình / On-screen text**:
+   - `Trợ Lý Giọng Nói Đa Phương Ngữ: Hiểu chuẩn giọng Bắc - Trung - Nam`
+   - `Function Calling: Tra tồn kho + Tính ship Google Maps + Lên đơn tự động vào Google Sheets`
 
 ---
 
-### Scene 5: Google Ecosystem Live Bi-Sync (2:20 – 2:45 | 25 Seconds)
-- **Visual Scene**: Split view between Order Management (`OrdersView.tsx`) and the Google Ecosystem Dashboard (`EcosystemSettingsView.tsx`).
-- **On-Screen Action**:
-  1. Show newly created order appearing instantly in the Orders Table.
-  2. Click **"Đồng Bộ Google Sheets"** — bi-directional sync icon spins and confirms live update.
-  3. Open Gmail Invoice Modal displaying responsive HTML invoice with embedded VietQR dynamic payment badge.
-  4. Show Google Calendar event scheduled for "TikTok Mega Live" and Google Maps 2-Opt TSP delivery route optimization.
-- **Voiceover (Vietnamese)**:
-  > *"Toàn bộ dữ liệu kết nối liền mạch qua Google Ecosystem SPI: Tự động đồng bộ hai chiều với Google Sheets, gửi email hóa đơn tích hợp mã VietQR động qua Gmail API, xếp lịch livestream qua Calendar và tối ưu hóa lộ trình giao hàng bằng Google Maps!"*
-- **Voiceover (English Subtitles)**:
-  > *"Everything syncs seamlessly across the Google Ecosystem: 2-way sync with Google Sheets API v4, responsive VietQR HTML invoices via Gmail, Calendar livestream reminders, and 2-Opt TSP delivery route optimization on Google Maps!"*
-- **Sound Effects**: Data sync whoosh ➔ Email sent swoosh sound.
+### Scene 5: Kiến Trúc Cloud Run Serverless & Kêu Gọi Trải Nghiệm (1:50 – 2:00 | 10s)
 
----
-
-### Scene 6: Cloud Run Architecture & Closing Call to Action (2:45 – 3:00 | 15 Seconds)
-- **Visual Scene**: Dynamic architecture diagram showing Google Cloud Run, Gemini 2.0 Flash, and Google Workspace SPI. Final screen shows GitHub repository URL and competition banner `#BuildwithGoogleAI`.
-- **On-Screen Action**: Hover over the Demo/Live mode toggle demonstrating zero-API-key instant evaluation.
-- **Voiceover (Vietnamese)**:
-  > *"Triển khai siêu tốc trên Google Cloud Run với thời gian khởi động dưới 350ms và chế độ Demo không cần API key. SME AutoPilot — Trao quyền AI cho mọi nhà bán hàng Việt Nam! Hãy trải nghiệm ngay hôm nay!"*
-- **Voiceover (English Subtitles)**:
-  > *"Deployed on Google Cloud Run with sub-350ms cold starts and zero-friction Demo Mode. SME AutoPilot — Empowering Vietnamese merchants with Google AI. Try it today!"*
-- **Sound Effects**: Energetic outro music crescendo.
+1. **Hình ảnh / Visual**:
+   - Giao diện `Google Ecosystem & Cài Đặt` (`EcosystemSettingsView.tsx`) cùng sơ đồ kiến trúc Google Cloud Run serverless, kết nối Gemini 2.0 Flash / Pro, Imagen 3 và Google Workspace SPI. Màn hình kết thúc hiển thị link GitHub repo `https://github.com/DuongNAD/googleRiser` và thông tin cuộc thi.
+2. **Thao tác bấm (click checklist)**:
+   1. Trên sidebar, bấm vào menu **`Google Ecosystem & Cài Đặt`**.
+   2. Giới thiệu chế độ Demo không cần cấu hình API key và mã nguồn mở trên GitHub.
+3. **Lời thoại tiếng Việt (voiceover)**:
+   > *"SME AutoPilot triển khai trên Google Cloud Run với thời gian khởi động dưới 350 mili-giây. Trải nghiệm mã nguồn mở ngay trên GitHub cùng hashtag BuildwithGoogleAI và AIRiserVietnam2026!"* (29 từ)
+4. **Chữ chạy trên màn hình / On-screen text**:
+   - `Google Cloud Run Serverless | Khởi động lạnh < 350ms`
+   - `Mã nguồn mở GitHub: https://github.com/DuongNAD/googleRiser`
+   - `#AIRiserVietnam2026 #BuildwithGoogleAI`
 
 ---
 
@@ -586,8 +634,8 @@ Hôm nay, chúng mình tự hào giới thiệu SME AutoPilot — giải pháp t
 
 ⚡ Trải nghiệm ngay trên Google Cloud Run với chế độ Demo 0-click (không cần nhập API key)!
 
-👉 Link trải nghiệm & mã nguồn: https://github.com/google-riser/sme-autopilot
-👉 Video Demo 3 phút: https://youtu.be/sme-autopilot-demo
+👉 Link trải nghiệm & mã nguồn: https://github.com/DuongNAD/googleRiser
+👉 Video Demo 2 phút: <<DÁN_LINK_YOUTUBE_CÔNG_KHAI>>
 
 #BuildwithGoogleAI #AIRiserVietnam2026 #VibeCoding #SMEAutoPilot #Gemini2 #CloudRun #VietAI #GoogleWorkspace
 ```
@@ -612,8 +660,8 @@ Key Architectural Highlights:
 Zero-Friction Evaluation: Built with an in-memory SPI fallback engine that enables judges and developers to test the full end-to-end workflow instantly in Demo Mode without requiring cloud API keys.
 
 Explore our open-source codebase & architecture:
-🔗 GitHub: https://github.com/google-riser/sme-autopilot
-🎥 3-Min Video Demo: https://youtu.be/sme-autopilot-demo
+🔗 GitHub: https://github.com/DuongNAD/googleRiser
+🎥 2-Min Video Demo: <<PASTE_PUBLIC_YOUTUBE_LINK>>
 
 #BuildwithGoogleAI #AIRiserVietnam2026 #VibeCoding #SMEAutoPilot #Gemini2 #GoogleCloud #CloudRun #TypeScript #MachineLearning #EnterpriseAI
 ```
@@ -633,7 +681,7 @@ Explore our open-source codebase & architecture:
 4/5 🌐 Deep Google Workspace SPI: Bi-directional @GoogleSheets sync, @Gmail responsive invoices with dynamic VietQR codes, @GoogleCalendar live sales alerts & @GoogleMaps 2-Opt TSP dispatch routing.
 
 5/5 ⚡ Containerized on @GoogleCloud Run with <350ms cold starts & zero-key instant Demo Mode!
-⭐ GitHub: https://github.com/google-riser/sme-autopilot
+⭐ GitHub: https://github.com/DuongNAD/googleRiser
 #BuildwithGoogleAI #AIRiserVietnam2026 #VibeCoding #SMEAutoPilot #CloudRun
 ```
 
@@ -667,17 +715,18 @@ SME AutoPilot is engineered with a **Zero-Friction Demo Mode** allowing competit
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/google-riser/sme-autopilot.git
-cd sme-autopilot
+git clone https://github.com/DuongNAD/googleRiser.git
+cd googleRiser
 
-# 2. Install dependencies (Root, Backend & Frontend)
-npm install
+# 2. Install dependencies (Root + Frontend) and build the SPA bundle
+npm run setup
 
-# 3. Launch Development Server (Express Backend + Vite Frontend)
-npm run dev
+# 3. Launch the full-stack demo (Express backend serving the built SPA)
+npm run demo
 
 # 4. Open in browser
-# Navigate to: http://localhost:8080 (or http://localhost:5173 for Vite HMR)
+# Navigate to: http://localhost:8080
+#   (for frontend hot-reload instead: `npm run dev` + `npm run dev:frontend` on :5173)
 ```
 
 To run with Docker locally:
@@ -686,9 +735,9 @@ docker-compose up --build
 # Open http://localhost:8080
 ```
 
-To run the full automated verification suite (421 tests in ~1.5s):
+To run the full automated verification suite (484 tests in ~2s):
 ```bash
-npm test
+npm run test:all   # 372 E2E/adversarial + 83 AI + 29 API = 484 cases
 ```
 
 ---
@@ -863,18 +912,66 @@ The production `Dockerfile` enforces strict container security standards:
 
 ## 6.4 Production Cloud Run Deployment Pipeline
 
-### Option A: 1-Click Automated Script (PowerShell / Bash)
-- **Windows (PowerShell)**:
-  ```powershell
-  .\deploy_cloud_run.ps1 -ProjectId "your-gcp-project-id" -Region "asia-southeast1"
-  ```
+### 6.4.1 Chuẩn Bị & Tiền Điều Kiện (Prerequisites)
+
+Trước khi thực hiện triển khai lên Google Cloud Run, đảm bảo đã cài đặt Google Cloud SDK (`gcloud`) và cấu hình xác thực:
+
+1. **Đăng nhập Google Cloud**:
+   ```bash
+   gcloud auth login
+   ```
+2. **Cấu hình Google Cloud Project ID**:
+   ```bash
+   gcloud config set project <PROJECT_ID>
+   ```
+3. **Kích hoạt các Google Cloud API bắt buộc**:
+   ```bash
+   gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com
+   ```
+4. **Cấu hình Biến Môi Trường cho Chế Độ Live (Live Mode Environment Variables)**:
+   Mặc định khi triển khai với script, hệ thống sẽ chạy ở chế độ **`APP_MODE=DEMO`** (sẵn sàng đánh giá không cần khóa API). Nếu muốn kết nối với dữ liệu thật của Google Ecosystem, cấu hình các biến môi trường sau (tham chiếu từ file `.env.example`):
+   - `GEMINI_API_KEY`: Khóa API Google Gemini 2.0 (tạo tại Google AI Studio).
+   - `GOOGLE_SHEETS_SPREADSHEET_ID`: ID bảng tính Google Sheets lưu trữ kho và đơn hàng.
+   - `GMAIL_CLIENT_ID` (kèm `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`): Thông tin xác thực OAuth gửi email hóa đơn qua Gmail API.
+   - `GOOGLE_MAPS_API_KEY`: Khóa API Google Maps tính cước khoảng cách và định tuyến giao hàng.
+   - `FIREBASE_PROJECT_ID` (kèm `GOOGLE_APPLICATION_CREDENTIALS`): Dự án Firebase lưu trữ forensic audit logs.
+
+   Để cập nhật các biến môi trường này lên Cloud Run:
+   ```bash
+   gcloud run services update sme-autopilot \
+     --region asia-southeast1 \
+     --set-env-vars "APP_MODE=LIVE,USE_MOCK_GOOGLE=false,GEMINI_API_KEY=...,GOOGLE_SHEETS_SPREADSHEET_ID=...,GOOGLE_MAPS_API_KEY=...,FIREBASE_PROJECT_ID=..."
+   ```
+
+### 6.4.2 Quy Trình Triển Khai 1-Click (Automated Script)
+
+Script triển khai tự động đọc `PROJECT_ID` hiện tại từ `gcloud config`, đóng gói mã nguồn và triển khai trực tiếp lên Cloud Run qua tính năng Source-to-Image:
+
 - **Linux / macOS / Google Cloud Shell**:
   ```bash
   chmod +x deploy_cloud_run.sh
-  ./deploy_cloud_run.sh your-gcp-project-id asia-southeast1
+  ./deploy_cloud_run.sh
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  .\deploy_cloud_run.ps1
   ```
 
-### Option B: Google Cloud Build Pipeline (`cloudbuild.yaml`)
+Lệnh `gcloud run deploy` được thực thi bên trong script:
+```bash
+gcloud run deploy sme-autopilot \
+    --source . \
+    --region asia-southeast1 \
+    --platform managed \
+    --allow-unauthenticated \
+    --port 8080 \
+    --memory 512Mi \
+    --cpu 1 \
+    --set-env-vars "APP_MODE=DEMO,NODE_ENV=production"
+```
+
+### 6.4.3 Triển Khai Qua Google Cloud Build (`cloudbuild.yaml`)
+Dành cho quy trình CI/CD tự động khi push mã nguồn lên repository:
 ```yaml
 steps:
   # 1. Build container image
@@ -913,6 +1010,8 @@ steps:
       - 'APP_MODE=DEMO,NODE_ENV=production'
 ```
 
+Sau khi quá trình triển khai hoàn tất, gcloud sẽ in ra đường dẫn dịch vụ có định dạng `https://<service>-<hash>-<region>.a.run.app` (ví dụ: `https://sme-autopilot-xyz-as.a.run.app`). Hãy sao chép URL này và dán vào hàng **Cloud Run demo URL (tuỳ chọn)** trong bảng [✅ Trạng Thái Nộp Bài](#-trạng-thái-nộp-bài-submission-status) ở đầu tài liệu.
+
 ---
 
 # 🏁 Summary & Submission Checklist
@@ -925,7 +1024,7 @@ steps:
 | **Google Ecosystem SPI** | ✅ Complete | Sheets API v4, Gmail API v1, Calendar API v3, Maps Platform, Firestore. |
 | **Zero-Friction Demo Mode** | ✅ Complete | 100% functionality out of the box with zero API keys required. |
 | **Google Cloud Run Deployment** | ✅ Complete | Multi-stage Dockerfile, `cloudbuild.yaml`, sub-350ms cold start. |
-| **Automated Verification** | ✅ Complete | 421/421 tests passed (100% pass rate in ~1.5s). |
+| **Automated Verification** | ✅ Complete | 484/484 tests passed (100% pass rate, `npm run test:all`). |
 
 **Team Name**: SME AutoPilot Engineering Team  
 **Competition**: #BuildwithGoogleAI — AI Riser Vietnam 2026 Challenge  

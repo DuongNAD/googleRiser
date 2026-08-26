@@ -7,6 +7,8 @@
     "build": "npm run build:backend",
     "build:backend": "tsc",
     "build:frontend": "cd frontend && npm run build",
+    "setup": "npm install && npm --prefix frontend install && npm --prefix frontend run build",
+    "demo": "npm --prefix frontend run build && ts-node backend/src/server.ts",
     "dev": "ts-node backend/src/server.ts",
     "dev:backend": "ts-node backend/src/server.ts",
     "dev:frontend": "cd frontend && npm run dev",
@@ -39,6 +41,9 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@googleapis/calendar": "^16.0.0",
+    "@googleapis/gmail": "^18.0.0",
+    "@googleapis/sheets": "^14.0.0",
     "cors": "^2.8.6",
     "express": "^5.2.1"
   }

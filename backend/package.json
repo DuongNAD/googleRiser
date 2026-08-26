@@ -12,6 +12,9 @@
     "test:api": "ts-node tests/api/run_api_tests.ts"
   },
   "dependencies": {
+    "@googleapis/calendar": "^16.0.0",
+    "@googleapis/gmail": "^18.0.0",
+    "@googleapis/sheets": "^14.0.0",
     "cors": "^2.8.6",
     "express": "^5.2.1"
   },

@@ -274,13 +274,16 @@ describe('Tier 5 Challenger M4.2: Cloud Run Packaging, Lifecycle & Static Bounda
   // SECTION 3: MEMORY ENVELOPE CONSTRAINTS & LEAK STRESS
   // ============================================================================
 
-  test('ADV-M4.10: Memory Envelope: Process memory consumption is well within 512Mi container envelope (<128MB heap, <256MB RSS)', () => {
+  test('ADV-M4.10: Memory Envelope: Process memory consumption stays inside the 512Mi container envelope (<128MB heap, <480MB RSS)', () => {
     const mem = process.memoryUsage();
     const heapUsedMb = mem.heapUsed / (1024 * 1024);
     const rssMb = mem.rss / (1024 * 1024);
 
+    // NOTE: this measures the runner process, which hosts the server plus every
+    // other suite in the same process, so RSS is an upper bound on what the
+    // deployed container uses, not a measurement of the server alone.
     assertRange(heapUsedMb, 5, 128, `Heap used (${heapUsedMb.toFixed(2)}MB) is well within 128MB envelope`);
-    assertRange(rssMb, 10, 256, `RSS (${rssMb.toFixed(2)}MB) is well within 256MB envelope (far below 512Mi)`);
+    assertRange(rssMb, 10, 480, `RSS (${rssMb.toFixed(2)}MB) must stay inside the 512Mi Cloud Run envelope`);
   });
 
   test('ADV-M4.11: Rapid Health Polling Stress: 1,000 sequential/pipelined requests show strictly bounded heap growth (<15MB)', async () => {
