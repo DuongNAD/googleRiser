@@ -54,11 +54,15 @@ class ApiClient {
       if (!contentType.includes('application/json')) {
         const text = await response.text();
         if (!response.ok) {
+          let cleanMessage = text.trim();
+          if (cleanMessage.startsWith('<') || cleanMessage.includes('<html') || cleanMessage.includes('<body')) {
+            cleanMessage = `Lỗi máy chủ (${response.status}: ${response.statusText || 'Server Error'})`;
+          }
           return {
             success: false,
             error: {
               code: `HTTP_${response.status}`,
-              message: text || `HTTP error ${response.status}`
+              message: cleanMessage || `Lỗi máy chủ HTTP ${response.status}`
             }
           };
         }
@@ -76,7 +80,7 @@ class ApiClient {
           success: false,
           error: data.error || {
             code: `HTTP_${response.status}`,
-            message: data.message || `HTTP error ${response.status}`
+            message: data.message || `Lỗi yêu cầu HTTP ${response.status}`
           },
           meta: data.meta
         };
@@ -105,6 +109,26 @@ class ApiClient {
       body: body !== undefined ? JSON.stringify(body) : undefined,
       headers
     });
+  }
+
+  async patch<T = any>(endpoint: string, body?: any, headers?: HeadersInit): Promise<ApiResponse<T>> {
+    return this.request<T>(endpoint, {
+      method: 'PATCH',
+      body: body !== undefined ? JSON.stringify(body) : undefined,
+      headers
+    });
+  }
+
+  async put<T = any>(endpoint: string, body?: any, headers?: HeadersInit): Promise<ApiResponse<T>> {
+    return this.request<T>(endpoint, {
+      method: 'PUT',
+      body: body !== undefined ? JSON.stringify(body) : undefined,
+      headers
+    });
+  }
+
+  async delete<T = any>(endpoint: string, headers?: HeadersInit): Promise<ApiResponse<T>> {
+    return this.request<T>(endpoint, { method: 'DELETE', headers });
   }
 }
 

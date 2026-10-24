@@ -978,7 +978,7 @@ Extract all receipt fields and return JSON with structure:
   "forensicSignals": {
     "timestampMatch": true,
     "fontConsistency": true,
-    "compressionArtifacts": true,
+    "compressionArtifacts": false,
     "logoAuthenticity": true,
     "qrIntegrity": true,
     "anomalies": []
@@ -992,10 +992,79 @@ Extract all receipt fields and return JSON with structure:
       mockFallback: () => this.auditWithHeuristicEngine(input)
     });
 
-    return {
-      ...result,
-      analyzedAt: new Date().toISOString()
+    const rawData = result?.extractedData || result || {};
+    const signals = result?.forensicSignals || {};
+    const fallbackData = input.receiptData || {};
+
+    const rawBank = rawData.bankName || fallbackData.bankName || 'VCB';
+    const bankInfo = lookupBankInfo(rawBank);
+
+    const hasFontAnomaly = signals.fontConsistency === false ||
+      (Array.isArray(signals.anomalies) && signals.anomalies.some((a: string) => /font|phông|chữ/i.test(a)));
+    const hasCompressionHalo = signals.compressionArtifacts === true ||
+      (Array.isArray(signals.anomalies) && signals.anomalies.some((a: string) => /compression|nén|ela|halo/i.test(a)));
+    const hasLogoDistortion = signals.logoAuthenticity === false ||
+      (Array.isArray(signals.anomalies) && signals.anomalies.some((a: string) => /logo|biểu trưng/i.test(a)));
+
+    const extractedAmount = rawData.amount !== undefined
+      ? Number(rawData.amount)
+      : (fallbackData.amount ?? 589000);
+    const extractedAccount = rawData.accountNumber || fallbackData.accountNumber || '0123456789';
+    const extractedTxId = rawData.transactionId || fallbackData.transactionId || 'FT260814982137';
+    const qrPayload = input.rawQrPayload || rawData.qrPayload || fallbackData.qrPayload;
+
+    const evalResult = evaluate5LayerForensics({
+      statusBarTime: rawData.statusBarTime || '14:35',
+      transactionTime: rawData.transactionTime || fallbackData.transactionTime || '14:32',
+      fontAnomalyDetected: hasFontAnomaly,
+      compressionHaloDetected: hasCompressionHalo,
+      logoDistortionDetected: hasLogoDistortion,
+      identifiedBank: bankInfo?.shortName || rawBank,
+      qrPayload,
+      extractedAmount,
+      extractedAccount,
+      extractedTxId
+    });
+
+    const extractedData: ExtractedReceiptData = {
+      bankName: bankInfo?.fullName || rawData.bankName || fallbackData.bankName || 'Ngân hàng TMCP Ngoại Thương Việt Nam (Vietcombank)',
+      accountNumber: extractedAccount,
+      accountHolder: rawData.accountHolder || fallbackData.accountHolder || 'NGUYEN VAN A',
+      amount: extractedAmount,
+      currency: rawData.currency || fallbackData.currency || 'VND',
+      transactionId: extractedTxId,
+      transactionTime: rawData.transactionTime || fallbackData.transactionTime || new Date().toISOString(),
+      transferContent: rawData.transferContent || fallbackData.transferContent || 'Chuyen tien mua hang',
+      qrPayload,
+      recipientBankBin: bankInfo?.bin || '970436',
+      recipientAccount: rawData.recipientAccount || fallbackData.recipientAccount || extractedAccount
     };
+
+    const preliminaryResult: BillForensicsResult = {
+      isAuthentic: result?.isAuthentic !== undefined ? (result.isAuthentic && evalResult.isAuthentic) : evalResult.isAuthentic,
+      confidenceScore: result?.confidenceScore !== undefined ? Math.min(result.confidenceScore, evalResult.confidenceScore) : evalResult.confidenceScore,
+      riskLevel: evalResult.riskLevel,
+      extractedData,
+      forensicSignals: evalResult.forensicSignals,
+      forensicLayers: evalResult.forensicLayers,
+      detailedAnomalies: evalResult.anomalies,
+      vietQrData: evalResult.vietQrData,
+      reconciliationStatus: 'UNMATCHED',
+      recommendation: 'MANUAL_REVIEW',
+      analyzedAt: new Date().toISOString(),
+      bankMetadata: bankInfo
+    };
+
+    if (input.activeOrders && input.activeOrders.length > 0) {
+      const rec = reconcileWithOrders(preliminaryResult, input.activeOrders);
+      preliminaryResult.reconciliationStatus = rec.reconciliationStatus;
+      preliminaryResult.matchedOrderId = rec.matchedOrderId;
+      preliminaryResult.recommendation = rec.recommendation;
+    } else {
+      preliminaryResult.recommendation = preliminaryResult.isAuthentic ? 'AUTO_APPROVE' : 'REJECT';
+    }
+
+    return preliminaryResult;
   }
 }
 

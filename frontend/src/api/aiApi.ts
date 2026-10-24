@@ -236,47 +236,81 @@ export const aiApi = {
     const query = new URLSearchParams({ prompt, type }).toString();
     const url = `/api/ai/stream-generate?${query}`;
     let eventSource: EventSource | null = null;
-    let fallbackTimeout: any = null;
+    let isCompleted = false;
+    let receivedAnyToken = false;
 
     try {
       eventSource = new EventSource(url);
 
-      eventSource.onmessage = (event) => {
+      const handleTokenData = (rawData: string) => {
         try {
-          const parsed = JSON.parse(event.data);
-          if (parsed.chunk) {
-            onChunk(parsed.chunk);
+          const parsed = JSON.parse(rawData);
+          const chunkText = parsed.text !== undefined ? parsed.text : (parsed.chunk !== undefined ? parsed.chunk : rawData);
+          if (chunkText) {
+            receivedAnyToken = true;
+            onChunk(chunkText);
           }
           if (parsed.done) {
+            isCompleted = true;
             eventSource?.close();
             onDone();
           }
         } catch {
-          onChunk(event.data);
+          receivedAnyToken = true;
+          onChunk(rawData);
         }
       };
 
+      // Listen for named 'token' events from backend
+      eventSource.addEventListener('token', (event: MessageEvent) => {
+        handleTokenData(event.data);
+      });
+
+      // Listen for named 'done' events from backend
+      eventSource.addEventListener('done', (event: MessageEvent) => {
+        isCompleted = true;
+        eventSource?.close();
+        onDone();
+      });
+
+      // Listen for default message events
+      eventSource.onmessage = (event: MessageEvent) => {
+        handleTokenData(event.data);
+      };
+
+      // Error and disconnect handling
       eventSource.onerror = (err) => {
         eventSource?.close();
-        let simulatedText = `[AI Stream - Gemini 2.0 Flash]\n\nPhân tích yêu cầu: "${prompt}"...\n- Xác thực dữ liệu đầu vào chuẩn xác.\n- Tối ưu hóa phản hồi cho doanh nghiệp Việt.\n- Đã sẵn sàng xuất kết quả.`;
-        let index = 0;
-        const interval = setInterval(() => {
-          if (index < simulatedText.length) {
-            onChunk(simulatedText.slice(index, index + 8));
-            index += 8;
-          } else {
-            clearInterval(interval);
-            onDone();
-          }
-        }, 40);
+        if (isCompleted) {
+          return;
+        }
+
+        // If no tokens were received from backend, fallback to client-side simulated stream
+        if (!receivedAnyToken) {
+          let simulatedText = `[AI Stream - Gemini 2.0 Flash]\n\nPhân tích yêu cầu: "${prompt}"...\n- Xác thực dữ liệu đầu vào chuẩn xác.\n- Tối ưu hóa phản hồi cho doanh nghiệp Việt.\n- Đã sẵn sàng xuất kết quả.`;
+          let index = 0;
+          const interval = setInterval(() => {
+            if (index < simulatedText.length) {
+              onChunk(simulatedText.slice(index, index + 8));
+              index += 8;
+            } else {
+              clearInterval(interval);
+              isCompleted = true;
+              onDone();
+            }
+          }, 40);
+        } else {
+          isCompleted = true;
+          onDone();
+        }
       };
     } catch (err) {
       onError(err);
     }
 
     return () => {
+      isCompleted = true;
       if (eventSource) eventSource.close();
-      if (fallbackTimeout) clearTimeout(fallbackTimeout);
     };
   }
 };

@@ -1,0 +1,7 @@
+{
+  "name": "googleRiser",
+  "category": "04_Web_Platforms",
+  "tech": "Node.js",
+  "command": "npm run dev",
+  "description": "SME AutoPilot - Tự động hóa tiếp thị doanh nghiệp"
+}

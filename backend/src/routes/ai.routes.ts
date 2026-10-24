@@ -247,8 +247,10 @@ aiRouter.post('/voice/audio-order', async (req: Request, res: Response): Promise
 // ============================================================================
 
 aiRouter.get('/stream-generate', (req: Request, res: Response): void => {
-  const prompt = (req.query.prompt as string) || 'Xin chào! Tôi có thể giúp gì cho shop của bạn hôm nay?';
-  const type = (req.query.type as string) || 'general';
+  const rawPrompt = Array.isArray(req.query.prompt) ? req.query.prompt[0] : req.query.prompt;
+  const prompt = (typeof rawPrompt === 'string' && rawPrompt.trim()) ? rawPrompt.trim() : 'Xin chào! Tôi có thể giúp gì cho shop của bạn hôm nay?';
+  const rawType = Array.isArray(req.query.type) ? req.query.type[0] : req.query.type;
+  const type = (typeof rawType === 'string' && rawType.trim()) ? rawType.trim() : 'general';
 
   // Set SSE HTTP Headers
   res.writeHead(200, {
@@ -275,12 +277,13 @@ aiRouter.get('/stream-generate', (req: Request, res: Response): void => {
 
     if (tokenIdx < tokens.length) {
       const chunkText = tokens[tokenIdx] + (tokenIdx < tokens.length - 1 ? ' ' : '');
-      const eventData = JSON.stringify({ text: chunkText, index: tokenIdx });
+      const eventData = JSON.stringify({ text: chunkText, chunk: chunkText, index: tokenIdx });
       res.write(`event: token\ndata: ${eventData}\n\n`);
       tokenIdx++;
     } else {
       clearInterval(intervalId);
       const doneData = JSON.stringify({
+        done: true,
         totalTokens: tokens.length,
         promptLength: prompt.length,
         type,

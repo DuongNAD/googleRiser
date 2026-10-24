@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useApp } from './context/AppContext';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { EcosystemDrawer } from './components/layout/EcosystemDrawer';
 import { ToastContainer } from './components/layout/ToastContainer';
 import { DashboardView } from './views/DashboardView';
-import { BillAuditView } from './views/BillAuditView';
-import { OrdersView } from './views/OrdersView';
-import { ProductStudioView } from './views/ProductStudioView';
-import { VoiceAssistantView } from './views/VoiceAssistantView';
-import { AIPlaygroundView } from './views/AIPlaygroundView';
-import { EcosystemSettingsView } from './views/EcosystemSettingsView';
+
+// Code-split secondary views for optimized initial bundle delivery
+const BillAuditView = React.lazy(() => import('./views/BillAuditView').then(m => ({ default: m.BillAuditView })));
+const OrdersView = React.lazy(() => import('./views/OrdersView').then(m => ({ default: m.OrdersView })));
+const ProductStudioView = React.lazy(() => import('./views/ProductStudioView').then(m => ({ default: m.ProductStudioView })));
+const VoiceAssistantView = React.lazy(() => import('./views/VoiceAssistantView').then(m => ({ default: m.VoiceAssistantView })));
+const AIPlaygroundView = React.lazy(() => import('./views/AIPlaygroundView').then(m => ({ default: m.AIPlaygroundView })));
+const EcosystemSettingsView = React.lazy(() => import('./views/EcosystemSettingsView').then(m => ({ default: m.EcosystemSettingsView })));
+
+const ViewLoadingFallback: React.FC = () => (
+  <div className="flex items-center justify-center min-h-[400px]">
+    <div className="flex flex-col items-center space-y-3">
+      <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+      <span className="text-sm text-slate-400">Đang tải giao diện...</span>
+    </div>
+  </div>
+);
 
 const AppContent: React.FC = () => {
   const { activeRoute } = useApp();
@@ -44,7 +55,9 @@ const AppContent: React.FC = () => {
         <Sidebar />
 
         <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto w-full max-w-[1536px] mx-auto">
-          {renderView()}
+          <Suspense fallback={<ViewLoadingFallback />}>
+            {renderView()}
+          </Suspense>
         </main>
       </div>
 

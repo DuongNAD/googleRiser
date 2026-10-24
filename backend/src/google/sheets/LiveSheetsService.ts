@@ -158,6 +158,11 @@ export class LiveSheetsService implements ISheetsService {
     }
   }
 
+  public async getOrderById(orderId: string, spreadsheetId?: string): Promise<Order | null> {
+    const orders = await this.getOrders(spreadsheetId);
+    return orders.find(o => o.orderId.toLowerCase() === orderId.toLowerCase()) || null;
+  }
+
   public async appendOrder(order: Order, spreadsheetId?: string): Promise<Order> {
     const targetId = spreadsheetId || this.defaultSpreadsheetId;
     if (!this.isAvailable()) {
@@ -196,6 +201,44 @@ export class LiveSheetsService implements ISheetsService {
     } catch (error: any) {
       console.warn(`[LiveSheetsService] appendOrder failed for ${order.orderId}, using fallback:`, error?.message);
       return this.fallbackMock.appendOrder(order, targetId);
+    }
+  }
+
+  public async updateOrderStatus(
+    orderId: string,
+    status: Order['orderStatus'],
+    spreadsheetId?: string
+  ): Promise<Order> {
+    const targetId = spreadsheetId || this.defaultSpreadsheetId;
+    if (!this.isAvailable()) {
+      return this.fallbackMock.updateOrderStatus(orderId, status, targetId);
+    }
+
+    try {
+      const orders = await this.getOrders(targetId);
+      const index = orders.findIndex(o => o.orderId.toLowerCase() === orderId.toLowerCase());
+      if (index === -1) {
+        throw new GoogleServiceError('SheetsService', `Order '${orderId}' not found in live sheet`, 404);
+      }
+
+      const order = orders[index];
+      order.orderStatus = status;
+      order.updatedAt = new Date().toISOString();
+
+      const rowIndex = index + 2; // Row index (1-based, header is row 1)
+      await this.sheetsClient.spreadsheets.values.update({
+        spreadsheetId: targetId,
+        range: `ORDERS_JOURNAL!L${rowIndex}:O${rowIndex}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+          values: [[order.orderStatus, order.transactionRef || '', order.createdAt, order.updatedAt]]
+        }
+      });
+
+      return order;
+    } catch (error: any) {
+      console.warn(`[LiveSheetsService] updateOrderStatus failed for ${orderId}, using fallback:`, error?.message);
+      return this.fallbackMock.updateOrderStatus(orderId, status, targetId);
     }
   }
 

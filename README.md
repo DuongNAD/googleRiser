@@ -3,7 +3,7 @@
 **Built for the [AI Riser Vietnam 2026 Challenge](http://goo.gle/airiservietnam) (#BuildwithGoogleAI & #VibeCoding)**
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg?style=for-the-badge&logo=github)](https://github.com/DuongNAD/googleRiser)
-[![Test Suite](https://img.shields.io/badge/Tests-484%2F484%20Passed%20(100%25)-success.svg?style=for-the-badge&logo=jest)](https://github.com/DuongNAD/googleRiser)
+[![Test Suite](https://img.shields.io/badge/Tests-518%2F518%20Passed%20(100%25)-success.svg?style=for-the-badge&logo=jest)](https://github.com/DuongNAD/googleRiser)
 [![Google AI](https://img.shields.io/badge/Google%20AI-Gemini%202.0%20%7C%20Imagen%203-blue.svg?style=for-the-badge&logo=google)](https://aistudio.google.com)
 [![Google Cloud](https://img.shields.io/badge/Cloud%20Run-Ready-4285F4.svg?style=for-the-badge&logo=googlecloud)](https://cloud.google.com/run)
 [![Stack](https://img.shields.io/badge/Stack-Node.js%2022%20%7C%20React%2018%20%7C%20Vite%206%20%7C%20Tailwind-61DAFB.svg?style=for-the-badge&logo=react)](https://react.dev)
@@ -59,7 +59,7 @@ In Vietnam, over **5.2 million individual micro-merchants and online social comm
                                                                   v
 +----------------------------------------------------------------------------------------------------+
 |                                GOOGLE CLOUD RUN SERVERLESS DEPLOYMENT                              |
-|  - Managed Container Runtime (Node 20 Alpine, Non-root `nodejs:1001`, Port 8080)                  |
+|  - Managed Container Runtime (Node 22 LTS Alpine, Non-root `node:1000`, Port 8080)                 |
 |  - Auto-scaling (0 to 5 instances, 512MiB RAM, 1 vCPU, <350ms Cold Start)                         |
 +----------------------------------------------------------------------------------------------------+
 ```
@@ -98,7 +98,7 @@ docker-compose up --build
 
 ### Run Comprehensive Test Suite:
 ```bash
-# Run all 484 automated unit, integration, and adversarial tests
+# Run all 518 automated unit, integration, and adversarial tests
 npm run test:all
 ```
 
@@ -199,9 +199,9 @@ npm run test:all
 ## ☁️ 6. Google Cloud Run Deployment
 
 The production container uses a hardened multi-stage Docker build:
-- **Base Image**: Lightweight `node:20-alpine`.
+- **Base Image**: Lightweight `node:22-alpine`.
 - **Image Size**: Under **150MB**.
-- **Security**: Runs under unprivileged user `nodejs:1001`.
+- **Security**: Runs under unprivileged user `node` (UID 1000).
 - **Cold Start Latency**: Under **350ms**.
 
 ### 1-Click Deployment:
@@ -234,9 +234,9 @@ Tier 4: Real-World SME Workload Scenarios                5       5       0  100.
 Tier 5: Adversarial & Stress Hardening                  98      98       0  100.0%
 Google Cloud Ecosystem & SPI Services (M2)              84      84       0  100.0%
 Backend Multimodal AI Suite (`run_ai_tests.ts`)         83      83       0  100.0%
-Express REST / SSE Integration Suite (`run_api_tests`)   29      29       0  100.0%
+Express REST / SSE Integration Suite (`run_api_tests`)   63      63       0  100.0%
 ──────────────────────────────────────────────────────────────────────────────────
-TOTAL VERIFIED TESTS                                   484     484       0  100.0%
+TOTAL VERIFIED TESTS                                   518     518       0  100.0%
 ================================================================================
 ⏱ Total Execution Time: 2.1s (100% Pass Rate across 1,900 verified iterations)
 ```

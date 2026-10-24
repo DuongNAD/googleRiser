@@ -4,6 +4,7 @@
  */
 
 import { runApiRoutesTests } from './api_routes.test';
+import { runChallengerM3AdversarialSuite } from './challenger_m3_adversarial.test';
 
 async function main(): Promise<void> {
   console.log('\n' + '='.repeat(80));
@@ -12,21 +13,35 @@ async function main(): Promise<void> {
   console.log('='.repeat(80) + '\n');
 
   const startTime = Date.now();
-  const results = await runApiRoutesTests();
+  const apiRouteResults = await runApiRoutesTests();
+  const adversarialResults = await runChallengerM3AdversarialSuite();
 
-  const passed = results.filter(r => r.passed).length;
-  const failed = results.filter(r => !r.passed).length;
-  const total = results.length;
+  const allResults = [
+    ...apiRouteResults.map(r => ({ ...r, suite: 'Backend Express REST & SSE Integration Suite' })),
+    ...adversarialResults
+  ];
 
-  console.log('📦 SUITE: Backend Express REST & SSE Integration Suite');
-  console.log('-'.repeat(80));
+  const passed = allResults.filter(r => r.passed).length;
+  const failed = allResults.filter(r => !r.passed).length;
+  const total = allResults.length;
 
-  for (const res of results) {
-    if (res.passed) {
-      console.log(`  ✅ [PASS] ${res.name} (${res.durationMs}ms)`);
-    } else {
-      console.log(`  ❌ [FAIL] ${res.name} (${res.durationMs}ms)`);
-      console.log(`     Error: ${res.error}`);
+  const suiteGroups: Record<string, typeof allResults> = {};
+  for (const res of allResults) {
+    const s = res.suite || 'General Suite';
+    if (!suiteGroups[s]) suiteGroups[s] = [];
+    suiteGroups[s].push(res);
+  }
+
+  for (const [suiteName, tests] of Object.entries(suiteGroups)) {
+    console.log(`\n📦 SUITE: ${suiteName}`);
+    console.log('-'.repeat(80));
+    for (const res of tests) {
+      if (res.passed) {
+        console.log(`  ✅ [PASS] ${res.name} (${res.durationMs}ms)`);
+      } else {
+        console.log(`  ❌ [FAIL] ${res.name} (${res.durationMs}ms)`);
+        console.log(`     Error: ${res.error}`);
+      }
     }
   }
 
@@ -43,7 +58,7 @@ async function main(): Promise<void> {
     console.error(`❌ Backend API test runner failed with ${failed} failing tests.`);
     process.exit(1);
   } else {
-    console.log('🎉 ALL BACKEND REST & SSE API INTEGRATION TESTS PASSED WITH 100% SUCCESS RATE!\n');
+    console.log('🎉 ALL BACKEND REST & SSE API AND ADVERSARIAL TESTS PASSED WITH 100% SUCCESS RATE!\n');
     process.exit(0);
   }
 }
